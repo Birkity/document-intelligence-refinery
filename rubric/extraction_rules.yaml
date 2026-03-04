@@ -1,0 +1,15 @@
+# Extraction Rules Configuration
+# Thresholds used by the Triage Agent and Extraction Router.
+# Modify these values to tune classification without changing code.
+
+origin_detection:
+  # Characters per point² of page area.
+  # Pages below this are likely scanned / image-based.
+  min_char_density: 0.01
+
+  # Image area / page area ratio.
+  # Pages above this are likely scanned documents with embedded page images.
+  scanned_image_ratio: 0.5
+
+  # Only analyse the first N pages for speed (covers most doc headers / body).
+  max_pages_to_sample: 5
