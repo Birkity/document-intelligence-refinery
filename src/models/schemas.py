@@ -86,6 +86,9 @@ class ExtractedDocument(BaseModel):
     document_id: str = Field(
         ..., description="Unique identifier for the source document"
     )
+    source_filename: str = Field(
+        ..., description="Original PDF filename (e.g. 'report.pdf')"
+    )
     pages: list[ExtractedPage] = Field(
         default_factory=list,
         description="Per-page extraction results in page order",
@@ -106,6 +109,9 @@ class DocumentProfile(BaseModel):
 
     document_id: str = Field(
         ..., description="Unique identifier for the source document"
+    )
+    source_filename: str = Field(
+        ..., description="Original PDF filename (e.g. 'report.pdf')"
     )
     origin_type: Literal[
         "native_digital", "scanned_image", "mixed", "form_fillable"
@@ -169,4 +175,94 @@ class LDU(BaseModel):
     content_hash: str = Field(
         ...,
         description="SHA-256 hex digest of content for provenance verification",
+    )
+
+
+# ---------------------------------------------------------------------------
+# PageIndex — hierarchical navigation
+# ---------------------------------------------------------------------------
+
+class PageIndexNode(BaseModel):
+    """A node in the hierarchical PageIndex tree.
+
+    Represents a document section with navigation metadata that allows
+    an LLM to traverse the document without reading everything.
+    """
+
+    title: str = Field(..., description="Section title")
+    page_start: int = Field(..., ge=1, description="First page of this section")
+    page_end: int = Field(..., ge=1, description="Last page of this section")
+    children: list["PageIndexNode"] = Field(
+        default_factory=list,
+        description="Child sections (recursive)",
+    )
+    key_entities: list[str] = Field(
+        default_factory=list,
+        description="Named entities found in this section",
+    )
+    summary: str = Field(
+        default="",
+        description="LLM-generated 2–3 sentence summary of section content",
+    )
+    data_types_present: list[str] = Field(
+        default_factory=list,
+        description="Types of data in section: tables, figures, equations, etc.",
+    )
+
+
+# Enable recursive model references
+PageIndexNode.model_rebuild()
+
+
+class PageIndex(BaseModel):
+    """Hierarchical navigation structure for a document.
+
+    The equivalent of a 'smart table of contents' that an LLM can
+    traverse to locate information without reading the entire document.
+    """
+
+    document_id: str = Field(
+        ..., description="Unique identifier of the source document"
+    )
+    root_nodes: list[PageIndexNode] = Field(
+        default_factory=list,
+        description="Top-level sections in document order",
+    )
+
+
+# ---------------------------------------------------------------------------
+# Provenance
+# ---------------------------------------------------------------------------
+
+class ProvenanceCitation(BaseModel):
+    """A single source citation linking an extracted fact to its origin."""
+
+    document_id: str = Field(..., description="Source document identifier")
+    document_name: str = Field(..., description="Human-readable file name")
+    page_number: int = Field(..., ge=1, description="1-indexed page number")
+    bbox: BoundingBox | None = Field(
+        default=None,
+        description="Bounding box of the cited region on the page",
+    )
+    content_hash: str = Field(
+        default="",
+        description="SHA-256 hash of the cited content for verification",
+    )
+
+
+class ProvenanceChain(BaseModel):
+    """Ordered chain of provenance citations for an answer or extracted fact.
+
+    Every answer emitted by the query agent must carry a ProvenanceChain
+    so that claims are auditable back to their spatial source.
+    """
+
+    query: str = Field(..., description="The question or claim being sourced")
+    citations: list[ProvenanceCitation] = Field(
+        default_factory=list,
+        description="Source citations in relevance order",
+    )
+    verified: bool = Field(
+        default=False,
+        description="Whether the chain has been verified against source",
     )

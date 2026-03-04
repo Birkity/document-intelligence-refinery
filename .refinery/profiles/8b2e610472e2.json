@@ -1,0 +1,10 @@
+{
+  "document_id": "8b2e610472e2",
+  "source_filename": "Annual_Report_JUNE-2019.pdf",
+  "origin_type": "mixed",
+  "layout_complexity": "multi_column",
+  "language": "en",
+  "language_confidence": 0.5,
+  "domain_hint": "general",
+  "estimated_extraction_cost": "needs_layout_model"
+}

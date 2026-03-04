@@ -100,13 +100,17 @@ class TestExtractedDocument:
     def test_valid_instantiation(self) -> None:
         doc = ExtractedDocument(
             document_id="doc-001",
+            source_filename="document.pdf",
             pages=[ExtractedPage(page_number=1)],
         )
         assert doc.document_id == "doc-001"
         assert len(doc.pages) == 1
 
     def test_defaults_to_empty_pages(self) -> None:
-        doc = ExtractedDocument(document_id="doc-002")
+        doc = ExtractedDocument(
+            document_id="doc-002",
+            source_filename="sample.pdf",
+        )
         assert doc.pages == []
 
 
@@ -116,6 +120,7 @@ class TestDocumentProfile:
     def test_valid_instantiation(self) -> None:
         profile = DocumentProfile(
             document_id="doc-001",
+            source_filename="report.pdf",
             origin_type="native_digital",
             layout_complexity="single_column",
             language="en",
@@ -130,6 +135,7 @@ class TestDocumentProfile:
         with pytest.raises(ValidationError):
             DocumentProfile(
                 document_id="doc-bad",
+                source_filename="bad.pdf",
                 origin_type="unknown_type",  # type: ignore[arg-type]
                 layout_complexity="single_column",
                 language="en",
@@ -142,6 +148,7 @@ class TestDocumentProfile:
         with pytest.raises(ValidationError):
             DocumentProfile(
                 document_id="doc-bad",
+                source_filename="bad.pdf",
                 origin_type="native_digital",
                 layout_complexity="single_column",
                 language="en",
