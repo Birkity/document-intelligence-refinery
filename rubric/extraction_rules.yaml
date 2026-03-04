@@ -13,3 +13,88 @@ origin_detection:
 
   # Only analyse the first N pages for speed (covers most doc headers / body).
   max_pages_to_sample: 5
+
+# -------------------------------------------------------------------
+# Layout Complexity Detection
+# -------------------------------------------------------------------
+layout_detection:
+  # Maximum pages to inspect for layout analysis.
+  max_pages_to_sample: 5
+
+  # If tables occupy more than this fraction of total page area,
+  # the document is classified as "table_heavy".
+  table_area_ratio_threshold: 0.3
+
+  # If image area ratio exceeds this AND char density is still high,
+  # the document is classified as "figure_heavy".
+  figure_ratio_threshold: 0.25
+
+  # Minimum char density (chars / page_area) to consider a figure-heavy
+  # page as still having meaningful text (not scanned).
+  figure_char_density_min: 0.005
+
+  # Coefficient of variation threshold for x-midpoints of text words.
+  # Values above this suggest two distinct column clusters → multi_column.
+  column_variance_threshold: 0.25
+
+# -------------------------------------------------------------------
+# Domain Hint Detection — keyword-based matching
+# -------------------------------------------------------------------
+domain_keywords:
+  financial:
+    - revenue
+    - profit
+    - balance sheet
+    - income statement
+    - dividend
+    - fiscal year
+    - net income
+    - assets
+    - liabilities
+    - equity
+    - cash flow
+    - audit
+    - expenditure
+    - financial statement
+
+  legal:
+    - plaintiff
+    - defendant
+    - court
+    - statute
+    - jurisdiction
+    - contract
+    - hereby
+    - pursuant
+    - arbitration
+    - indemnity
+    - clause
+    - regulation
+    - compliance
+
+  technical:
+    - algorithm
+    - implementation
+    - architecture
+    - system design
+    - module
+    - protocol
+    - specification
+    - throughput
+    - latency
+    - benchmark
+    - deployment
+    - vulnerability
+
+  medical:
+    - patient
+    - diagnosis
+    - treatment
+    - clinical
+    - symptom
+    - prescription
+    - dosage
+    - pathology
+    - prognosis
+    - therapy
+    - pharmaceutical
