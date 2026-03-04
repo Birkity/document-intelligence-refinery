@@ -150,56 +150,79 @@ feedback loops.  It can be rendered using any Mermaid-compatible tool.
 
 \begin{lstlisting}[language={},caption={Mermaid Pipeline Diagram}]
 graph TD
-    subgraph Stage1[Stage 1: Triage Agent]
-        A1[PDF Input] --> A2[detect_origin_type]
-        A2 --> A3[detect_layout_complexity]
-        A3 --> A4[detect_domain_hint]
-        A4 --> A5[estimate_extraction_cost]
-        A5 --> A6[DocumentProfile + source_filename]
-    end
 
-    subgraph Stage2[Stage 2: Extraction Router]
-        B1[ExtractionRouter] --> B2{Cost Tier?}
-        B2 -->|fast_text| B3[Strategy A: FastText]
-        B2 -->|needs_layout| B4[Strategy B: Layout]
-        B2 -->|needs_vision| B5[Strategy C: Vision]
-        B3 -->|confidence < 0.6| B4
-        B4 -->|confidence < 0.5| B5
-        B3 --> B6[ExtractedDocument + source_filename]
-        B4 --> B6
-        B5 --> B6
-        B6 --> B7[extraction_ledger.jsonl with filename]
-        B5 -->|confidence < 0.4| B8[Flag for Review]
-    end
+%% =========================
+%% Stage 1: Triage Agent
+%% =========================
+subgraph Stage1["Stage 1: Triage Agent"]
+A1["PDF Input"] --> A2["detect_origin_type"]
+A2 --> A3["detect_layout_complexity"]
+A3 --> A4["detect_domain_hint"]
+A4 --> A5["estimate_extraction_cost"]
+A5 --> A6["DocumentProfile + source_filename"]
+end
 
-    subgraph Stage3[Stage 3: Chunking Engine]
-        C1[ExtractedDocument] --> C2[Chunk Validator]
-        C2 -->|rules violated| C1
-        C2 -->|valid| C3[LDU List]
-    end
+%% =========================
+%% Stage 2: Extraction Router
+%% =========================
+subgraph Stage2["Stage 2: Extraction Router (Confidence-Gated)"]
+B1["ExtractionRouter"] --> B2{"Cost Tier?"}
 
-    subgraph Stage4[Stage 4: Indexing]
-        D1[LDU List] --> D2[ChromaDB Embeddings]
-        D1 --> D3[SQLite Structured Facts]
-        D1 --> D4[PageIndex Tree]
-    end
+B2 -->|fast_text_sufficient| B3["Strategy A: FastTextExtractor"]
+B2 -->|needs_layout_model| B4["Strategy B: LayoutExtractor (Docling)"]
+B2 -->|needs_vision_model| B5["Strategy C: VisionExtractor (HF VLM)"]
 
-    subgraph Stage5[Stage 5: Query Agent]
-        E1[User Query] --> E2[pageindex_navigate]
-        E1 --> E3[semantic_search]
-        E1 --> E4[structured_query]
-        E2 --> E5[Answer + ProvenanceChain]
-        E3 --> E5
-        E4 --> E5
-        E5 -->|unverifiable| E6[Audit Flag]
-    end
+B3 -->|conf < A_to_B_threshold| B4
+B4 -->|conf < B_to_C_threshold| B5
 
-    A6 --> B1
-    B6 --> C1
-    C3 --> D1
-    D2 --> E3
-    D3 --> E4
-    D4 --> E2
+B3 --> B6["ExtractedDocument + source_filename"]
+B4 --> B6
+B5 --> B6
+
+B6 --> B7["Append extraction_ledger.jsonl"]
+B5 -->|conf < review_threshold| B8["Flag for Manual Review"]
+end
+
+%% =========================
+%% Stage 3: Chunking Engine
+%% =========================
+subgraph Stage3["Stage 3: Chunking Engine (Rules + Validator)"]
+C1["ExtractedDocument"] --> C2["ChunkValidator"]
+C2 -->|rules violated| C1
+C2 -->|valid| C3["LDU List"]
+end
+
+%% =========================
+%% Stage 4: Indexing
+%% =========================
+subgraph Stage4["Stage 4: Indexing"]
+D1["LDU List"] --> D2["ChromaDB Embeddings"]
+D1 --> D3["SQLite Structured Facts"]
+D1 --> D4["PageIndex Tree"]
+end
+
+%% =========================
+%% Stage 5: Query Agent
+%% =========================
+subgraph Stage5["Stage 5: Query Agent"]
+E1["User Query"] --> E2["pageindex_navigate"]
+E1 --> E3["semantic_search"]
+E1 --> E4["structured_query (SQL)"]
+E2 --> E5["Answer + ProvenanceChain"]
+E3 --> E5
+E4 --> E5
+E5 -->|unverifiable| E6["Audit Flag"]
+end
+
+%% =========================
+%% Pipeline Connections
+%% =========================
+A6 --> B1
+B6 --> C1
+C3 --> D1
+D2 --> E3
+D3 --> E4
+D4 --> E2
 \end{lstlisting}
 
 
@@ -225,9 +248,9 @@ architecture (SQLite + ChromaDB).
 \subsubsection{Stage 2: Extraction Router}
 \begin{itemize}
     \item Reads the \texttt{DocumentProfile} and selects starting strategy.
-    \item \textbf{Strategy A} (FastTextExtractor): pdfplumber, cost = negligible.
-    \item \textbf{Strategy B} (LayoutExtractor): Docling or enhanced pdfplumber, cost = moderate.
-    \item \textbf{Strategy C} (VisionExtractor): HF vision model, cost = high.
+    \item \textbf{Strategy A} (FastTextExtractor): pdfplumber text extraction, negligible compute cost.
+    \item \textbf{Strategy B} (LayoutExtractor): Docling layout-aware parser, moderate compute cost.
+    \item \textbf{Strategy C} (VisionExtractor): HuggingFace vision-language model, high compute cost.
     \item \textbf{Escalation Guard}: confidence thresholds from \texttt{extraction\_rules.yaml}.
     \item Every attempt logged to \texttt{.refinery/extraction\_ledger.jsonl} with source filename tracking.
     \item Documents with confidence $<$ \texttt{flag\_confidence\_below} trigger review queue entry.
@@ -313,26 +336,26 @@ The corpus includes 31 profiled documents across 4 classes (minimum 3 per class)
 
 \subsection{Per-Strategy Cost Estimates}
 
-\subsubsection{Strategy A --- FastTextExtractor}
+\subsubsection{Strategy A --- FastTextExtractor (pdfplumber)}
 \begin{description}
-    \item[Cost:] Negligible (CPU only, pdfplumber).
+    \item[Cost:] Negligible compute (CPU-only text extraction, \$0 direct spend).
     \item[Latency:] $\sim$0.5--2s per document (depends on page count).
     \item[Risk:] Structure collapse on multi-column or table-heavy documents.
     \item[When Used:] \texttt{native\_digital} + \texttt{single\_column} documents.
 \end{description}
 
-\subsubsection{Strategy B --- LayoutExtractor (Docling / enhanced pdfplumber)}
+\subsubsection{Strategy B --- LayoutExtractor (Docling)}
 \begin{description}
-    \item[Cost:] Moderate (CPU-intensive layout analysis, $\sim$\$0 if local).
+    \item[Cost:] Moderate compute (CPU-intensive layout analysis, \$0 direct spend using local Docling).
     \item[Latency:] $\sim$5--15s per document.
     \item[Risk:] Manageable --- structural accuracy significantly higher than A.
     \item[When Used:] \texttt{multi\_column}, \texttt{table\_heavy}, \texttt{mixed} origin documents.
 \end{description}
 
-\subsubsection{Strategy C --- VisionExtractor (HF vision model)}
+\subsubsection{Strategy C --- VisionExtractor (HuggingFace Vision-Language Model)}
 \begin{description}
-    \item[Cost:] High ($\sim$\$0.01--0.05/page via API, or GPU compute if local).
-    \item[Latency:] $\sim$15--60s per document.
+    \item[Cost:] High compute (\$0 direct spend using free HF models, but GPU time significant).
+    \item[Latency:] $\sim$15--60s per document (CPU) or 5--10s (GPU).
     \item[Risk:] OCR structural drift; handwriting may still fail.
     \item[When Used:] \texttt{scanned\_image} documents, or escalation fallback.
 \end{description}
@@ -342,14 +365,16 @@ The corpus includes 31 profiled documents across 4 classes (minimum 3 per class)
 \begin{center}
 \begin{tabular}{lllll}
 \toprule
-\textbf{Tier} & \textbf{Cost} & \textbf{Speed} & \textbf{Structure Quality} & \textbf{When Used} \\
+\textbf{Tier} & \textbf{Compute Cost} & \textbf{Speed (CPU)} & \textbf{Structure Quality} & \textbf{When Used} \\
 \midrule
-A (FastText) & Negligible & $<$2s & Low--Medium & native\_digital + single\_column \\
-B (Layout)   & Moderate   & 5--15s & Medium--High & multi\_column, table\_heavy, mixed \\
-C (Vision)   & High       & 15--60s & High & scanned\_image, low-confidence fallback \\
+A (pdfplumber) & Negligible & $<$2s & Low--Medium & native\_digital + single\_column \\
+B (Docling)    & Moderate   & 5--15s & Medium--High & multi\_column, table\_heavy, mixed \\
+C (HF Vision)  & High       & 15--60s & High & scanned\_image, low-confidence fallback \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\textit{Note: All costs measured in compute time. Direct spend = \$0 using free open-source models.}
 
 \subsection{Cost Optimisation Strategy}
 
@@ -358,10 +383,10 @@ and only incurs higher costs when quality demands it.  For a typical
 heterogeneous corpus of 50 documents:
 
 \begin{itemize}
-    \item $\sim$30\% native digital $\Rightarrow$ Strategy A (negligible cost).
-    \item $\sim$40\% mixed/complex layout $\Rightarrow$ Strategy B (moderate cost).
-    \item $\sim$30\% scanned $\Rightarrow$ Strategy C (high cost).
-    \item Estimated total: \textbf{\$0.50--2.00} for the full corpus via API, or \textbf{\$0} if all models run locally.
+    \item $\sim$30\% native digital $\Rightarrow$ Strategy A (negligible compute).
+    \item $\sim$40\% mixed/complex layout $\Rightarrow$ Strategy B (moderate compute via Docling).
+    \item $\sim$30\% scanned $\Rightarrow$ Strategy C (high compute via HF vision model).
+    \item Estimated total: \textbf{\$0 direct spend} using free/open-source models (pdfplumber, Docling, HuggingFace). Compute cost measured in CPU/GPU time rather than API fees.
 \end{itemize}
 
 
