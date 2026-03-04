@@ -365,10 +365,12 @@ class TriageAgent:
 
         # --- Build document id from file name hash ---
         file_name = Path(pdf_path).stem
+        source_filename = Path(pdf_path).name
         doc_id = hashlib.sha256(file_name.encode()).hexdigest()[:12]
 
         profile = DocumentProfile(
             document_id=doc_id,
+            source_filename=source_filename,
             origin_type=origin_type,
             layout_complexity=layout_complexity,
             language="en",  # placeholder — language detection not yet wired

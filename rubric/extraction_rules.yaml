@@ -38,6 +38,34 @@ layout_detection:
   column_variance_threshold: 0.25
 
 # -------------------------------------------------------------------
+# Escalation & Confidence
+# -------------------------------------------------------------------
+escalation:
+  # Minimum confidence for Strategy A before escalating to B
+  strategy_a_min_confidence: 0.6
+  # Minimum confidence for Strategy B before escalating to C
+  strategy_b_min_confidence: 0.5
+  # Maximum escalation chain length
+  max_escalation_depth: 3
+
+# -------------------------------------------------------------------
+# Chunk Size Rules
+# -------------------------------------------------------------------
+chunking:
+  max_tokens_per_chunk: 512
+  min_tokens_per_chunk: 50
+  overlap_tokens: 64
+
+# -------------------------------------------------------------------
+# Review Trigger Thresholds
+# -------------------------------------------------------------------
+review:
+  # Confidence below this flags document for manual review
+  flag_confidence_below: 0.4
+  # Maximum image ratio for fast-text to pass without review
+  max_image_ratio_fast_text: 0.5
+
+# -------------------------------------------------------------------
 # Domain Hint Detection — keyword-based matching
 # -------------------------------------------------------------------
 domain_keywords:

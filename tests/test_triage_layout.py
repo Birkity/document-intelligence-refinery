@@ -362,6 +362,7 @@ class TestGenerateDocumentProfile:
             # We'll test via the static method directly
             profile = DocumentProfile(
                 document_id="test-doc-001",
+                source_filename="test_document.pdf",
                 origin_type="native_digital",
                 layout_complexity="single_column",
                 language="en",

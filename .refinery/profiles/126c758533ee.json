@@ -1,0 +1,10 @@
+{
+  "document_id": "126c758533ee",
+  "source_filename": "Consumer Price Index August 2025.pdf",
+  "origin_type": "mixed",
+  "layout_complexity": "table_heavy",
+  "language": "en",
+  "language_confidence": 0.5,
+  "domain_hint": "financial",
+  "estimated_extraction_cost": "needs_layout_model"
+}

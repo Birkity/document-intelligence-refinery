@@ -1,0 +1,10 @@
+{
+  "document_id": "40edbded54df",
+  "source_filename": "2021_Audited_Financial_Statement_Report.pdf",
+  "origin_type": "scanned_image",
+  "layout_complexity": "single_column",
+  "language": "en",
+  "language_confidence": 0.5,
+  "domain_hint": "general",
+  "estimated_extraction_cost": "needs_vision_model"
+}
