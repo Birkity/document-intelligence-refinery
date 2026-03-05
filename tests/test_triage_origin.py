@@ -83,14 +83,21 @@ class TestDetectOriginType:
         assert 0.5 <= confidence <= 1.0
 
     @patch("src.agents.triage.pdfplumber")
-    def test_mixed_document(self, mock_pdfplumber: MagicMock) -> None:
-        """A PDF with some text but also large images → mixed."""
-        # Moderate text — enough to pass char_density threshold
+    def test_native_digital_with_embedded_images(self, mock_pdfplumber: MagicMock) -> None:
+        """A PDF with a full text stream AND large images is still native_digital.
+
+        This covers real-world annual reports (e.g. CBE) whose first pages
+        contain corporate photos / charts alongside substantial text.
+        With the corrected threshold (min_char_density=0.001) the presence
+        of a meaningful character stream is sufficient to classify native_digital,
+        regardless of image area ratio.
+        """
+        # Moderate text — char_density well above 0.001 threshold
         moderate_text = "B" * 10_000
-        # Image covering ~70 % of the page → exceeds scanned_image_ratio
+        # Large image covering ~70 % of the page
         large_image = {
             "x0": 0, "x1": 612,
-            "top": 0, "bottom": 554,  # 612 * 554 ≈ 339 048 / 484 704 ≈ 0.70
+            "top": 0, "bottom": 554,  # 612 * 554 / 484_704 ≈ 0.70
         }
         pages = [_make_mock_page(text=moderate_text, images=[large_image])]
         mock_pdfplumber.open.return_value = _open_mock_pdf(pages)
@@ -98,7 +105,30 @@ class TestDetectOriginType:
         agent = TriageAgent(rules_path=_RULES_PATH)
         origin, confidence = agent.detect_origin_type("dummy.pdf")
 
-        # Has enough chars (not low) but image ratio is high → mixed
+        # Text stream is present → native_digital (images don't override this)
+        assert origin == "native_digital"
+
+    @patch("src.agents.triage.pdfplumber")
+    def test_mixed_document(self, mock_pdfplumber: MagicMock) -> None:
+        """A PDF with near-zero text extraction but not image-dominated → mixed.
+
+        This models partially-OCR'd or image-slide PDFs: few extractable chars
+        but not a full-page scanned image (image_ratio stays below 0.7).
+        """
+        # Very little extractable text → char_density < 0.001
+        sparse_text = "X" * 20   # 20 chars on 484_704 pt² page → ~0.000041
+        # Moderate image (covers ~30 % of page) — not enough to be scanned
+        moderate_image = {
+            "x0": 0, "x1": 612,
+            "top": 0, "bottom": 238,  # 612 * 238 / 484_704 ≈ 0.30
+        }
+        pages = [_make_mock_page(text=sparse_text, images=[moderate_image])]
+        mock_pdfplumber.open.return_value = _open_mock_pdf(pages)
+
+        agent = TriageAgent(rules_path=_RULES_PATH)
+        origin, confidence = agent.detect_origin_type("dummy.pdf")
+
+        # Low chars but not image-dominated → mixed
         assert origin == "mixed"
 
     @patch("src.agents.triage.pdfplumber")

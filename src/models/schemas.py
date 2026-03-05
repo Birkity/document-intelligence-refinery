@@ -57,6 +57,24 @@ class TableObject(BaseModel):
     bbox: BoundingBox = Field(..., description="Bounding box of the full table")
 
 
+class FigureObject(BaseModel):
+    """A figure (image/chart/diagram) extracted from a document page.
+
+    The caption is always stored as metadata of its parent figure,
+    never split into a separate chunk (chunking rule #2).
+    """
+
+    caption: str = Field(
+        default="",
+        description="Figure caption text (may be empty if not detected)",
+    )
+    bbox: BoundingBox = Field(..., description="Bounding box of the figure")
+    figure_type: str = Field(
+        default="image",
+        description="Type hint: image, chart, diagram, photograph, etc.",
+    )
+
+
 # ---------------------------------------------------------------------------
 # Page / Document containers
 # ---------------------------------------------------------------------------
@@ -72,6 +90,17 @@ class ExtractedPage(BaseModel):
     tables: list[TableObject] = Field(
         default_factory=list,
         description="Tables extracted from this page",
+    )
+    figures: list[FigureObject] = Field(
+        default_factory=list,
+        description="Figures/charts extracted from this page",
+    )
+    reading_order: list[int] = Field(
+        default_factory=list,
+        description=(
+            "Indices into a combined list of text_blocks + tables + figures "
+            "giving the intended reading sequence on this page"
+        ),
     )
 
 

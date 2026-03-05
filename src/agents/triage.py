@@ -129,14 +129,23 @@ class TriageAgent:
         image_ratio = total_image_area / total_page_area
 
         # ------ Classification logic ------
+        # Key insight: if a PDF has a meaningful character stream
+        # (char_density >= min_char_density) then it IS native-digital,
+        # regardless of how many embedded images it contains.  Annual reports
+        # with corporate photos, charts, and cover artwork still carry a full
+        # text layer and must NOT be demoted to "mixed".
         is_low_chars = char_density < self.min_char_density
         is_high_images = image_ratio > self.scanned_image_ratio
 
-        if is_low_chars and is_high_images:
-            origin_type: OriginType = "scanned_image"
-        elif (not is_low_chars) and (not is_high_images):
-            origin_type = "native_digital"
+        if not is_low_chars:
+            # Text stream is present → definitively native-digital.
+            origin_type: OriginType = "native_digital"
+        elif is_high_images:
+            # Near-zero text AND large embedded images → scanned.
+            origin_type = "scanned_image"
         else:
+            # Low text but not image-dominated → mixed (e.g. image-heavy
+            # slides or partially OCR'd documents).
             origin_type = "mixed"
 
         # ------ Confidence score ------

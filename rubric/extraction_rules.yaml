@@ -4,12 +4,16 @@
 
 origin_detection:
   # Characters per point² of page area.
-  # Pages below this are likely scanned / image-based.
-  min_char_density: 0.01
+  # Real native-digital PDFs (CBE annual reports, FTA survey) measure
+  # 0.001 – 0.008. Pure scanned pages measure < 0.0002.
+  # Threshold must sit between the two populations.
+  min_char_density: 0.001
 
   # Image area / page area ratio.
-  # Pages above this are likely scanned documents with embedded page images.
-  scanned_image_ratio: 0.5
+  # A truly scanned page is one large embedded image → ratio ≈ 0.8–1.0.
+  # Native-digital reports with photos/charts sit at 0.3–0.65.
+  # Threshold raised to 0.7 so photo-heavy annual reports stay native_digital.
+  scanned_image_ratio: 0.7
 
   # Only analyse the first N pages for speed (covers most doc headers / body).
   max_pages_to_sample: 5
@@ -113,6 +117,18 @@ domain_keywords:
     - benchmark
     - deployment
     - vulnerability
+    - assessment
+    - evaluation
+    - methodology
+    - framework
+    - performance indicator
+    - transparency
+    - accountability
+    - procurement
+    - sector analysis
+    - survey findings
+    - pharmaceutical
+    - manufacturing
 
   medical:
     - patient

@@ -20,32 +20,52 @@ _PROFILES = _REPO / ".refinery" / "profiles"
 
 def classify_profile(profile: dict) -> str:
     """Return the document class (A, B, C, or D) for a profile."""
-    origin = profile["origin_type"]
-    layout = profile["layout_complexity"]
-    domain = profile["domain_hint"]
+    origin   = profile["origin_type"]
+    layout   = profile["layout_complexity"]
+    domain   = profile["domain_hint"]
     filename = profile.get("source_filename", "").lower()
-    
-    if layout == "table_heavy" and origin != "scanned_image":
-        return "D"
-    
+
+    # Class B: scanned image
     if origin == "scanned_image":
         return "B"
-    
-    if domain == "technical":
+
+    # Class C: assessment / technical (checked BEFORE D)
+    _TECH_PATTERNS = (
+        "fta", "assessment", "survey", "pharmaceutical",
+        "company_profile", "company profile", "at_a_glance",
+        "vulnerability", "security_vulnerability", "procedure",
+        "whistle", "manufacturing",
+    )
+    if any(pat in filename for pat in _TECH_PATTERNS):
         return "C"
-    
+
+    # Class D: known fiscal-data filenames OR table_heavy layout
+    _FISCAL_PATTERNS = (
+        "tax_expenditure", "tax expenditure",
+        "consumer price index", "consumer_price_index",
+        "price index", "price_index",
+        "assigned-regular-budget",
+    )
+    if any(pat in filename for pat in _FISCAL_PATTERNS):
+        return "D"
+    if layout == "table_heavy" and origin in ("native_digital", "mixed"):
+        return "D"
+
+    # Class A: named annual reports
+    _ANNUAL_PATTERNS = (
+        "cbe annual", "cbe_annual", "annual_report_june",
+        "ethswitch", "ets-annual", "ets_annual", "ethio_re",
+    )
+    if any(pat in filename for pat in _ANNUAL_PATTERNS):
+        return "A"
+
+    if origin == "native_digital" and domain == "financial":
+        return "A"
     if origin == "mixed":
-        is_financial_report = any(x in filename for x in [
-            "cbe annual", "dbe annual", "ethswitch-annual",
-            "annual_report", "ets-annual", "ets_annual"
-        ])
-        if is_financial_report:
-            return "A"
         return "C"
-    
     if origin == "native_digital":
         return "A"
-    
+
     return "C"
 
 

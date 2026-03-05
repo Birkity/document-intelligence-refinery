@@ -26,40 +26,65 @@ _PROFILES = _REPO / ".refinery" / "profiles"
 
 
 def classify_profile(profile: dict) -> str:
-    """Return the document class (A, B, C, or D) for a profile."""
-    origin = profile["origin_type"]
-    layout = profile["layout_complexity"]
-    domain = profile["domain_hint"]
+    """Return the document class (A, B, C, or D) for a profile.
+
+    Priority order:
+      B  → scanned_image origin
+      C  → filename matches assessment/technical patterns  (BEFORE D so that
+             Pharmaceutical doesn't get mis-routed by its table_heavy layout)
+      D  → known fiscal-data filename  OR  table_heavy layout
+      A  → annual-report filename  OR  native_digital + financial
+      C  → fallback (mixed / unrecognised)
+    """
+    origin   = profile["origin_type"]
+    layout   = profile["layout_complexity"]
+    domain   = profile["domain_hint"]
     filename = profile.get("source_filename", "").lower()
-    
-    # Class D: Table-heavy structured data (highest priority)
-    if layout == "table_heavy" and origin != "scanned_image":
-        return "D"
-    
-    # Class B: Scanned government/legal documents
+
+    # ── Class B ───────────────────────────────────────────────────────────
     if origin == "scanned_image":
         return "B"
-    
-    # Class C: Technical assessment or non-financial mixed documents
-    # These are complex documents that aren't financial reports
-    if domain == "technical":
+
+    # ── Class C (before D) ────────────────────────────────────────────────
+    # Assessment / technical / company-profile docs are always Class C even
+    # if pdfplumber detects a high table area ratio.
+    _TECH_PATTERNS = (
+        "fta", "assessment", "survey", "pharmaceutical",
+        "company_profile", "company profile", "at_a_glance",
+        "vulnerability", "security_vulnerability", "procedure",
+        "whistle", "manufacturing",
+    )
+    if any(pat in filename for pat in _TECH_PATTERNS):
         return "C"
-    
+
+    # ── Class D ───────────────────────────────────────────────────────────
+    # Explicitly-known fiscal data filenames (pdfplumber may miss tables).
+    _FISCAL_PATTERNS = (
+        "tax_expenditure", "tax expenditure",
+        "consumer price index", "consumer_price_index",
+        "price index", "price_index",
+        "assigned-regular-budget",
+    )
+    if any(pat in filename for pat in _FISCAL_PATTERNS):
+        return "D"
+    if layout == "table_heavy" and origin in ("native_digital", "mixed"):
+        return "D"
+
+    # ── Class A ───────────────────────────────────────────────────────────
+    _ANNUAL_PATTERNS = (
+        "cbe annual", "cbe_annual", "annual_report_june",
+        "ethswitch", "ets-annual", "ets_annual", "ethio_re",
+    )
+    if any(pat in filename for pat in _ANNUAL_PATTERNS):
+        return "A"
+
+    if origin == "native_digital" and domain == "financial":
+        return "A"
     if origin == "mixed":
-        # Annual reports from financial institutions are Class A
-        is_financial_report = any(x in filename for x in [
-            "cbe annual", "dbe annual", "ethswitch-annual",
-            "annual_report", "ets-annual", "ets_annual"
-        ])
-        if is_financial_report:
-            return "A"
-        # Everything else mixed is Class C
         return "C"
-    
-    # Class A: Native digital financial/business reports
     if origin == "native_digital":
         return "A"
-    
+
     return "C"
 
 
