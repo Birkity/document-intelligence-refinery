@@ -56,6 +56,16 @@ CREATE TABLE IF NOT EXISTS provenance_ledger (
 CREATE INDEX IF NOT EXISTS idx_ledger_document ON provenance_ledger(document_id);
 CREATE INDEX IF NOT EXISTS idx_ledger_timestamp ON provenance_ledger(timestamp);
 
+-- ── PageIndex storage ─────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS page_indexes (
+    document_id TEXT PRIMARY KEY,
+    source_filename TEXT NOT NULL,
+    tree_json TEXT NOT NULL,
+    node_count INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id)
+);
+
 -- ── Query logs ───────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS query_logs (
     query_id INTEGER PRIMARY KEY AUTOINCREMENT,

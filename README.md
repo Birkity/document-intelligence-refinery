@@ -33,7 +33,7 @@ PDF Corpus
 | 1 | Triage Agent | Done | Classifies docs by origin, layout, domain, cost tier |
 | 2 | Extraction Router | Done | Three strategies (A/B/C) with confidence-gated escalation |
 | 3 | Chunking Engine | Done | Converts `ExtractedDocument` → `List[LDU]` with 5 enforced rules |
-| 4 | PageIndex Builder | Planned | Hierarchical section navigation for LLM traversal |
+| 4 | PageIndex Builder | Done | Hierarchical section navigation for LLM traversal |
 | 5 | Query Agent | Planned | LangGraph agent with provenance-backed answers |
 
 ## Quick Start
@@ -112,14 +112,40 @@ for ldu in ldus[:3]:
 "
 ```
 
-### 6. Generate profile artifacts (batch)
+### 6. Build PageIndex for a document
+
+```bash
+python -c "
+from src.agents.triage import TriageAgent
+from src.agents.extractor import ExtractionRouter
+from src.agents.chunker import ChunkingEngine
+from src.agents.pageindex import PageIndexBuilder
+
+agent = TriageAgent()
+router = ExtractionRouter()
+chunker = ChunkingEngine()
+builder = PageIndexBuilder()
+
+profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
+doc, _ = router.route_and_extract(profile, 'data/CBE ANNUAL REPORT 2023-24.pdf')
+ldus = chunker.chunk_document(doc)
+pi = builder.build(ldus, source_filename=profile.source_filename, document_id=profile.document_id)
+
+builder.save_json(pi)  # → .refinery/pageindex/{doc_id}.json
+print(f'Sections: {len(pi.root_nodes)}')
+for node in pi.root_nodes:
+    print(f'  [{node.page_start}-{node.page_end}] {node.title}  ({', '.join(node.data_types_present) or 'text'})')
+"
+```
+
+### 7. Generate profile artifacts (batch)
 
 ```bash
 python scripts/generate_profiles.py
 python scripts/generate_ledger.py
 ```
 
-### 7. Verify class coverage
+### 8. Verify class coverage
 
 ```bash
 python scripts/ensure_class_coverage.py   # Check and generate missing profiles
@@ -128,7 +154,7 @@ python scripts/generate_class_report.py   # Generate classification report
 
 Ensures at least 3 documents per class (A/B/C/D).
 
-### 8. Generate the interim report
+### 9. Generate the interim report
 
 ```bash
 python scripts/generate_interim_report.py
@@ -136,13 +162,13 @@ python scripts/generate_interim_report.py
 
 Produces `interim_submission.tex`.
 
-### 9. Run tests
+### 10. Run tests
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-**91 tests passing** across 6 test modules.
+**112 tests passing** across 7 test modules.
 
 ## Project Structure
 
@@ -156,7 +182,8 @@ python -m pytest tests/ -v
 │   ├── agents/
 │   │   ├── triage.py              # Stage 1 — Triage Agent
 │   │   ├── extractor.py           # Stage 2 — ExtractionRouter (A→B→C)
-│   │   └── chunker.py             # Stage 3 — ChunkingEngine + ChunkValidator
+│   │   ├── chunker.py             # Stage 3 — ChunkingEngine + ChunkValidator
+│   │   └── pageindex.py           # Stage 4 — PageIndexBuilder + query
 │   ├── strategies/
 │   │   ├── base.py                # BaseExtractor abstract interface
 │   │   ├── fast_text.py           # Strategy A — pdfplumber (low cost)
@@ -165,7 +192,7 @@ python -m pytest tests/ -v
 │   ├── utils/
 │   │   └── hash_utils.py          # SHA-256 content hashing for provenance
 │   └── db/
-│       ├── schema.sql             # SQLite DDL with source_filename column
+│       ├── schema.sql             # SQLite DDL (6 tables incl. page_indexes)
 │       ├── init_db.py             # Idempotent DB init
 │       └── vector_store.py        # ChromaDB wrapper
 ├── scripts/
@@ -180,11 +207,13 @@ python -m pytest tests/ -v
 │   ├── test_triage_layout.py      # Layout, domain, cost (18 tests)
 │   ├── test_extraction_router.py  # Escalation logic + ledger (8 tests)
 │   ├── test_db_and_schemas.py     # DB + PageIndex + Provenance (10 tests)
-│   └── test_chunking_engine.py    # Chunking rules + validator (29 tests)
+│   ├── test_chunking_engine.py    # Chunking rules + validator (29 tests)
+│   └── test_pageindex_builder.py  # PageIndex builder + query (21 tests)
 ├── .refinery/
 │   ├── profiles/                  # DocumentProfile JSONs (12+, 3 per class)
+│   ├── pageindex/                 # PageIndex tree JSONs per document
 │   ├── extraction_ledger.jsonl    # Extraction audit trail
-│   └── refinery.db                # SQLite governance DB
+│   └── refinery.db                # SQLite governance DB (6 tables)
 ├── pyproject.toml
 ├── README.md
 └── class_coverage_report.txt      # Document class verification
@@ -250,6 +279,26 @@ Each LDU carries: `content`, `chunk_type`, `page_refs`, `bbox`, `parent_section`
 
 The `ChunkValidator` checks every emitted LDU for: non-empty content, token limits, hash integrity, and valid page references.
 
+## PageIndex Builder (Stage 4)
+
+The `PageIndexBuilder` creates a hierarchical navigation tree from `List[LDU]` — the equivalent of a "smart table of contents" that an LLM can traverse to locate sections without embedding-searching the full corpus.
+
+**Features:**
+- Groups LDUs by `parent_section`, preserving document order
+- Computes page ranges (`page_start` / `page_end`) from content LDU page refs
+- Detects data-type signals per section: `tables`, `figures`, `lists`, `numeric_dense`
+- Generates deterministic 2-3 sentence summaries from first paragraph text (LLM hook ready)
+- Extracts lightweight key entities via capitalised multi-word patterns
+- **Query API**: `builder.query(pi, topic="revenue growth", top_n=3)` returns top-N matching sections via bag-of-words scoring
+- **Persistence**: JSON to `.refinery/pageindex/` + SQLite `page_indexes` table (upsert)
+
+| Signal | Detection Logic |
+|--------|-----------------|
+| `tables` | Any LDU with `chunk_type="table"` |
+| `figures` | Any LDU with `chunk_type="figure"` |
+| `lists` | Any LDU with `chunk_type="list"` |
+| `numeric_dense` | ≥15% of tokens in section content contain digits |
+
 ## Document Class Coverage
 
 Validated across 4 document classes with 12+ profiled documents (minimum 3 per class):
@@ -265,11 +314,12 @@ Verify coverage: `python scripts/generate_class_report.py`
 
 ## Testing
 
-91 tests across 6 modules, run with `python -m pytest tests/ -v`:
+112 tests across 7 modules, run with `python -m pytest tests/ -v`:
 
 - **test_models.py** — Schema instantiation, validation, rejection of invalid data
 - **test_triage_origin.py** — Origin-type detection (native digital, scanned, mixed)
 - **test_triage_layout.py** — Layout complexity, domain hint, extraction cost estimation
 - **test_extraction_router.py** — Strategy selection, escalation chains, ledger persistence
-- **test_db_and_schemas.py** — Database init, PageIndex, ProvenanceChain serialization
+- **test_db_and_schemas.py** — Database init (6 tables), PageIndex, ProvenanceChain serialization
 - **test_chunking_engine.py** — All 5 chunking rules, content hashing, validator, end-to-end mixed docs
+- **test_pageindex_builder.py** — Section grouping, page ranges, data-type signals, summaries, JSON/DB persistence, query
