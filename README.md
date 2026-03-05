@@ -1,6 +1,6 @@
 # The Document Intelligence Refinery
 
-A production-grade, multi-stage agentic pipeline that ingests heterogeneous PDF documents and emits structured, queryable, spatially-indexed knowledge.
+A production-grade, multi-stage agentic pipeline that ingests heterogeneous PDF documents and emits structured, queryable, spatially-indexed knowledge. Built as a Forward Deployed Engineer (FDE) engagement tool for enterprise document intelligence.
 
 ## Architecture
 
@@ -12,8 +12,9 @@ PDF Corpus
 │ Triage Agent │────▶│ Extraction Router   │────▶│ Chunking Engine │
 │ (Stage 1)    │     │ A → B → C escalate │     │ (Stage 3)       │
 └──────────────┘     └────────────────────┘     └─────────────────┘
-                              │                         │
-                    .refinery/ledger            ┌───────┴───────┐
+        │                     │                         │
+  DocumentProfile    .refinery/ledger             List[LDU]
+                                                ┌───────┴───────┐
                                                 │               │
                                           ┌─────▼─────┐  ┌─────▼────┐
                                           │ PageIndex  │  │ ChromaDB │
@@ -24,6 +25,16 @@ PDF Corpus
                                           │    Query Agent (Stage 5) │
                                           └──────────────────────────┘
 ```
+
+### Pipeline Stages
+
+| Stage | Component | Status | Description |
+|-------|-----------|--------|-------------|
+| 1 | Triage Agent | Done | Classifies docs by origin, layout, domain, cost tier |
+| 2 | Extraction Router | Done | Three strategies (A/B/C) with confidence-gated escalation |
+| 3 | Chunking Engine | Done | Converts `ExtractedDocument` → `List[LDU]` with 5 enforced rules |
+| 4 | PageIndex Builder | Planned | Hierarchical section navigation for LLM traversal |
+| 5 | Query Agent | Planned | LangGraph agent with provenance-backed answers |
 
 ## Quick Start
 
@@ -43,7 +54,7 @@ pip install -e ".[dev]"
 python -c "from src.db.init_db import initialize_database; initialize_database()"
 ```
 
-This creates `.refinery/refinery.db` with all governance tables.
+Creates `.refinery/refinery.db` with all governance tables.
 
 ### 3. Run triage on a document
 
@@ -76,23 +87,48 @@ print(f'Pages: {len(doc.pages)}, Strategies tried: {[e[\"strategy_used\"] for e 
 
 Ledger entries are appended to `.refinery/extraction_ledger.jsonl`.
 
-### 5. Generate profile artifacts (batch)
+### 5. Chunk extracted documents into LDUs
+
+```bash
+python -c "
+from src.agents.triage import TriageAgent
+from src.agents.extractor import ExtractionRouter
+from src.agents.chunker import ChunkingEngine, ChunkValidator
+
+agent = TriageAgent()
+router = ExtractionRouter()
+chunker = ChunkingEngine()
+validator = ChunkValidator()
+
+profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
+doc, _ = router.route_and_extract(profile, 'data/CBE ANNUAL REPORT 2023-24.pdf')
+ldus = chunker.chunk_document(doc)
+
+# Validate all chunks
+errors = validator.validate_batch(ldus)
+print(f'LDUs: {len(ldus)}, Validation errors: {len(errors)}')
+for ldu in ldus[:3]:
+    print(f'  [{ldu.chunk_type}] {ldu.token_count} tokens — {ldu.content[:80]}...')
+"
+```
+
+### 6. Generate profile artifacts (batch)
 
 ```bash
 python scripts/generate_profiles.py
 python scripts/generate_ledger.py
 ```
 
-### 6. Verify class coverage
+### 7. Verify class coverage
 
 ```bash
 python scripts/ensure_class_coverage.py   # Check and generate missing profiles
 python scripts/generate_class_report.py   # Generate classification report
 ```
 
-Ensures at least 3 documents per class (A: native digital financial, B: scanned, C: technical assessment, D: table-heavy).
+Ensures at least 3 documents per class (A/B/C/D).
 
-### 7. Generate the interim report
+### 8. Generate the interim report
 
 ```bash
 python scripts/generate_interim_report.py
@@ -100,13 +136,13 @@ python scripts/generate_interim_report.py
 
 Produces `interim_submission.tex`.
 
-### 8. Run tests
+### 9. Run tests
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-All 61 tests passing.
+**91 tests passing** across 6 test modules.
 
 ## Project Structure
 
@@ -115,71 +151,125 @@ All 61 tests passing.
 │   └── extraction_rules.yaml      # All thresholds — no hardcoding
 ├── src/
 │   ├── models/
-│   │   └── schemas.py             # Pydantic schemas with source_filename tracking
+│   │   ├── __init__.py            # Re-exports all schemas
+│   │   └── schemas.py             # Pydantic v2 schemas (12 models)
 │   ├── agents/
-│   │   ├── triage.py              # Triage Agent (Stage 1)
-│   │   └── extractor.py           # ExtractionRouter with A→B→C escalation
+│   │   ├── triage.py              # Stage 1 — Triage Agent
+│   │   ├── extractor.py           # Stage 2 — ExtractionRouter (A→B→C)
+│   │   └── chunker.py             # Stage 3 — ChunkingEngine + ChunkValidator
 │   ├── strategies/
-│   │   ├── base.py                # BaseExtractor interface
-│   │   ├── fast_text.py           # Strategy A — pdfplumber
+│   │   ├── base.py                # BaseExtractor abstract interface
+│   │   ├── fast_text.py           # Strategy A — pdfplumber (low cost)
 │   │   ├── layout.py              # Strategy B — Docling / enhanced pdfplumber
-│   │   └── vision.py              # Strategy C — VLM / OCR
+│   │   └── vision.py              # Strategy C — VLM / OCR (high cost)
+│   ├── utils/
+│   │   └── hash_utils.py          # SHA-256 content hashing for provenance
 │   └── db/
 │       ├── schema.sql             # SQLite DDL with source_filename column
 │       ├── init_db.py             # Idempotent DB init
 │       └── vector_store.py        # ChromaDB wrapper
 ├── scripts/
-│   ├── generate_profiles.py       # Batch profile generation
+│   ├── generate_profiles.py       # Batch profile generation (12 docs)
 │   ├── generate_ledger.py         # Batch extraction + ledger
 │   ├── generate_interim_report.py # LaTeX report generator
 │   ├── ensure_class_coverage.py   # Class coverage checker
 │   └── generate_class_report.py   # Classification report generator
 ├── tests/
-│   ├── test_models.py
-│   ├── test_triage_origin.py
-│   ├── test_triage_layout.py
-│   ├── test_extraction_router.py
-│   └── test_db_and_schemas.py
+│   ├── test_models.py             # Schema validation (11 tests)
+│   ├── test_triage_origin.py      # Origin-type detection (6 tests)
+│   ├── test_triage_layout.py      # Layout, domain, cost (18 tests)
+│   ├── test_extraction_router.py  # Escalation logic + ledger (8 tests)
+│   ├── test_db_and_schemas.py     # DB + PageIndex + Provenance (10 tests)
+│   └── test_chunking_engine.py    # Chunking rules + validator (29 tests)
 ├── .refinery/
-│   ├── profiles/                  # 31 DocumentProfile JSONs (4 classes)
-│   ├── extraction_ledger.jsonl    # Extraction audit trail with filenames
+│   ├── profiles/                  # DocumentProfile JSONs (12+, 3 per class)
+│   ├── extraction_ledger.jsonl    # Extraction audit trail
 │   └── refinery.db                # SQLite governance DB
 ├── pyproject.toml
 ├── README.md
 └── class_coverage_report.txt      # Document class verification
 ```
 
+## Pydantic Schemas
+
+All data contracts are defined in `src/models/schemas.py`:
+
+| Model | Purpose |
+|-------|---------|
+| `BoundingBox` | Spatial coordinates (x1, y1, x2, y2, page) |
+| `TextBlock` | Content + bounding box |
+| `TableObject` | Headers + rows + bounding box |
+| `FigureObject` | Caption + bounding box + figure type |
+| `ExtractedPage` | Text blocks, tables, figures, reading order |
+| `ExtractedDocument` | Full document extraction (strategy-agnostic) |
+| `DocumentProfile` | Triage classification output |
+| `LDU` | Logical Document Unit — RAG-ready chunk |
+| `PageIndexNode` | Hierarchical section node |
+| `PageIndex` | Smart table of contents for LLM navigation |
+| `ProvenanceCitation` | Source citation (doc, page, bbox, hash) |
+| `ProvenanceChain` | Ordered citations for auditable answers |
+
 ## Configuration
 
-All thresholds are in `rubric/extraction_rules.yaml`:
-- Origin detection thresholds
-- Layout complexity thresholds
-- Escalation confidence thresholds
-- Domain keyword lists
-- Chunk size rules
-- Review trigger thresholds
+All thresholds are externalized in `rubric/extraction_rules.yaml`:
 
-**No hardcoded thresholds in code.**
+| Section | Key Parameters |
+|---------|---------------|
+| `origin_detection` | `min_char_density: 0.001`, `scanned_image_ratio: 0.7` |
+| `layout_detection` | `table_area_ratio_threshold: 0.3`, `column_variance_threshold: 0.25` |
+| `escalation` | `strategy_a_min_confidence: 0.6`, `strategy_b_min_confidence: 0.5` |
+| `chunking` | `max_tokens_per_chunk: 512`, `min_tokens_per_chunk: 50`, `overlap_tokens: 64` |
+| `review` | `flag_confidence_below: 0.4` |
+| `domain_keywords` | financial, legal, technical, medical keyword lists |
+
+A new document type can be onboarded by modifying only `extraction_rules.yaml` — no code changes required.
 
 ## Extraction Strategy Tiers
 
-| Tier | Strategy | Cost | Speed | When Used |
-|------|----------|------|-------|-----------|
-| A | FastTextExtractor | Negligible | Fast | native_digital + single_column |
-| B | LayoutExtractor | Moderate | Medium | multi_column, table_heavy, mixed |
-| C | VisionExtractor | High | Slow | scanned_image, low-confidence fallback |
+| Tier | Strategy | Cost | When Used |
+|------|----------|------|-----------|
+| A | FastTextExtractor | Low | `native_digital` + `single_column` |
+| B | LayoutExtractor | Medium | `multi_column`, `table_heavy`, `mixed` origin |
+| C | VisionExtractor | High | `scanned_image` (direct — skips A/B) or low-confidence fallback |
 
-Escalation: If Strategy A confidence < 0.6 → try B. If B confidence < 0.5 → try C.
+**Escalation Guard:** Strategy A confidence < 0.6 → escalate to B. Strategy B confidence < 0.5 → escalate to C. Scanned-image documents route directly to Strategy C (no pointless intermediate steps).
+
+## Semantic Chunking Engine (Stage 3)
+
+The `ChunkingEngine` converts `ExtractedDocument` → `List[LDU]` following five enforced chunking rules (the "Constitution"):
+
+| # | Rule | Enforcement |
+|---|------|-------------|
+| 1 | A table cell is never split from its header row | Tables emit as single LDU with headers + rows |
+| 2 | A figure caption is always stored as metadata of its parent figure chunk | `FigureObject.caption` embedded in figure LDU content |
+| 3 | A numbered/bullet list is kept as a single LDU unless it exceeds `max_tokens` | List detection via regex; overflow split at item boundaries |
+| 4 | Section headers propagate as `parent_section` on all child chunks | Header detection by length + capitalization heuristics |
+| 5 | Cross-references (e.g. "see Table 3") are preserved in chunk content | References remain in the paragraph text verbatim |
+
+Each LDU carries: `content`, `chunk_type`, `page_refs`, `bbox`, `parent_section`, `token_count`, and a SHA-256 `content_hash` for provenance verification.
+
+The `ChunkValidator` checks every emitted LDU for: non-empty content, token limits, hash integrity, and valid page references.
 
 ## Document Class Coverage
 
-The system has been validated across 4 document classes with 31 profiled documents:
+Validated across 4 document classes with 12+ profiled documents (minimum 3 per class):
 
-- **Class A**: Native Digital Financial Reports (5 documents) — CBE Annual Reports, financial statements
-- **Class B**: Scanned Government/Legal Documents (20 documents) — Audit Report 2023, Audited Financial Statements
-- **Class C**: Technical Assessment Reports (3 documents) — FTA Performance Survey, technical assessments
-- **Class D**: Structured Data Reports (3 documents) — Consumer Price Index, table-heavy fiscal data
-
-**All schemas track `source_filename`** — Every DocumentProfile and ExtractedDocument includes the original PDF filename for traceability.
+| Class | Type | Example Documents |
+|-------|------|-------------------|
+| A | Native Digital Financial | CBE Annual Reports, financial statements |
+| B | Scanned Government/Legal | DBE Audit Reports, audited financial statements |
+| C | Technical Assessment | FTA Performance Survey, pharmaceutical assessments |
+| D | Structured Data (table-heavy) | CPI reports, tax expenditure data |
 
 Verify coverage: `python scripts/generate_class_report.py`
+
+## Testing
+
+91 tests across 6 modules, run with `python -m pytest tests/ -v`:
+
+- **test_models.py** — Schema instantiation, validation, rejection of invalid data
+- **test_triage_origin.py** — Origin-type detection (native digital, scanned, mixed)
+- **test_triage_layout.py** — Layout complexity, domain hint, extraction cost estimation
+- **test_extraction_router.py** — Strategy selection, escalation chains, ledger persistence
+- **test_db_and_schemas.py** — Database init, PageIndex, ProvenanceChain serialization
+- **test_chunking_engine.py** — All 5 chunking rules, content hashing, validator, end-to-end mixed docs
