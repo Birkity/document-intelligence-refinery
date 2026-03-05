@@ -5,6 +5,6 @@
   "layout_complexity": "table_heavy",
   "language": "en",
   "language_confidence": 0.5,
-  "domain_hint": "general",
+  "domain_hint": "technical",
   "estimated_extraction_cost": "needs_layout_model"
 }

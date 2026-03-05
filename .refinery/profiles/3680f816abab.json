@@ -1,10 +1,10 @@
 {
   "document_id": "3680f816abab",
   "source_filename": "Company_Profile_2024_25.pdf",
-  "origin_type": "scanned_image",
+  "origin_type": "native_digital",
   "layout_complexity": "multi_column",
   "language": "en",
   "language_confidence": 0.5,
   "domain_hint": "general",
-  "estimated_extraction_cost": "needs_vision_model"
+  "estimated_extraction_cost": "needs_layout_model"
 }
