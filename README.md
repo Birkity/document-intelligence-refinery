@@ -34,7 +34,7 @@ PDF Corpus
 | 2 | Extraction Router | Done | Three strategies (A/B/C) with confidence-gated escalation |
 | 3 | Chunking Engine | Done | Converts `ExtractedDocument` → `List[LDU]` with 5 enforced rules |
 | 4 | PageIndex Builder | Done | Hierarchical section navigation for LLM traversal |
-| 5 | Query Agent | Planned | LangGraph agent with provenance-backed answers |
+| 5 | Query Agent | Done | LangGraph agent with 3 tools, FactTable, Audit Mode |
 
 ## Quick Start
 
@@ -138,14 +138,54 @@ for node in pi.root_nodes:
 "
 ```
 
-### 7. Generate profile artifacts (batch)
+### 7. Query a document with provenance
+
+```bash
+python -c "
+from src.agents.triage import TriageAgent
+from src.agents.extractor import ExtractionRouter
+from src.agents.chunker import ChunkingEngine
+from src.agents.pageindex import PageIndexBuilder
+from src.agents.fact_table import FactTableExtractor
+from src.agents.query_agent import QueryAgent
+
+agent = TriageAgent()
+router = ExtractionRouter()
+chunker = ChunkingEngine()
+builder = PageIndexBuilder()
+
+profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
+doc, _ = router.route_and_extract(profile, 'data/CBE ANNUAL REPORT 2023-24.pdf')
+ldus = chunker.chunk_document(doc)
+pi = builder.build(ldus, source_filename=profile.source_filename, document_id=profile.document_id)
+
+# Build query agent
+qa = QueryAgent()
+qa.ingest_ldus(ldus, document_id=profile.document_id, source_filename=profile.source_filename)
+qa.register_page_index(pi)
+
+# Extract and persist facts
+fact_ext = FactTableExtractor()
+facts = fact_ext.extract(ldus, document_id=profile.document_id)
+fact_ext.persist_to_db(facts)
+
+# Ask a question
+result = qa.answer('What is the total revenue?', document_id=profile.document_id)
+print(f'Answer: {result.answer}')
+print(f'Tools: {result.tools_used}')
+for c in result.provenance.citations:
+    print(f'  Source: {c.document_name} p.{c.page_number}')
+"
+```
+
+### 8. Generate profile artifacts (batch)
 
 ```bash
 python scripts/generate_profiles.py
 python scripts/generate_ledger.py
 ```
 
-### 8. Verify class coverage
+### 9. Verify class coverage
 
 ```bash
 python scripts/ensure_class_coverage.py   # Check and generate missing profiles
@@ -154,7 +194,7 @@ python scripts/generate_class_report.py   # Generate classification report
 
 Ensures at least 3 documents per class (A/B/C/D).
 
-### 9. Generate the interim report
+### 10. Generate the interim report
 
 ```bash
 python scripts/generate_interim_report.py
@@ -162,13 +202,13 @@ python scripts/generate_interim_report.py
 
 Produces `interim_submission.tex`.
 
-### 10. Run tests
+### 11. Run tests
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-**112 tests passing** across 7 test modules.
+**143 tests passing** across 9 test modules.
 
 ## Project Structure
 
@@ -178,12 +218,14 @@ python -m pytest tests/ -v
 ├── src/
 │   ├── models/
 │   │   ├── __init__.py            # Re-exports all schemas
-│   │   └── schemas.py             # Pydantic v2 schemas (12 models)
+│   │   └── schemas.py             # Pydantic v2 schemas (14 models)
 │   ├── agents/
 │   │   ├── triage.py              # Stage 1 — Triage Agent
 │   │   ├── extractor.py           # Stage 2 — ExtractionRouter (A→B→C)
 │   │   ├── chunker.py             # Stage 3 — ChunkingEngine + ChunkValidator
-│   │   └── pageindex.py           # Stage 4 — PageIndexBuilder + query
+│   │   ├── pageindex.py           # Stage 4 — PageIndexBuilder + query
+│   │   ├── fact_table.py          # Stage 5 — FactTable extractor (SQLite)
+│   │   └── query_agent.py         # Stage 5 — LangGraph Query Agent + Audit
 │   ├── strategies/
 │   │   ├── base.py                # BaseExtractor abstract interface
 │   │   ├── fast_text.py           # Strategy A — pdfplumber (low cost)
@@ -192,7 +234,7 @@ python -m pytest tests/ -v
 │   ├── utils/
 │   │   └── hash_utils.py          # SHA-256 content hashing for provenance
 │   └── db/
-│       ├── schema.sql             # SQLite DDL (6 tables incl. page_indexes)
+│       ├── schema.sql             # SQLite DDL (7 tables incl. fact_tables)
 │       ├── init_db.py             # Idempotent DB init
 │       └── vector_store.py        # ChromaDB wrapper
 ├── scripts/
@@ -208,12 +250,15 @@ python -m pytest tests/ -v
 │   ├── test_extraction_router.py  # Escalation logic + ledger (8 tests)
 │   ├── test_db_and_schemas.py     # DB + PageIndex + Provenance (10 tests)
 │   ├── test_chunking_engine.py    # Chunking rules + validator (29 tests)
-│   └── test_pageindex_builder.py  # PageIndex builder + query (21 tests)
+│   ├── test_pageindex_builder.py  # PageIndex builder + query (21 tests)
+│   ├── test_fact_table.py         # FactTable extraction + persistence (12 tests)
+│   └── test_query_agent.py        # Query Agent tools + audit (19 tests)
 ├── .refinery/
 │   ├── profiles/                  # DocumentProfile JSONs (12+, 3 per class)
 │   ├── pageindex/                 # PageIndex tree JSONs per document
 │   ├── extraction_ledger.jsonl    # Extraction audit trail
-│   └── refinery.db                # SQLite governance DB (6 tables)
+│   ├── chroma_store/              # ChromaDB vector store (LDU embeddings)
+│   └── refinery.db                # SQLite governance DB (7 tables)
 ├── pyproject.toml
 ├── README.md
 └── class_coverage_report.txt      # Document class verification
@@ -237,6 +282,8 @@ All data contracts are defined in `src/models/schemas.py`:
 | `PageIndex` | Smart table of contents for LLM navigation |
 | `ProvenanceCitation` | Source citation (doc, page, bbox, hash) |
 | `ProvenanceChain` | Ordered citations for auditable answers |
+| `Fact` | Key-value numerical fact (for FactTable) |
+| `QueryResult` | Agent answer with provenance + tools used |
 
 ## Configuration
 
@@ -299,6 +346,41 @@ The `PageIndexBuilder` creates a hierarchical navigation tree from `List[LDU]` �
 | `lists` | Any LDU with `chunk_type="list"` |
 | `numeric_dense` | ≥15% of tokens in section content contain digits |
 
+## Query Agent & Provenance Layer (Stage 5)
+
+The `QueryAgent` is a LangGraph agent with three tools and full provenance tracking:
+
+### Three Tools
+
+| Tool | Backend | Purpose |
+|------|---------|--------|
+| `pageindex_navigate` | PageIndex tree | Navigate to relevant sections by topic — avoids full-corpus search |
+| `semantic_search` | ChromaDB vectors | Embedding-based retrieval over all ingested LDU chunks |
+| `structured_query` | SQLite `fact_tables` | Precise key-value lookups for numerical facts (revenue, costs, rates) |
+
+### FactTable Extractor
+
+Extracts structured key-value numerical facts from LDUs using regex patterns:
+- `Key: $4.2B` — colon-separated currency/percentage values
+- `Key | 4,200 | 3,800` — pipe-delimited table rows
+
+Facts are persisted to the `fact_tables` SQLite table for `structured_query` access.
+
+### Audit Mode
+
+Given a claim (e.g. "The report states revenue was $4.2B in Q3"), the system:
+1. Searches for supporting evidence across all three tools
+2. Computes token overlap (excluding stop words) to verify relevance
+3. Returns a `ProvenanceChain` with `verified=True` + citations, or `verified=False` (unverifiable)
+
+### Provenance
+
+Every answer returns a `QueryResult` containing:
+- `answer` — composed from retrieved evidence
+- `provenance` — `ProvenanceChain` with per-citation `document_name`, `page_number`, `bbox`, `content_hash`
+- `tools_used` — which tools contributed to the answer
+- `confidence` — score based on evidence count
+
 ## Document Class Coverage
 
 Validated across 4 document classes with 12+ profiled documents (minimum 3 per class):
@@ -314,12 +396,14 @@ Verify coverage: `python scripts/generate_class_report.py`
 
 ## Testing
 
-112 tests across 7 modules, run with `python -m pytest tests/ -v`:
+143 tests across 9 modules, run with `python -m pytest tests/ -v`:
 
-- **test_models.py** — Schema instantiation, validation, rejection of invalid data
-- **test_triage_origin.py** — Origin-type detection (native digital, scanned, mixed)
-- **test_triage_layout.py** — Layout complexity, domain hint, extraction cost estimation
-- **test_extraction_router.py** — Strategy selection, escalation chains, ledger persistence
-- **test_db_and_schemas.py** — Database init (6 tables), PageIndex, ProvenanceChain serialization
-- **test_chunking_engine.py** — All 5 chunking rules, content hashing, validator, end-to-end mixed docs
-- **test_pageindex_builder.py** — Section grouping, page ranges, data-type signals, summaries, JSON/DB persistence, query
+- **test_models.py** — Schema instantiation, validation, rejection of invalid data (11 tests)
+- **test_triage_origin.py** — Origin-type detection (native digital, scanned, mixed) (6 tests)
+- **test_triage_layout.py** — Layout complexity, domain hint, extraction cost estimation (18 tests)
+- **test_extraction_router.py** — Strategy selection, escalation chains, ledger persistence (8 tests)
+- **test_db_and_schemas.py** — Database init (7 tables), PageIndex, ProvenanceChain serialization (10 tests)
+- **test_chunking_engine.py** — All 5 chunking rules, content hashing, validator, end-to-end mixed docs (29 tests)
+- **test_pageindex_builder.py** — Section grouping, page ranges, data-type signals, summaries, JSON/DB persistence, query (21 tests)
+- **test_fact_table.py** — FactTable extraction, persistence, key-pattern queries (12 tests)
+- **test_query_agent.py** — 3 tools (pageindex/semantic/structured), answer provenance, audit mode, LangGraph graph (19 tests)

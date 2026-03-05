@@ -66,6 +66,22 @@ CREATE TABLE IF NOT EXISTS page_indexes (
     FOREIGN KEY (document_id) REFERENCES documents(document_id)
 );
 
+-- ── Fact tables (structured key-value extraction) ─────────────────────────
+CREATE TABLE IF NOT EXISTS fact_tables (
+    fact_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id TEXT NOT NULL,
+    key TEXT NOT NULL,
+    value TEXT NOT NULL,
+    unit TEXT DEFAULT '',
+    page_ref INTEGER NOT NULL,
+    content_hash TEXT DEFAULT '',
+    created_at TEXT NOT NULL,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_facts_document ON fact_tables(document_id);
+CREATE INDEX IF NOT EXISTS idx_facts_key ON fact_tables(key);
+
 -- ── Query logs ───────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS query_logs (
     query_id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -295,3 +295,50 @@ class ProvenanceChain(BaseModel):
         default=False,
         description="Whether the chain has been verified against source",
     )
+
+
+# ---------------------------------------------------------------------------
+# Fact table — structured key-value extraction
+# ---------------------------------------------------------------------------
+
+class Fact(BaseModel):
+    """A key-value numerical fact extracted from a document.
+
+    Used by the FactTable extractor (Stage 5) to populate a queryable
+    SQLite table for precise structured queries over financial /
+    numerical documents.
+    """
+
+    key: str = Field(..., description="Fact label (e.g. 'Revenue', 'Net Income')")
+    value: str = Field(..., description="Fact value (e.g. '$4.2B', '12.5%')")
+    unit: str = Field(default="", description="Unit or currency (e.g. 'USD', '%', 'ETB')")
+    page_ref: int = Field(..., ge=1, description="Page where fact was found")
+    document_id: str = Field(..., description="Source document identifier")
+    content_hash: str = Field(default="", description="SHA-256 hash of source content")
+
+
+# ---------------------------------------------------------------------------
+# Query agent result
+# ---------------------------------------------------------------------------
+
+class QueryResult(BaseModel):
+    """Structured result from the Query Agent (Stage 5).
+
+    Wraps the answer text with a full ProvenanceChain and metadata
+    about which tools were used to produce the answer.
+    """
+
+    answer: str = Field(..., description="Natural-language answer to the query")
+    provenance: ProvenanceChain = Field(
+        ..., description="Source citations backing the answer"
+    )
+    tools_used: list[str] = Field(
+        default_factory=list,
+        description="Tools invoked to produce this answer (e.g. 'pageindex_navigate', 'semantic_search')",
+    )
+    confidence: float = Field(
+        default=0.0,
+        ge=0.0,
+        le=1.0,
+        description="Agent's confidence in the answer [0, 1]",
+    )

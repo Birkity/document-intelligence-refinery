@@ -5,12 +5,14 @@ from src.models.schemas import (
     DocumentProfile,
     ExtractedDocument,
     ExtractedPage,
+    Fact,
     FigureObject,
     LDU,
     PageIndex,
     PageIndexNode,
     ProvenanceChain,
     ProvenanceCitation,
+    QueryResult,
     TableObject,
     TextBlock,
 )
@@ -28,4 +30,6 @@ __all__ = [
     "PageIndex",
     "ProvenanceCitation",
     "ProvenanceChain",
+    "Fact",
+    "QueryResult",
 ]
