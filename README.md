@@ -23,6 +23,7 @@ PDF Corpus
                                                 │               │
                                           ┌─────▼───────────────▼────┐
                                           │    Query Agent (Stage 5) │
+                                          │  + FactTable + Audit     │
                                           └──────────────────────────┘
 ```
 
@@ -35,89 +36,72 @@ PDF Corpus
 | 3 | Chunking Engine | Done | Converts `ExtractedDocument` → `List[LDU]` with 5 enforced rules |
 | 4 | PageIndex Builder | Done | Hierarchical section navigation for LLM traversal |
 | 5 | Query Agent | Done | LangGraph agent with 3 tools, FactTable, Audit Mode |
+| - | CLI Orchestrator | Done | Typer CLI with batch/sample-page support |
+| - | SQLite + ChromaDB | Done | Full persistence layer with metadata filters |
+| - | OCR Backends | Done | PaddleOCR / Tesseract with PyMuPDF rendering |
+
+### Extraction Strategies
+
+| Strategy | Cost | Backend | When Used |
+|----------|------|---------|-----------|
+| **A** — Fast Text | Low | pdfplumber | Native-digital, single-column PDFs |
+| **B** — Layout-Aware | Medium | Docling + pdfplumber fallback | Multi-column, table-heavy documents |
+| **C** — Vision/OCR | High | PaddleOCR / Tesseract / pdfplumber fallback | Scanned images, low-confidence docs |
 
 ## Quick Start
 
-### 1. Install dependencies
+### 1. Install
 
 ```bash
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-# or: .\venv\Scripts\Activate.ps1   # Windows
+.\venv\Scripts\Activate.ps1   # Windows
+# or: source venv/bin/activate   # Linux/Mac
 
 pip install -e ".[dev]"
+
+# Optional OCR backends:
+pip install -e ".[ocr]"        # PaddleOCR
+pip install -e ".[tesseract]"  # Tesseract
 ```
 
 ### 2. Initialize the database
 
 ```bash
-python -c "from src.db.init_db import initialize_database; initialize_database()"
+python -m src.cli init-db
 ```
 
-Creates `.refinery/refinery.db` with all governance tables.
-
-### 3. Run triage on a document
+### 3. Process a single PDF
 
 ```bash
-python -c "
-from src.agents.triage import TriageAgent
-agent = TriageAgent()
-profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
-print(profile.model_dump_json(indent=2))
-"
+python -m src.cli run data/sample.pdf --sample-pages 3
 ```
 
-The profile JSON is saved to `.refinery/profiles/{document_id}.json`.
-
-### 4. Run extraction with escalation
+### 4. Batch-process all PDFs
 
 ```bash
-python -c "
-from src.agents.triage import TriageAgent
-from src.agents.extractor import ExtractionRouter
-
-agent = TriageAgent()
-router = ExtractionRouter()
-
-profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
-doc, ledger = router.route_and_extract(profile, 'data/CBE ANNUAL REPORT 2023-24.pdf')
-print(f'Pages: {len(doc.pages)}, Strategies tried: {[e[\"strategy_used\"] for e in ledger]}')
-"
+python -m src.cli batch data/ --sample-pages 3
 ```
 
-Ledger entries are appended to `.refinery/extraction_ledger.jsonl`.
-
-### 5. Chunk extracted documents into LDUs
+### 5. Query indexed documents
 
 ```bash
-python -c "
-from src.agents.triage import TriageAgent
-from src.agents.extractor import ExtractionRouter
-from src.agents.chunker import ChunkingEngine, ChunkValidator
-
-agent = TriageAgent()
-router = ExtractionRouter()
-chunker = ChunkingEngine()
-validator = ChunkValidator()
-
-profile = agent.generate_document_profile('data/CBE ANNUAL REPORT 2023-24.pdf')
-doc, _ = router.route_and_extract(profile, 'data/CBE ANNUAL REPORT 2023-24.pdf')
-ldus = chunker.chunk_document(doc)
-
-# Validate all chunks
-errors = validator.validate_batch(ldus)
-print(f'LDUs: {len(ldus)}, Validation errors: {len(errors)}')
-for ldu in ldus[:3]:
-    print(f'  [{ldu.chunk_type}] {ldu.token_count} tokens — {ldu.content[:80]}...')
-"
+python -m src.cli query "What is the total revenue?"
+python -m src.cli query "Net profit" --doc-id abc123
 ```
 
-### 6. Build PageIndex for a document
+### 6. Audit a document
 
 ```bash
-python -c "
-from src.agents.triage import TriageAgent
-from src.agents.extractor import ExtractionRouter
+python -m src.cli audit --doc-id abc123
+```
+
+### 7. Inspect artefacts
+
+```bash
+python -m src.cli show pageindex --doc-id abc123
+python -m src.cli show facts --doc-id abc123
+python -m src.cli list-docs
+```
 from src.agents.chunker import ChunkingEngine
 from src.agents.pageindex import PageIndexBuilder
 
@@ -216,6 +200,7 @@ python -m pytest tests/ -v
 ├── rubric/
 │   └── extraction_rules.yaml      # All thresholds — no hardcoding
 ├── src/
+│   ├── cli.py                     # Typer CLI entry point (7 commands)
 │   ├── models/
 │   │   ├── __init__.py            # Re-exports all schemas
 │   │   └── schemas.py             # Pydantic v2 schemas (14 models)
@@ -230,13 +215,20 @@ python -m pytest tests/ -v
 │   │   ├── base.py                # BaseExtractor abstract interface
 │   │   ├── fast_text.py           # Strategy A — pdfplumber (low cost)
 │   │   ├── layout.py              # Strategy B — Docling / enhanced pdfplumber
-│   │   └── vision.py              # Strategy C — VLM / OCR (high cost)
+│   │   └── vision.py              # Strategy C — OCR / VLM (high cost)
+│   ├── vision/
+│   │   ├── __init__.py
+│   │   └── ocr_backends.py        # PaddleOCR + Tesseract backends
+│   ├── pipeline/
+│   │   ├── __init__.py
+│   │   └── orchestrator.py        # PipelineOrchestrator (end-to-end)
 │   ├── utils/
 │   │   └── hash_utils.py          # SHA-256 content hashing for provenance
 │   └── db/
 │       ├── schema.sql             # SQLite DDL (7 tables incl. fact_tables)
 │       ├── init_db.py             # Idempotent DB init
-│       └── vector_store.py        # ChromaDB wrapper
+│       ├── repo.py                # SQLite repository layer (upsert helpers)
+│       └── vector_store.py        # ChromaDB wrapper with metadata filters
 ├── scripts/
 │   ├── generate_profiles.py       # Batch profile generation (12 docs)
 │   ├── generate_ledger.py         # Batch extraction + ledger
@@ -396,7 +388,7 @@ Verify coverage: `python scripts/generate_class_report.py`
 
 ## Testing
 
-143 tests across 9 modules, run with `python -m pytest tests/ -v`:
+**167 tests** across 10 modules, run with `python -m pytest tests/ -v`:
 
 - **test_models.py** — Schema instantiation, validation, rejection of invalid data (11 tests)
 - **test_triage_origin.py** — Origin-type detection (native digital, scanned, mixed) (6 tests)
@@ -407,3 +399,4 @@ Verify coverage: `python scripts/generate_class_report.py`
 - **test_pageindex_builder.py** — Section grouping, page ranges, data-type signals, summaries, JSON/DB persistence, query (21 tests)
 - **test_fact_table.py** — FactTable extraction, persistence, key-pattern queries (12 tests)
 - **test_query_agent.py** — 3 tools (pageindex/semantic/structured), answer provenance, audit mode, LangGraph graph (19 tests)
+- **test_pipeline_and_cli.py** — Repo layer, VectorStore filters, sample-page selection, OCR backends, CLI smoke, orchestrator (24 tests)

@@ -51,8 +51,20 @@ class FastTextExtractor(BaseExtractor):
         rev = rules.get("review", {})
         self._max_image_ratio: float = rev.get("max_image_ratio_fast_text", 0.5)
 
-    def extract(self, pdf_path: str, document_id: str) -> ExtractedDocument:
-        """Extract text blocks and tables from every page using pdfplumber."""
+    def extract(
+        self,
+        pdf_path: str,
+        document_id: str,
+        *,
+        page_numbers: list[int] | None = None,
+    ) -> ExtractedDocument:
+        """Extract text blocks and tables from every page using pdfplumber.
+
+        Parameters
+        ----------
+        page_numbers : list[int] | None
+            1-indexed pages to extract.  ``None`` → all pages.
+        """
         pages_out: list[ExtractedPage] = []
         total_chars = 0
         total_image_area = 0.0
@@ -60,6 +72,8 @@ class FastTextExtractor(BaseExtractor):
 
         with pdfplumber.open(pdf_path) as pdf:
             for idx, page in enumerate(pdf.pages, start=1):
+                if page_numbers and idx not in page_numbers:
+                    continue
                 pw, ph = float(page.width), float(page.height)
                 page_area = pw * ph
                 total_page_area += page_area

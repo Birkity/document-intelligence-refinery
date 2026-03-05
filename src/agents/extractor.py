@@ -77,9 +77,16 @@ class ExtractionRouter:
     # ------------------------------------------------------------------
 
     def route_and_extract(
-        self, profile: DocumentProfile, pdf_path: str
+        self, profile: DocumentProfile, pdf_path: str,
+        *,
+        page_numbers: list[int] | None = None,
     ) -> tuple[ExtractedDocument, list[dict]]:
         """Select strategy based on *profile*, extract, and escalate if needed.
+
+        Parameters
+        ----------
+        page_numbers : list[int] | None
+            If given, only extract these 1-indexed pages (sample mode).
 
         Returns
         -------
@@ -97,7 +104,15 @@ class ExtractionRouter:
 
             extractor = self._strategies[strategy_name]
             t0 = time.perf_counter()
-            result = extractor.extract(pdf_path, profile.document_id)
+            # Pass page_numbers if the strategy supports it
+            try:
+                result = extractor.extract(
+                    pdf_path, profile.document_id,
+                    page_numbers=page_numbers,
+                )
+            except TypeError:
+                # Fallback for strategies that don't accept page_numbers
+                result = extractor.extract(pdf_path, profile.document_id)
             elapsed = round(time.perf_counter() - t0, 4)
 
             confidence = extractor.confidence_score
