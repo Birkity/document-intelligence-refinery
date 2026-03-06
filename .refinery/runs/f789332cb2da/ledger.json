@@ -1,0 +1,13 @@
+[
+  {
+    "document_id": "88145efb1c21",
+    "source_filename": "CBE ANNUAL REPORT 2023-24.pdf",
+    "strategy_used": "layout_aware",
+    "confidence_score": 0.727,
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "estimated_cost": "medium",
+    "processing_time_s": 0.9464,
+    "flagged_for_review": false
+  }
+]

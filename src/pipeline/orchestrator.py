@@ -175,7 +175,7 @@ class PipelineOrchestrator:
         log.info("Pipeline run %s — %s", run_id, pdf.name)
 
         # ── Stage 1: Triage ──────────────────────────────────────────
-        profile: DocumentProfile = self._triage.classify(str(pdf))
+        profile: DocumentProfile = self._triage.generate_document_profile(str(pdf))
         doc_id = profile.document_id
         log.info("[%s] Triage → %s / %s / cost=%s",
                  doc_id[:8], profile.origin_type,
@@ -184,13 +184,14 @@ class PipelineOrchestrator:
 
         # ── Determine pages to extract ───────────────────────────────
         page_nums: list[int] | None = None
+        with pdfplumber.open(str(pdf)) as _p:
+            total_pages = len(_p.pages)
+
         if sample_pages is not None:
-            with pdfplumber.open(str(pdf)) as p:
-                total = len(p.pages)
             page_nums = select_sample_pages(
-                total, n=sample_pages, strategy=page_sample_strategy
+                total_pages, n=sample_pages, strategy=page_sample_strategy
             )
-            log.info("[%s] Sample mode → pages %s of %d", doc_id[:8], page_nums, total)
+            log.info("[%s] Sample mode → pages %s of %d", doc_id[:8], page_nums, total_pages)
 
         # ── Stage 2: Extract ─────────────────────────────────────────
         extracted_doc, ledger = self._router.route_and_extract(
@@ -217,7 +218,7 @@ class PipelineOrchestrator:
         log.info("[%s] FactTable → %d facts", doc_id[:8], len(facts))
 
         # ── Stage 5b: Persist to SQLite + ChromaDB ───────────────────
-        self._persist(profile, extracted_doc, ldus, page_index, facts, ledger)
+        self._persist(profile, extracted_doc, ldus, page_index, facts, ledger, total_pages)
         log.info("[%s] Persisted to SQLite + ChromaDB", doc_id[:8])
 
         # ── Write artefacts ──────────────────────────────────────────
@@ -254,6 +255,7 @@ class PipelineOrchestrator:
         index: PageIndex,
         facts: list[Fact],
         ledger: list[dict],
+        page_count: int = 0,
     ) -> None:
         """Write everything to SQLite + ChromaDB."""
         did = profile.document_id
@@ -266,7 +268,7 @@ class PipelineOrchestrator:
             layout_complexity=profile.layout_complexity,
             domain_hint=profile.domain_hint,
             estimated_cost=profile.estimated_extraction_cost,
-            page_count=profile.page_count,
+            page_count=page_count,
             total_chunks=len(ldus),
         )
 

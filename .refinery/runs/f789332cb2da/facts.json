@@ -1,0 +1,186 @@
+[
+  {
+    "key": "The various foreign currencies to which the Group is exposed to are summarized below",
+    "value": "30",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "67f91ed957a3df5b06a8e3e134b2ee2ab11d6b3a28506571d4877e356aecd776"
+  },
+  {
+    "key": "AED",
+    "value": "1,069",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "CAD",
+    "value": "701",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "CHF",
+    "value": "1,554",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "DJF",
+    "value": "64,331",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "DKK",
+    "value": "645",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "EUR",
+    "value": "11,604",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "GBP",
+    "value": "1,211",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "INR",
+    "value": "180,128",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "JPY",
+    "value": "63,067",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "KES",
+    "value": "12,831",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "KWD",
+    "value": "33",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "AUD",
+    "value": "38",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "SAR",
+    "value": "2,455",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "SEK",
+    "value": "9,247",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "USD",
+    "value": "645,593",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "NOK",
+    "value": "7,019",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "CNY",
+    "value": "215",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "DJF",
+    "value": "36",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "EUR",
+    "value": "62,864",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "GBP",
+    "value": "6,600",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "USD",
+    "value": "1,057,879",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  },
+  {
+    "key": "JPY",
+    "value": "760",
+    "unit": "",
+    "page_ref": 81,
+    "document_id": "88145efb1c21",
+    "content_hash": "23782eba2c233eefd5d1e8754b29f7d44c03dfe04f5b1f58f86dd5eb49a0d8ba"
+  }
+]
