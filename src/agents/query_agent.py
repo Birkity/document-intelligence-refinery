@@ -148,7 +148,8 @@ class QueryAgent:
         if self._vector_store is None:
             self._vector_store = VectorStore(
                 persist_dir=self._chroma_dir,
-                collection_name="refinery_query_agent",
+                # Must match the collection used by pipeline ingestion.
+                collection_name="refinery_chunks",
             )
         return self._vector_store
 
@@ -367,6 +368,22 @@ class QueryAgent:
                 entity=entity_hint,
                 period=period_hint,
             )
+            if facts:
+                # Keep only facts that actually overlap with the query to avoid
+                # flooding synthesis with unrelated rows.
+                scored_facts: list[tuple[float, dict[str, Any]]] = []
+                for f in facts:
+                    fact_text = f"{f.get('key', '')} {f.get('value', '')} {f.get('entity', '')} {f.get('metric', '')}"
+                    score = _overlap_score(question, fact_text)
+                    if score > 0:
+                        scored_facts.append((score, f))
+
+                if scored_facts:
+                    scored_facts.sort(key=lambda x: x[0], reverse=True)
+                    facts = [f for _, f in scored_facts[:10]]
+                else:
+                    facts = []
+
             if facts:
                 tools_used.append("structured_query")
                 for f in facts:
@@ -724,7 +741,8 @@ class QueryAgent:
             "revenue", "income", "cost", "expense", "profit", "loss",
             "budget", "expenditure", "salary", "price", "rate", "amount",
             "total", "net", "gross", "tax", "fee", "dividend", "assets",
-            "liabilities", "equity", "balance", "cash", "flow",
+            "liabilities", "equity", "balance", "cash", "flow", "capital",
+            "capacity", "subscribed", "paid-up",
             "how much", "how many", "what is the",
             "$", "%", "billion", "million", "thousand",
         }

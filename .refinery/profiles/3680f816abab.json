@@ -1,0 +1,13 @@
+{
+  "document_id": "3680f816abab",
+  "source_filename": "Company_Profile_2024_25.pdf",
+  "origin_type": "native_digital",
+  "layout_complexity": "multi_column",
+  "language": "en",
+  "language_confidence": 0.5,
+  "domain_hint": "financial",
+  "estimated_extraction_cost": "needs_layout_model",
+  "page_count": 24,
+  "has_ocr_pages": false,
+  "confidence": 0.7704
+}

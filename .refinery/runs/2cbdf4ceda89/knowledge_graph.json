@@ -1,0 +1,2640 @@
+{
+  "document_id": "c7d87eb9189d",
+  "entities": [
+    {
+      "entity_name": "Fy 2018",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c5d607163dc6201908f6313f3a2b5055ee047e9908ac77645727bc8180ea9d"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "a88c5e6e03315f6883ee6e078ea83e42cb9b4fdcb0d4f26bb0809f8afa43964a"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c5d607163dc6201908f6313f3a2b5055ee047e9908ac77645727bc8180ea9d"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2020",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c5d607163dc6201908f6313f3a2b5055ee047e9908ac77645727bc8180ea9d"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Tax",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c5d607163dc6201908f6313f3a2b5055ee047e9908ac77645727bc8180ea9d"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "eaaabc9d4072536cd2593c5c1c9e0d72953a608f31db5ad06b6b46d089edc6c8"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b055d044ce3c038c4c5ba0b80e710c893b09c7edca23d5ad4e3b7fdeb7f0af60"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "a4575fc9f182cdddc72f5f14a86087fbae59d5fd82f8252ff351d016564dc38b"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "1d70bfe0523bc89ffb389b57c8dd7002ee81986323d084f2d954eab269efb4ba"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "55f82482c68fba45057d5598d7f85e2d70f4bc6e175fdd48b0797ebacb94efb0"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "ee53e0849b9a264740b420bd17edc5c1cf049293a19e01e8a2711aab1244f81a"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Tax Policy Directorate",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "eaaabc9d4072536cd2593c5c1c9e0d72953a608f31db5ad06b6b46d089edc6c8"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopia",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "eaaabc9d4072536cd2593c5c1c9e0d72953a608f31db5ad06b6b46d089edc6c8"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "1d70bfe0523bc89ffb389b57c8dd7002ee81986323d084f2d954eab269efb4ba"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2022",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d3de569b7c2f7f122fba8046d966cd109673d0c87ac58412c3d64f2b2a4c0649"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Tax Analysis",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Developing Countries",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Daniel Prinz",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Edris Seid",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ben Waltmann",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopian Ministry",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Finance Tax Policy Directorate",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Mulay Weldu",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ratio",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "a4575fc9f182cdddc72f5f14a86087fbae59d5fd82f8252ff351d016564dc38b"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "David Phillips",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopian Customs Commission",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Liability",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "1d70bfe0523bc89ffb389b57c8dd7002ee81986323d084f2d954eab269efb4ba"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2018",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2019",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Cost",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "ee53e0849b9a264740b420bd17edc5c1cf049293a19e01e8a2711aab1244f81a"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Margin",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "ee53e0849b9a264740b420bd17edc5c1cf049293a19e01e8a2711aab1244f81a"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Revenue",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "ee53e0849b9a264740b420bd17edc5c1cf049293a19e01e8a2711aab1244f81a"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fy 2020",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "a88c5e6e03315f6883ee6e078ea83e42cb9b4fdcb0d4f26bb0809f8afa43964a"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fy 2019",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "a88c5e6e03315f6883ee6e078ea83e42cb9b4fdcb0d4f26bb0809f8afa43964a"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "76.4 Billion And",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "68.7 Billion And",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Growth",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Capital",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Import Tax Expenditures",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2018/19",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2019/20",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2020/21",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Imports",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Taxes Levied",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Motor Vehicles And Animal/Vegetable Fats",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Share Of Total Tax Expenditures",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fy 2020/21",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Motor Vehicles",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Average Tax Expenditures Relative To Import Value",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Animal And Vegetable Fats",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Tax Expenditures",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Percentage",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Imports By Value",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fiscal Years",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Period",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2019/20-2020/21",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+        }
+      ],
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Import Tax Expenditures",
+      "relation": "has_metric",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "2018/19",
+      "relation": "reported_for_period",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "2019/20",
+      "relation": "reported_for_period",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "2020/21",
+      "relation": "reported_for_period",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Imports",
+      "target": "Taxes Levied",
+      "relation": "has_metric",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "2018",
+      "relation": "reported_for_period",
+      "page_ref": 4,
+      "confidence": 0.75
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "Share Of Total Tax Expenditures",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "Fy 2020/21",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "Fy 2020/21",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "target": "2019",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Tax Expenditures",
+      "target": "Percentage",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Percentage",
+      "target": "2019",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Imports By Value",
+      "target": "Percentage",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Period",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Period",
+      "target": "2019/20-2020/21",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Policy Directorate",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Policy Directorate",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Policy Directorate",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Policy Directorate",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Fy 2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "68.7 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "2018/19",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Margin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "68.7 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "2018/19",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Margin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "68.7 Billion And",
+      "target": "2018/19",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "68.7 Billion And",
+      "target": "Margin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "68.7 Billion And",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "68.7 Billion And",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "68.7 Billion And",
+      "target": "76.4 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018/19",
+      "target": "Margin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018/19",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018/19",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018/19",
+      "target": "76.4 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018/19",
+      "target": "Taxes Levied",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Margin",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Margin",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Margin",
+      "target": "76.4 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Margin",
+      "target": "Taxes Levied",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Margin",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "76.4 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Taxes Levied",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "76.4 Billion And",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Taxes Levied",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "76.4 Billion And",
+      "target": "Taxes Levied",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "76.4 Billion And",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "76.4 Billion And",
+      "target": "2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "76.4 Billion And",
+      "target": "2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "76.4 Billion And",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Taxes Levied",
+      "target": "Import Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Import Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "2019/20",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018",
+      "target": "2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018",
+      "target": "Import Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018",
+      "target": "2019/20",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2018",
+      "target": "Imports",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020/21",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020/21",
+      "target": "Import Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020/21",
+      "target": "2019/20",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020/21",
+      "target": "Imports",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020/21",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Import Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "2019/20",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Imports",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "2019/20",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "Imports",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Import Tax Expenditures",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20",
+      "target": "Imports",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Fiscal Years",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Share Of Total Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019",
+      "target": "Motor Vehicles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Fiscal Years",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Share Of Total Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Motor Vehicles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020",
+      "target": "Fy 2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Share Of Total Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Motor Vehicles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Fy 2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fiscal Years",
+      "target": "Period",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Share Of Total Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Motor Vehicles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Fy 2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Period",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "Motor Vehicles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "Fy 2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "Period",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Of Total Tax Expenditures",
+      "target": "2019/20-2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "Fy 2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "Period",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "2019/20-2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles",
+      "target": "Percentage",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020/21",
+      "target": "Period",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020/21",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020/21",
+      "target": "2019/20-2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020/21",
+      "target": "Percentage",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2020/21",
+      "target": "Motor Vehicles And Animal/Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Period",
+      "target": "2020",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Period",
+      "target": "2019/20-2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Period",
+      "target": "Percentage",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Period",
+      "target": "Motor Vehicles And Animal/Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Period",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "2019/20-2020/21",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Percentage",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Motor Vehicles And Animal/Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2020",
+      "target": "Imports By Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20-2020/21",
+      "target": "Percentage",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20-2020/21",
+      "target": "Motor Vehicles And Animal/Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20-2020/21",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20-2020/21",
+      "target": "Imports By Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2019/20-2020/21",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Percentage",
+      "target": "Motor Vehicles And Animal/Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Percentage",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Percentage",
+      "target": "Imports By Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Percentage",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Percentage",
+      "target": "Animal And Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "Average Tax Expenditures Relative To Import Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "Imports By Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "Animal And Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Motor Vehicles And Animal/Vegetable Fats",
+      "target": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "Imports By Value",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "Animal And Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Average Tax Expenditures Relative To Import Value",
+      "target": "Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports By Value",
+      "target": "Fy 2018",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports By Value",
+      "target": "Animal And Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports By Value",
+      "target": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports By Value",
+      "target": "Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Imports By Value",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Animal And Vegetable Fats",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fy 2018",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Animal And Vegetable Fats",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "target": "Tax Expenditures",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "This Is Primarily Because Only A Very Small Share Of Imports By Value Are Eligible For Them",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Expenditures",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Expenditures",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax Expenditures",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Fy 2019",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Ministry",
+      "target": "Edris Seid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Ministry",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Ministry",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Ministry",
+      "target": "Mulay Weldu",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Ministry",
+      "target": "David Phillips",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Edris Seid",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Edris Seid",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Edris Seid",
+      "target": "Mulay Weldu",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Edris Seid",
+      "target": "David Phillips",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Edris Seid",
+      "target": "Daniel Prinz",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Mulay Weldu",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "David Phillips",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Daniel Prinz",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Mulay Weldu",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "David Phillips",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Daniel Prinz",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Developing Countries",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Mulay Weldu",
+      "target": "David Phillips",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Mulay Weldu",
+      "target": "Daniel Prinz",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Mulay Weldu",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Mulay Weldu",
+      "target": "Developing Countries",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Mulay Weldu",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "David Phillips",
+      "target": "Daniel Prinz",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "David Phillips",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "David Phillips",
+      "target": "Developing Countries",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "David Phillips",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "David Phillips",
+      "target": "Finance Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Daniel Prinz",
+      "target": "Ethiopian Customs Commission",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Daniel Prinz",
+      "target": "Developing Countries",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Daniel Prinz",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Daniel Prinz",
+      "target": "Finance Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Daniel Prinz",
+      "target": "Ben Waltmann",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Developing Countries",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Finance Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Ben Waltmann",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Customs Commission",
+      "target": "Tax Analysis",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Developing Countries",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Developing Countries",
+      "target": "Finance Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Developing Countries",
+      "target": "Ben Waltmann",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Developing Countries",
+      "target": "Tax Analysis",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Finance Tax Policy Directorate",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Ben Waltmann",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Tax Analysis",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Finance Tax Policy Directorate",
+      "target": "Ben Waltmann",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Finance Tax Policy Directorate",
+      "target": "Tax Analysis",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ben Waltmann",
+      "target": "Tax Analysis",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    }
+  ],
+  "cross_references": []
+}

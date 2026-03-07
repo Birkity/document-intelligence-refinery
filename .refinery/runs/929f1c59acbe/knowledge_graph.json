@@ -1,0 +1,6767 @@
+{
+  "document_id": "3680f816abab",
+  "entities": [
+    {
+      "entity_name": "Ethiopian Reinsurance",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "7f4cc62346383ad6c74ff17958f5cfe7e70361f595955ef6008f3e54463d03ad"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "5ddf679eb837080a773be176adb3cdaa97b03bfcb9868cd6381c9b2981861346"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopia",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "7f4cc62346383ad6c74ff17958f5cfe7e70361f595955ef6008f3e54463d03ad"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e1c72bed7ea1872eb090f195232d44d34bed5978e6f9aebc8ea3bf3c1341281d"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "5ddf679eb837080a773be176adb3cdaa97b03bfcb9868cd6381c9b2981861346"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b36feba0f704c9b9bcfda4343de4c5639e43b460b7b8037d73de56ed7802f690"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "efd503d93cc6c7091d1ddd457305b8213295f9886343465859531e82534f8545"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "b5dd81368f99e8102dd748e43ee939f4b41f75fa71187528d0d2a16ffc3df478"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "927add7493f3a82df1e0e78e942e4b3befb4ab8cbac1bd78f055c6809ae8d3ed"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "62248cdc6af411e0aafd04901d6463629d1a0c6475038a93aedcfdded7d20cc4"
+        },
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "e845e5150ed23e17d1cec20148cf6d9e56e5481b9229da64c5b454a59d846c5d"
+        },
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "4573fffe53ddf5c133fc8bb36d4f0704ff330a7d33774caafed346eae6394035"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "ad611eba88aa3ffff0cb6895723f8a8e8cffabbeb32ece5853226dc1e7fdae28"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "923cc2719175912830b513cf9c57f80152e053a3ae0dced8abbe73ac24f752aa"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "4f48c0af45881ec722e56fbc54cc7135208de75a5d1e866ce052571a072373de"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Commercial Code",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Proclamation Number",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "1243",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2021",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "4b722d0ee1f973ef3fe05fe30ee04be850b33c9f9c2e07b90ad1477eaa34f90f"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Roc",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3cf375e95ad9d6e0780f1b8e1bddb00e7580da8a222b29eef183785d531a86c1"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "3a49fc889f83277d9586a6a7507a2c53daa4a3bf38eba818f0f03a571b351e6d"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "98635dfcb023f8a34297810967a6e523656e08a3096bfe31c474c7705b949c2f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "d66ee44a053b5f4f4247aeb97cf9c707ba77f4757da12e6fc9af9ea290d27a2e"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "National Bank",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "e1c72bed7ea1872eb090f195232d44d34bed5978e6f9aebc8ea3bf3c1341281d"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2.5 Billion And",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "5ddf679eb837080a773be176adb3cdaa97b03bfcb9868cd6381c9b2981861346"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Capital",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "5ddf679eb837080a773be176adb3cdaa97b03bfcb9868cd6381c9b2981861346"
+        },
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "7252631b1aa92a5f88eec7cf34b27701ca16205b7f89b5c8868ab4e70249bf46"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "98635dfcb023f8a34297810967a6e523656e08a3096bfe31c474c7705b949c2f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c218e163e639c54f7c24ca7b91b7a229f0ab8e81c0e20bb4eacad1c8c1964835"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Registration Number",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "859be6a343ee8ac4df4d66aba4de34cd044eb065f9c35c164a8c89bbf6efbb81"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2008",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "859be6a343ee8ac4df4d66aba4de34cd044eb065f9c35c164a8c89bbf6efbb81"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ratio",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "859be6a343ee8ac4df4d66aba4de34cd044eb065f9c35c164a8c89bbf6efbb81"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Its Headquarters",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "948579384d603cce56caf74fba29c591d8b35654d1fe4f5af69dbeea9324ecd1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Bahiru Abraham Commercial Tower",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "948579384d603cce56caf74fba29c591d8b35654d1fe4f5af69dbeea9324ecd1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Addis Ababa",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "948579384d603cce56caf74fba29c591d8b35654d1fe4f5af69dbeea9324ecd1"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Kirkos Subcity",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "948579384d603cce56caf74fba29c591d8b35654d1fe4f5af69dbeea9324ecd1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Addis Ababa",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "948579384d603cce56caf74fba29c591d8b35654d1fe4f5af69dbeea9324ecd1"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2dcaac1cc08c8a20935a7536376fc6f1001577d226b6619982b82ad4bc42662f"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "efd503d93cc6c7091d1ddd457305b8213295f9886343465859531e82534f8545"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "The General",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2dcaac1cc08c8a20935a7536376fc6f1001577d226b6619982b82ad4bc42662f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Addis Ababa Hilton",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2dcaac1cc08c8a20935a7536376fc6f1001577d226b6619982b82ad4bc42662f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "December 20, 2022",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2dcaac1cc08c8a20935a7536376fc6f1001577d226b6619982b82ad4bc42662f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Annual Ordinary General Meeting",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "723ddd76178efc39106bbf1c76752fc3d5b70a54b0b385818d947702668992ce"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Vote Tellers",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b4193f21d2152effd0b3031c9a88669931229d7907a6f86ebeb8b72af3517843"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Meeting Agenda",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "93b5cb199ed06765141f9360b3ed856ba2fc5a6e7778c59f0192c3c4ec71e767"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Share Transfers",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "4b722d0ee1f973ef3fe05fe30ee04be850b33c9f9c2e07b90ad1477eaa34f90f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "New Shareholders",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "4b722d0ee1f973ef3fe05fe30ee04be850b33c9f9c2e07b90ad1477eaa34f90f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Annual Report",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "External Auditors",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Africa",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "cee07f9ab8b36bedfbccda7d592c896d3e1a651ab0c88633bce26411212ec47b"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b36feba0f704c9b9bcfda4343de4c5639e43b460b7b8037d73de56ed7802f690"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "f91511e1ec7fa4d9dc09d34618c2fa6de5f6411e95814d1d159b08951d9035d3"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2022",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "021878af8a50e0130893617236880ac13ce555ce3b64e87dd18a8fa55139f31e"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Annual Compensation",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Africa Rising",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Saharan Africa",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2000",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Growth",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b36feba0f704c9b9bcfda4343de4c5639e43b460b7b8037d73de56ed7802f690"
+        },
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "0a71f944a38007dad6e8e318669efc5009b68d917401753820b525fad9219e18"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Income",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "84d805327ea0d8abed09001f86ae69040987cee3687b6aa3ce13df56cbe28633"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "98635dfcb023f8a34297810967a6e523656e08a3096bfe31c474c7705b949c2f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopian Re",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b36feba0f704c9b9bcfda4343de4c5639e43b460b7b8037d73de56ed7802f690"
+        },
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "e845e5150ed23e17d1cec20148cf6d9e56e5481b9229da64c5b454a59d846c5d"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "East Africa",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "b36feba0f704c9b9bcfda4343de4c5639e43b460b7b8037d73de56ed7802f690"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Strength Ratng",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "e8ddff387a2404b11bc4c1ef40d45a6075247b6ffd9761d27d7d58c13aad60c8"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Term Rating",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "178c63690bc680a057e586857d33e00e1dca70724365701516833593ad4442ed"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Our Credit Rating",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "459e80151bc7cd2f72a024f63b9d45844e523fd50401ec6b6f6caa85e27b5465"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "459e80151bc7cd2f72a024f63b9d45844e523fd50401ec6b6f6caa85e27b5465"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Strategic Partnerships",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "7ab093a5df392f1a009da05b37e012671f97cca13c9308afc7efd65b93c27f52"
+        },
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "a56188de900258524b3dcdb55bf48fe21c6b60f79a17c247ae8599b9880e26f1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Underwriting Capacity",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "a8ca629a352c53851279818d8a978c4f458649b35fcf384099680ccb802668b2"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Our Strategic",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "a8eae7c5657fb4af2f095400a4ce99258675d80ab6c59b427790cc94a7648c5a"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Corporate Governance",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "d0087cff5bc9e5ae40babfe28c9eca6307878084a292705fd1c47e88979f0e96"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Executive Management",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "3e82349d987880d052d1e0b78003865b7851ea232d157bf9b3b2679a444ce66e"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Conduct Ethio",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "bd63ddbe1e53d6bbb6e1a112c54039399d4a9c32e918c5be8063ddf975537876"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethio Re",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "ebcce8f197170bdeadafad3c7b27a75fae7b09b08aaa19028994de449a2d4a21"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "98635dfcb023f8a34297810967a6e523656e08a3096bfe31c474c7705b949c2f"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopia Country",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 4,
+          "section": "",
+          "content_hash": "b5dd81368f99e8102dd748e43ee939f4b41f75fa71187528d0d2a16ffc3df478"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Historical Sites",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "927add7493f3a82df1e0e78e942e4b3befb4ab8cbac1bd78f055c6809ae8d3ed"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Insurance Business Proclamation No",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "It Establishment Ethio",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "The Company",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "d66ee44a053b5f4f4247aeb97cf9c707ba77f4757da12e6fc9af9ea290d27a2e"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2012",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2016",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Proclamation No.746",
+      "entity_type": "regulation",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopian Insurance",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Directive No",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2014",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Loss",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Core Values",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "5912782f153a733d550d433bfc0c2bcee5249afdf059d5e2d852fe47444522d3"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Communication Technology",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 6,
+          "section": "",
+          "content_hash": "d66ee44a053b5f4f4247aeb97cf9c707ba77f4757da12e6fc9af9ea290d27a2e"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Global Credit Rating",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "2ea03b64d75ff6c71c8459bdd164db43ee94726c6303ec1ea60b729709aef0c6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Big Five Pillars",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Financial Strength",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Long Term",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2030",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Market Development",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "c5dac6285c9f7fd0a99bb5a4cd84d43553e26e8b462b1e08c8839f14c7a9aa29"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "At Ethiopian Reinsurance",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "4573fffe53ddf5c133fc8bb36d4f0704ff330a7d33774caafed346eae6394035"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2024",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "366e7ed9eff4735c3cf6458b3a23d7ed49d49115736bd711bda0801188eea0c4"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "366e7ed9eff4735c3cf6458b3a23d7ed49d49115736bd711bda0801188eea0c4"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Nairobi Declaration",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Sustainable Insurance",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Nairobi",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Corporate Social Responsibility",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "44ee368c21e16bb378459d7e7be8a59520baa8a4b767363fbc1566bbb866d05f"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "44ee368c21e16bb378459d7e7be8a59520baa8a4b767363fbc1566bbb866d05f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopian National Association",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "ad611eba88aa3ffff0cb6895723f8a8e8cffabbeb32ece5853226dc1e7fdae28"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "923cc2719175912830b513cf9c57f80152e053a3ae0dced8abbe73ac24f752aa"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Feeding Program",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "ac1ef7e3567a232b3a2c064049cb95a3002bd402aa584ef37113a720adb05a3f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "The Needy",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "ac1ef7e3567a232b3a2c064049cb95a3002bd402aa584ef37113a720adb05a3f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Children Shareholdings",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "The Board",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Birr Five Hundred Million",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "$ 10 Million",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2.5 Billion Equ",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "50 Million Whi",
+      "entity_type": "amount",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Treaty Capacity",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Facultative Capacity",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Marine Hull",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Political Violence",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Articles",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "7f4cc62346383ad6c74ff17958f5cfe7e70361f595955ef6008f3e54463d03ad"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Operation Commencement",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Insurance Business Proclamation",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        },
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Article Number",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Article Reference",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "e3af4f0c954bf3da8b6b25c925c34296481ea90a34fe6b220f16b4f35c7536a5"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Commencement Of Operations",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Concept Paper Written",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Establishment Directive",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Document Reference",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 5,
+          "section": "",
+          "content_hash": "acda0848c32d2ef9d277c63c317c2524b71e4d517b24682a80a532ec7441e041"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethio-Re",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Financial Strength Rating",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Long Term Rating",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Strategic Plan Timeline",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 7,
+          "section": "",
+          "content_hash": "57a0e75269b608f4661ca0f92bcf775bfabcc6ecd83b1d65fc150ba7729d2874"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "We Have Delivered Over",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 8,
+          "section": "",
+          "content_hash": "366e7ed9eff4735c3cf6458b3a23d7ed49d49115736bd711bda0801188eea0c4"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Membership Effective Date",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "c91a8be762d9bb92e7c10d99f02c2b70e102a88edadb7d33ce83f7ee150b82b6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Shareholders",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "8ecc082b659eb44009b9b3b82eb699763544693e6af6b4f031de9951ca6544e2"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Company",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Company Is Birr",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Share Capital",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        },
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Board Size",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 9,
+          "section": "",
+          "content_hash": "b058bc11a78a74e88c18ebf6f3b062e1e804be9e76619c6f32a4c37050cd9a83"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Reinsurance Company",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Capital Requirement",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "72182974efed1fd4dbc6e5beaf1c0c59dbf53c7126456decb355e5af485fcffc"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fire",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fire And Engineering",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Marine",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Marine Hull And Cargo",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Casualty",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Political",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Political Violence And Terrorism",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Bond",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Aviation",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Aviation Small Aircraft",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Fire And Engineering",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Treaty Capacity",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Facultative Capacity",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Marine Hull And Cargo",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Casualty",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Political Violence And Terrorism",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Bond",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Aviation Small Aircraft",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        },
+        {
+          "page": 10,
+          "section": "",
+          "content_hash": "c73cf5ba7171d995089dc55a8254d2e3ccb00590e18ada44ae42d0e107eaad21"
+        }
+      ],
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "Ethio Re",
+      "target": "Operation Commencement",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "2016",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "Article Number",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Article Number",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "Article Reference",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Article Reference",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Commencement Of Operations",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Concept Paper Written",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Establishment Directive",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Document Reference",
+      "relation": "has_metric",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Document Reference",
+      "target": "2012",
+      "relation": "reported_for_period",
+      "page_ref": 5,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Financial Strength Rating",
+      "relation": "has_metric",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "2030",
+      "relation": "reported_for_period",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Long Term Rating",
+      "relation": "has_metric",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "Long Term Rating",
+      "target": "2030",
+      "relation": "reported_for_period",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Strategic Plan Timeline",
+      "relation": "has_metric",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "2030",
+      "relation": "reported_for_period",
+      "page_ref": 7,
+      "confidence": 0.75
+    },
+    {
+      "source": "We Have Delivered Over",
+      "target": "2024",
+      "relation": "reported_for_period",
+      "page_ref": 8,
+      "confidence": 0.7
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Membership Effective Date",
+      "relation": "has_metric",
+      "page_ref": 9,
+      "confidence": 0.75
+    },
+    {
+      "source": "Membership Effective Date",
+      "target": "2024",
+      "relation": "reported_for_period",
+      "page_ref": 9,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Shareholders",
+      "relation": "has_metric",
+      "page_ref": 9,
+      "confidence": 0.75
+    },
+    {
+      "source": "Company",
+      "target": "Company Is Birr",
+      "relation": "has_metric",
+      "page_ref": 9,
+      "confidence": 0.5499999999999999
+    },
+    {
+      "source": "Company",
+      "target": "Share Capital",
+      "relation": "has_metric",
+      "page_ref": 9,
+      "confidence": 0.75
+    },
+    {
+      "source": "Company",
+      "target": "Board Size",
+      "relation": "has_metric",
+      "page_ref": 9,
+      "confidence": 0.75
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "Capital Requirement",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Capital",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Fire",
+      "target": "Fire And Engineering",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.9
+    },
+    {
+      "source": "Marine",
+      "target": "Marine Hull And Cargo",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.9
+    },
+    {
+      "source": "Political",
+      "target": "Political Violence And Terrorism",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.9
+    },
+    {
+      "source": "Aviation",
+      "target": "Aviation Small Aircraft",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.9
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Facultative Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Facultative Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Casualty",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Casualty",
+      "target": "Facultative Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Facultative Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Bond",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Aviation Small Aircraft",
+      "target": "Treaty Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "Aviation Small Aircraft",
+      "target": "Facultative Capacity",
+      "relation": "has_metric",
+      "page_ref": 10,
+      "confidence": 0.75
+    },
+    {
+      "source": "2.5 Billion And",
+      "target": "Proclamation Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion And",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion And",
+      "target": "Registration Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion And",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion And",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation Number",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation Number",
+      "target": "Registration Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation Number",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation Number",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation Number",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Registration Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Saharan Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Registration Number",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Registration Number",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Registration Number",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Registration Number",
+      "target": "Saharan Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Registration Number",
+      "target": "Africa Rising",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Saharan Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Africa Rising",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Saharan Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Africa Rising",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "2000",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Saharan Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Africa Rising",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "2000",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Saharan Africa",
+      "target": "Africa Rising",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Saharan Africa",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Saharan Africa",
+      "target": "2000",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Saharan Africa",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Saharan Africa",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa Rising",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa Rising",
+      "target": "2000",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa Rising",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa Rising",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa Rising",
+      "target": "East Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2000",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "East Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Articles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2000",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2000",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2000",
+      "target": "East Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2000",
+      "target": "Articles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2000",
+      "target": "New Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "East Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Articles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "New Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Annual Report",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "East Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Articles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "New Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Annual Report",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "External Auditors",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "East Africa",
+      "target": "Articles",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "East Africa",
+      "target": "New Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "East Africa",
+      "target": "Annual Report",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "East Africa",
+      "target": "External Auditors",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "East Africa",
+      "target": "Bahiru Abraham Commercial Tower",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Articles",
+      "target": "New Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Articles",
+      "target": "Annual Report",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Articles",
+      "target": "External Auditors",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Articles",
+      "target": "Bahiru Abraham Commercial Tower",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Articles",
+      "target": "1243",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "New Shareholders",
+      "target": "Annual Report",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "New Shareholders",
+      "target": "External Auditors",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "New Shareholders",
+      "target": "Bahiru Abraham Commercial Tower",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "New Shareholders",
+      "target": "1243",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "New Shareholders",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Report",
+      "target": "External Auditors",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Report",
+      "target": "Bahiru Abraham Commercial Tower",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Report",
+      "target": "1243",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Report",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Report",
+      "target": "Addis Ababa Hilton",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "External Auditors",
+      "target": "Bahiru Abraham Commercial Tower",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "External Auditors",
+      "target": "1243",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "External Auditors",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "External Auditors",
+      "target": "Addis Ababa Hilton",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "External Auditors",
+      "target": "Vote Tellers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bahiru Abraham Commercial Tower",
+      "target": "1243",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bahiru Abraham Commercial Tower",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bahiru Abraham Commercial Tower",
+      "target": "Addis Ababa Hilton",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bahiru Abraham Commercial Tower",
+      "target": "Vote Tellers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bahiru Abraham Commercial Tower",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "1243",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "1243",
+      "target": "Addis Ababa Hilton",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "1243",
+      "target": "Vote Tellers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "1243",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "1243",
+      "target": "Share Transfers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Addis Ababa Hilton",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Vote Tellers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Share Transfers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa Hilton",
+      "target": "Vote Tellers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa Hilton",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa Hilton",
+      "target": "Share Transfers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa Hilton",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa Hilton",
+      "target": "Annual Ordinary General Meeting",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Vote Tellers",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Vote Tellers",
+      "target": "Share Transfers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Vote Tellers",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Vote Tellers",
+      "target": "Annual Ordinary General Meeting",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Vote Tellers",
+      "target": "The General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Share Transfers",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Annual Ordinary General Meeting",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "The General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Annual Compensation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Transfers",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Transfers",
+      "target": "Annual Ordinary General Meeting",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Transfers",
+      "target": "The General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Transfers",
+      "target": "Annual Compensation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Transfers",
+      "target": "Meeting Agenda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Annual Ordinary General Meeting",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "The General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Annual Compensation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Meeting Agenda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Ordinary General Meeting",
+      "target": "The General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Ordinary General Meeting",
+      "target": "Annual Compensation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Ordinary General Meeting",
+      "target": "Meeting Agenda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Ordinary General Meeting",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Ordinary General Meeting",
+      "target": "Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The General",
+      "target": "Annual Compensation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The General",
+      "target": "Meeting Agenda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The General",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The General",
+      "target": "Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The General",
+      "target": "December 20, 2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Compensation",
+      "target": "Meeting Agenda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Compensation",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Compensation",
+      "target": "Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Compensation",
+      "target": "December 20, 2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Compensation",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Meeting Agenda",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Meeting Agenda",
+      "target": "Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Meeting Agenda",
+      "target": "December 20, 2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Meeting Agenda",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Meeting Agenda",
+      "target": "Its Headquarters",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "December 20, 2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Its Headquarters",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Commercial Code",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Reinsurance",
+      "target": "December 20, 2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Reinsurance",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Reinsurance",
+      "target": "Its Headquarters",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Reinsurance",
+      "target": "Commercial Code",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Reinsurance",
+      "target": "2008",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "December 20, 2022",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "December 20, 2022",
+      "target": "Its Headquarters",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "December 20, 2022",
+      "target": "Commercial Code",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "December 20, 2022",
+      "target": "2008",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "December 20, 2022",
+      "target": "Kirkos Subcity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Its Headquarters",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Commercial Code",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "2008",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Kirkos Subcity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Its Headquarters",
+      "target": "Commercial Code",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Its Headquarters",
+      "target": "2008",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Its Headquarters",
+      "target": "Kirkos Subcity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commercial Code",
+      "target": "2008",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commercial Code",
+      "target": "Kirkos Subcity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2008",
+      "target": "Kirkos Subcity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Term Rating",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Term Rating",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Term Rating",
+      "target": "Strength Ratng",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Strength Ratng",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Strength Ratng",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Corporate Governance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Underwriting Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Ethiopia Country",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Governance",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Governance",
+      "target": "Underwriting Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Governance",
+      "target": "Ethiopia Country",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Governance",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Governance",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Underwriting Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Ethiopia Country",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Our Strategic",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Underwriting Capacity",
+      "target": "Ethiopia Country",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Underwriting Capacity",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Underwriting Capacity",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Underwriting Capacity",
+      "target": "Our Strategic",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Underwriting Capacity",
+      "target": "Conduct Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia Country",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia Country",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia Country",
+      "target": "Our Strategic",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia Country",
+      "target": "Conduct Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia Country",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Our Strategic",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Conduct Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Our Strategic",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Conduct Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Executive Management",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Strategic",
+      "target": "Conduct Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Strategic",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Strategic",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Strategic",
+      "target": "Executive Management",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Conduct Ethio",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Conduct Ethio",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Conduct Ethio",
+      "target": "Executive Management",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Executive Management",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Credit Rating",
+      "target": "Executive Management",
+      "relation": "co_occurs_on_page",
+      "page_ref": 4,
+      "confidence": 0.5
+    },
+    {
+      "source": "2016",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2016",
+      "target": "Addis Ababa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2016",
+      "target": "Article Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2016",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2016",
+      "target": "It Establishment Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Article Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "It Establishment Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Article Number",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "It Establishment Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Addis Ababa",
+      "target": "Document Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Number",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Number",
+      "target": "It Establishment Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Number",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Number",
+      "target": "Document Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Number",
+      "target": "Commencement Of Operations",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "It Establishment Ethio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Document Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Commencement Of Operations",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Operation Commencement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "It Establishment Ethio",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "It Establishment Ethio",
+      "target": "Document Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "It Establishment Ethio",
+      "target": "Commencement Of Operations",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "It Establishment Ethio",
+      "target": "Operation Commencement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "It Establishment Ethio",
+      "target": "2012",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Document Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Commencement Of Operations",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Operation Commencement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "2012",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Article Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Document Reference",
+      "target": "Commencement Of Operations",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Document Reference",
+      "target": "Operation Commencement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Document Reference",
+      "target": "2012",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Document Reference",
+      "target": "Article Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Document Reference",
+      "target": "Proclamation No.746",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "Operation Commencement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "2012",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "Article Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "Proclamation No.746",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Commencement Of Operations",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "2012",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "Article Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "Proclamation No.746",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Operation Commencement",
+      "target": "Ethiopian Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2012",
+      "target": "Article Reference",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2012",
+      "target": "Proclamation No.746",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2012",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2012",
+      "target": "Ethiopian Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2012",
+      "target": "Historical Sites",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Reference",
+      "target": "Proclamation No.746",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Reference",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Reference",
+      "target": "Ethiopian Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Reference",
+      "target": "Historical Sites",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Article Reference",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation No.746",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation No.746",
+      "target": "Ethiopian Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation No.746",
+      "target": "Historical Sites",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation No.746",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proclamation No.746",
+      "target": "Establishment Directive",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Ethiopian Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Historical Sites",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Establishment Directive",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Concept Paper Written",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Insurance",
+      "target": "Historical Sites",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Insurance",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Insurance",
+      "target": "Establishment Directive",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Insurance",
+      "target": "Concept Paper Written",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Insurance",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Historical Sites",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Historical Sites",
+      "target": "Establishment Directive",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Historical Sites",
+      "target": "Concept Paper Written",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Historical Sites",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Historical Sites",
+      "target": "Insurance Business Proclamation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Establishment Directive",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Concept Paper Written",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Insurance Business Proclamation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "Concept Paper Written",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "Insurance Business Proclamation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Establishment Directive",
+      "target": "2014",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "National Bank",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "Insurance Business Proclamation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "2014",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Concept Paper Written",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Insurance Business Proclamation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "2014",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "National Bank",
+      "target": "Directive No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "2014",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "Directive No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Insurance Business Proclamation",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "2014",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Directive No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Insurance Business Proclamation No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2014",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2014",
+      "target": "Directive No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2014",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "2014",
+      "target": "Insurance Business Proclamation No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Company",
+      "target": "Directive No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Company",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Company",
+      "target": "Insurance Business Proclamation No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Directive No",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Directive No",
+      "target": "Insurance Business Proclamation No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Insurance Business Proclamation No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 5,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Communication Technology",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Core Values",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Communication Technology",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Communication Technology",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Communication Technology",
+      "target": "Core Values",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Communication Technology",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Core Values",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Core Values",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Core Values",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 6,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "We Have Delivered Over",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Market Development",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "We Have Delivered Over",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Market Development",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "At Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "We Have Delivered Over",
+      "target": "Growth",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "We Have Delivered Over",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "We Have Delivered Over",
+      "target": "Market Development",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "We Have Delivered Over",
+      "target": "At Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Strategic Partnerships",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "Market Development",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Growth",
+      "target": "At Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "Market Development",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Partnerships",
+      "target": "At Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Market Development",
+      "target": "At Ethiopian Reinsurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 8,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Shareholders",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Ethiopian National Association",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Company Is Birr",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "The Needy",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Shareholders",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Shareholders",
+      "target": "Ethiopian National Association",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Shareholders",
+      "target": "Company Is Birr",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Shareholders",
+      "target": "The Needy",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Shareholders",
+      "target": "Feeding Program",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Ethiopian National Association",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Company Is Birr",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "The Needy",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Feeding Program",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Nairobi Declaration",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian National Association",
+      "target": "Company Is Birr",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian National Association",
+      "target": "The Needy",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian National Association",
+      "target": "Feeding Program",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian National Association",
+      "target": "Nairobi Declaration",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian National Association",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company Is Birr",
+      "target": "The Needy",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company Is Birr",
+      "target": "Feeding Program",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company Is Birr",
+      "target": "Nairobi Declaration",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company Is Birr",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company Is Birr",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Needy",
+      "target": "Feeding Program",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Needy",
+      "target": "Nairobi Declaration",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Needy",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Needy",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Needy",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Feeding Program",
+      "target": "Nairobi Declaration",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Feeding Program",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Feeding Program",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Feeding Program",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Feeding Program",
+      "target": "Nairobi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi Declaration",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi Declaration",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi Declaration",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi Declaration",
+      "target": "Nairobi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi Declaration",
+      "target": "Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "2024",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Nairobi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Sustainable Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Nairobi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Sustainable Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "2024",
+      "target": "Corporate Social Responsibility",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Nairobi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Sustainable Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Corporate Social Responsibility",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi",
+      "target": "Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi",
+      "target": "Sustainable Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi",
+      "target": "Corporate Social Responsibility",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Nairobi",
+      "target": "Children Shareholdings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company",
+      "target": "Sustainable Insurance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company",
+      "target": "Corporate Social Responsibility",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company",
+      "target": "Children Shareholdings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Company",
+      "target": "Board Size",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Sustainable Insurance",
+      "target": "Corporate Social Responsibility",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Sustainable Insurance",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Sustainable Insurance",
+      "target": "Children Shareholdings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Sustainable Insurance",
+      "target": "Board Size",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Sustainable Insurance",
+      "target": "The Board",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Social Responsibility",
+      "target": "Ethio Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Social Responsibility",
+      "target": "Children Shareholdings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Social Responsibility",
+      "target": "Board Size",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Social Responsibility",
+      "target": "The Board",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Corporate Social Responsibility",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Children Shareholdings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Board Size",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "The Board",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Re",
+      "target": "Share Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Children Shareholdings",
+      "target": "Board Size",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Children Shareholdings",
+      "target": "The Board",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Children Shareholdings",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Children Shareholdings",
+      "target": "Share Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Children Shareholdings",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Board Size",
+      "target": "The Board",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Board Size",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Board Size",
+      "target": "Share Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Board Size",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Board Size",
+      "target": "Membership Effective Date",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Board",
+      "target": "The Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Board",
+      "target": "Share Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Board",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Board",
+      "target": "Membership Effective Date",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Company",
+      "target": "Share Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Company",
+      "target": "Membership Effective Date",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Capital",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Share Capital",
+      "target": "Membership Effective Date",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Membership Effective Date",
+      "relation": "co_occurs_on_page",
+      "page_ref": 9,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine",
+      "target": "Bond",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine",
+      "target": "$ 10 Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine",
+      "target": "Casualty",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine",
+      "target": "Birr Five Hundred Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine",
+      "target": "Treaty Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bond",
+      "target": "$ 10 Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bond",
+      "target": "Casualty",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bond",
+      "target": "Birr Five Hundred Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bond",
+      "target": "Treaty Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Bond",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "$ 10 Million",
+      "target": "Casualty",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "$ 10 Million",
+      "target": "Birr Five Hundred Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "$ 10 Million",
+      "target": "Treaty Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "$ 10 Million",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "$ 10 Million",
+      "target": "Marine Hull And Cargo",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Casualty",
+      "target": "Birr Five Hundred Million",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Casualty",
+      "target": "Treaty Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Casualty",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Casualty",
+      "target": "Marine Hull And Cargo",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Casualty",
+      "target": "Political Violence",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Birr Five Hundred Million",
+      "target": "Treaty Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Birr Five Hundred Million",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Birr Five Hundred Million",
+      "target": "Marine Hull And Cargo",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Birr Five Hundred Million",
+      "target": "Political Violence",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Birr Five Hundred Million",
+      "target": "Facultative Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Treaty Capacity",
+      "target": "Africa",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Treaty Capacity",
+      "target": "Marine Hull And Cargo",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Treaty Capacity",
+      "target": "Political Violence",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Treaty Capacity",
+      "target": "Facultative Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Treaty Capacity",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Marine Hull And Cargo",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Political Violence",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Facultative Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Africa",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Political Violence",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Facultative Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull And Cargo",
+      "target": "Fire",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence",
+      "target": "Facultative Capacity",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence",
+      "target": "Fire",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence",
+      "target": "Fire And Engineering",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Facultative Capacity",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Facultative Capacity",
+      "target": "Ethiopian Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Facultative Capacity",
+      "target": "Fire",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Facultative Capacity",
+      "target": "Fire And Engineering",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Facultative Capacity",
+      "target": "Reinsurance Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Fire",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Fire And Engineering",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Reinsurance Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2.5 Billion Equ",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Fire",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Fire And Engineering",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Reinsurance Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "2.5 Billion Equ",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopian Re",
+      "target": "Political",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire",
+      "target": "Fire And Engineering",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire",
+      "target": "Reinsurance Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire",
+      "target": "2.5 Billion Equ",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire",
+      "target": "Political",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Reinsurance Company",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "2.5 Billion Equ",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Political",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Fire And Engineering",
+      "target": "Marine Hull",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "2.5 Billion Equ",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "Political",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "Marine Hull",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Reinsurance Company",
+      "target": "Political Violence And Terrorism",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion Equ",
+      "target": "Political",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion Equ",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion Equ",
+      "target": "Marine Hull",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion Equ",
+      "target": "Political Violence And Terrorism",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "2.5 Billion Equ",
+      "target": "Aviation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political",
+      "target": "Marine Hull",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political",
+      "target": "Political Violence And Terrorism",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political",
+      "target": "Aviation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political",
+      "target": "Aviation Small Aircraft",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Marine Hull",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Political Violence And Terrorism",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Aviation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Aviation Small Aircraft",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Capital Requirement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull",
+      "target": "Political Violence And Terrorism",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull",
+      "target": "Aviation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull",
+      "target": "Aviation Small Aircraft",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull",
+      "target": "Capital Requirement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Marine Hull",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Aviation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Aviation Small Aircraft",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Capital Requirement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Political Violence And Terrorism",
+      "target": "50 Million Whi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation",
+      "target": "Aviation Small Aircraft",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation",
+      "target": "Capital Requirement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation",
+      "target": "50 Million Whi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation Small Aircraft",
+      "target": "Capital Requirement",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation Small Aircraft",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Aviation Small Aircraft",
+      "target": "50 Million Whi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital Requirement",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital Requirement",
+      "target": "50 Million Whi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "50 Million Whi",
+      "relation": "co_occurs_on_page",
+      "page_ref": 10,
+      "confidence": 0.5
+    },
+    {
+      "source": "Big Five Pillars",
+      "target": "Strategic Plan Timeline",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Big Five Pillars",
+      "target": "Financial Strength Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Big Five Pillars",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Big Five Pillars",
+      "target": "Financial Strength",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Big Five Pillars",
+      "target": "Global Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "Financial Strength Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "Financial Strength",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "Global Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Strategic Plan Timeline",
+      "target": "Long Term Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "Ethio-Re",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "Financial Strength",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "Global Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "Long Term Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength Rating",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Financial Strength",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Global Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Long Term Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio-Re",
+      "target": "2030",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength",
+      "target": "Global Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength",
+      "target": "Long Term Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength",
+      "target": "2030",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Financial Strength",
+      "target": "Long Term",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Global Credit Rating",
+      "target": "Long Term Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Global Credit Rating",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Global Credit Rating",
+      "target": "2030",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Global Credit Rating",
+      "target": "Long Term",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Long Term Rating",
+      "target": "Our Credit Rating",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Long Term Rating",
+      "target": "2030",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Long Term Rating",
+      "target": "Long Term",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Credit Rating",
+      "target": "2030",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "Our Credit Rating",
+      "target": "Long Term",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    },
+    {
+      "source": "2030",
+      "target": "Long Term",
+      "relation": "co_occurs_on_page",
+      "page_ref": 7,
+      "confidence": 0.5
+    }
+  ],
+  "cross_references": []
+}

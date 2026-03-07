@@ -1,0 +1,182 @@
+[
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      1
+    ],
+    "parent_section": null,
+    "content_preview": "Import tax expenditure report: FY 2018/19 - 2020/21",
+    "content_hash": "24c5d607163dc6201908f6313f3a2b5055ee047e9908ac77645727bc8180ea9d"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      1
+    ],
+    "parent_section": null,
+    "content_preview": "Tax Policy Directorate, Ministry of Finance, Ethiopia",
+    "content_hash": "eaaabc9d4072536cd2593c5c1c9e0d72953a608f31db5ad06b6b46d089edc6c8"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      1
+    ],
+    "parent_section": null,
+    "content_preview": "September 2022",
+    "content_hash": "d3de569b7c2f7f122fba8046d966cd109673d0c87ac58412c3d64f2b2a4c0649"
+  },
+  {
+    "chunk_type": "figure",
+    "page_refs": [
+      1
+    ],
+    "parent_section": null,
+    "content_preview": "[IMAGE] (no caption)",
+    "content_hash": "ea9150df070bf59a9220d06103351b70f4f75e0bb2fd32c390a9b6a7826881a1"
+  },
+  {
+    "chunk_type": "section",
+    "page_refs": [
+      2
+    ],
+    "parent_section": "Preface",
+    "content_preview": "Preface",
+    "content_hash": "7a931891ebbb61a7201470a43a8d9ce76bba4d3e147b44af701917422ef5e81f"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      2
+    ],
+    "parent_section": "Preface",
+    "content_preview": "This report has been prepared by the IFS Centre for Tax Analysis in Developing Countries (TaxDev) team (Daniel Prinz, Ed",
+    "content_hash": "e6e0bf9d85f2247934369267fd6e9654d55a884c129b7288e4c28a8bf5497d93"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      2
+    ],
+    "parent_section": "Preface",
+    "content_preview": "The authors would like to thank David Phillips (IFS) for useful comments and feedback. They also thank the staff of the ",
+    "content_hash": "a41c9af7e589e372b5df7cb209ee946aeb02d25ce2ef9e3cfaa0e14ba77f76fa"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      2
+    ],
+    "parent_section": "Preface",
+    "content_preview": "This report has been funded by UK aid from the UK government through a grant to TaxDev.",
+    "content_hash": "b055d044ce3c038c4c5ba0b80e710c893b09c7edca23d5ad4e3b7fdeb7f0af60"
+  },
+  {
+    "chunk_type": "figure",
+    "page_refs": [
+      2
+    ],
+    "parent_section": "Preface",
+    "content_preview": "[IMAGE] (no caption)",
+    "content_hash": "ea9150df070bf59a9220d06103351b70f4f75e0bb2fd32c390a9b6a7826881a1"
+  },
+  {
+    "chunk_type": "section",
+    "page_refs": [
+      3
+    ],
+    "parent_section": "Contents",
+    "content_preview": "Contents",
+    "content_hash": "437aea62a5bd6ad4762e494c81b88532809a231477c82bdecf6fd6636908b7ab"
+  },
+  {
+    "chunk_type": "table",
+    "page_refs": [
+      3
+    ],
+    "parent_section": "Contents",
+    "content_preview": "0 | 1 | 2\n--- | --- | ---\nExecutive summary.............................................................................",
+    "content_hash": "a4575fc9f182cdddc72f5f14a86087fbae59d5fd82f8252ff351d016564dc38b"
+  },
+  {
+    "chunk_type": "section",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "Executive summary",
+    "content_hash": "b7e884fe280c9dd20110d50d0ef5d0a4cc752065ce9a88e39ea9e19ed6bc6de0"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "Understanding, estimating and reporting on tax expenditures is an important exercise in public financial management. Tax",
+    "content_hash": "1d70bfe0523bc89ffb389b57c8dd7002ee81986323d084f2d954eab269efb4ba"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "This report uses shipment-level microdata from the Ethiopian Customs Commission to estimate import tax expenditures for ",
+    "content_hash": "0797620962bbb45c539005018fb0637c941c1836316ab2fa115c48688626a968"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "Where appropriate, exemptions and rate reductions are considered separately, and estimates are presented for different c",
+    "content_hash": "55f82482c68fba45057d5598d7f85e2d70f4bc6e175fdd48b0797ebacb94efb0"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "The report uses the revenue forgone method and does not attempt to incorporate the behavioural or compliance effects of ",
+    "content_hash": "ee53e0849b9a264740b420bd17edc5c1cf049293a19e01e8a2711aab1244f81a"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      4
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "Import tax expenditures were ETB 120.7 billion in FY 2020/21, which represented around 2.8% of GDP, between ETB 76.4 bil",
+    "content_hash": "4b99a2e634ac925815d7e700c8fe680ac7ad6fd2358903158cca846605f53433"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      5
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "import value of affected goods in FY 2020/21, 16% in FY 2019/20 and around 20% in FY 2018/19.",
+    "content_hash": "a88c5e6e03315f6883ee6e078ea83e42cb9b4fdcb0d4f26bb0809f8afa43964a"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      5
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "In FY 2020/21, import tax expenditures were especially large on motor vehicles and on animal and vegetable fats. Togethe",
+    "content_hash": "c512a9fda795ce28e8c19580b2f301428b72c6d3727cc875f2871ff3cb71d471"
+  },
+  {
+    "chunk_type": "paragraph",
+    "page_refs": [
+      5
+    ],
+    "parent_section": "Executive summary",
+    "content_preview": "Tax exemptions for capital and investment goods and 'second schedule' preferential customs and surtax rates respectively",
+    "content_hash": "cce96df44d7e1940ae13d46150e39b4397e0e8dde575a72482f543647ef0fa9f"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "document_id": "c7d87eb9189d",
+    "source_filename": "tax_expenditure_ethiopia_2021_22.pdf",
+    "strategy_used": "layout_aware",
+    "confidence_score": 1.0,
+    "cost_estimate": "medium",
+    "processing_time_s": 27.407,
+    "fallback_trigger": null,
+    "page_scope": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "failure_reason": null,
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "flagged_for_review": false,
+    "timestamp": "2026-03-07T16:44:23.038222+00:00"
+  }
+]
