@@ -51,21 +51,21 @@ class TestExtractionRouterChainSelection:
         profile = _make_profile(estimated_extraction_cost="fast_text_sufficient")
         chain = router._build_chain(profile)
         assert chain[0] == "fast_text"
-        assert len(chain) == 3
+        assert len(chain) == 4  # 4-tier: fast_text → layout → ocr → vision
 
     def test_needs_layout_starts_with_b(self) -> None:
         router = ExtractionRouter(rules_path=_RULES_PATH)
         profile = _make_profile(estimated_extraction_cost="needs_layout_model")
         chain = router._build_chain(profile)
         assert chain[0] == "layout_aware"
-        assert len(chain) == 2
+        assert len(chain) == 3  # 3-tier: layout → ocr → vision
 
     def test_needs_vision_starts_with_c(self) -> None:
         router = ExtractionRouter(rules_path=_RULES_PATH)
         profile = _make_profile(estimated_extraction_cost="needs_vision_model")
         chain = router._build_chain(profile)
-        assert chain[0] == "vision_augmented"
-        assert len(chain) == 1
+        assert chain[0] == "ocr_heavy"
+        assert len(chain) == 2  # 2-tier: ocr → vision
 
 
 class TestExtractionRouterEscalation:
@@ -102,7 +102,7 @@ class TestExtractionRouterEscalation:
         assert entries[1]["escalation_triggered"] is False
 
     def test_escalation_b_to_c_on_low_confidence(self, tmp_path: Path) -> None:
-        """When B returns low confidence, escalate to C."""
+        """When B returns low confidence, escalate to C (ocr_heavy)."""
         ledger_file = tmp_path / "ledger.jsonl"
         router = ExtractionRouter(
             rules_path=_RULES_PATH, ledger_path=ledger_file
@@ -117,7 +117,7 @@ class TestExtractionRouterEscalation:
         mock_c.confidence_score = 0.7
 
         router._strategies["layout_aware"] = mock_b
-        router._strategies["vision_augmented"] = mock_c
+        router._strategies["ocr_heavy"] = mock_c
 
         profile = _make_profile(estimated_extraction_cost="needs_layout_model")
         doc, entries = router.route_and_extract(profile, "dummy.pdf")
@@ -125,7 +125,7 @@ class TestExtractionRouterEscalation:
         assert len(entries) == 2
         assert entries[0]["strategy_used"] == "layout_aware"
         assert entries[0]["escalation_triggered"] is True
-        assert entries[1]["strategy_used"] == "vision_augmented"
+        assert entries[1]["strategy_used"] == "ocr_heavy"
 
     def test_no_escalation_when_a_is_confident(self, tmp_path: Path) -> None:
         """When A is confident, no escalation should occur."""
@@ -153,12 +153,17 @@ class TestExtractionRouterEscalation:
             rules_path=_RULES_PATH, ledger_path=ledger_file
         )
 
-        # Vision is the only option and returns very low confidence
-        mock_c = MagicMock()
-        mock_c.extract.return_value = _stub_extracted_doc()
-        mock_c.confidence_score = 0.1
+        # OCR + vision both return low confidence
+        mock_ocr = MagicMock()
+        mock_ocr.extract.return_value = _stub_extracted_doc()
+        mock_ocr.confidence_score = 0.1
 
-        router._strategies["vision_augmented"] = mock_c
+        mock_vision = MagicMock()
+        mock_vision.extract.return_value = _stub_extracted_doc()
+        mock_vision.confidence_score = 0.1
+
+        router._strategies["ocr_heavy"] = mock_ocr
+        router._strategies["vision_augmented"] = mock_vision
 
         profile = _make_profile(estimated_extraction_cost="needs_vision_model")
         doc, entries = router.route_and_extract(profile, "dummy.pdf")
@@ -190,4 +195,4 @@ class TestLedgerWriting:
         assert entry["document_id"] == "test-001"
         assert entry["strategy_used"] == "fast_text"
         assert "confidence_score" in entry
-        assert "estimated_cost" in entry
+        assert "cost_estimate" in entry

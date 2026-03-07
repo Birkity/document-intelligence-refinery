@@ -96,99 +96,143 @@ class LayoutExtractor(BaseExtractor):
         document_id: str,
         page_numbers: list[int] | None = None,
     ) -> ExtractedDocument:
-        """Full Docling pipeline with per-page normalisation."""
+        """Full Docling pipeline using the iterate_items() API (Docling 2.x).
+
+        When *page_numbers* is provided, each page is converted individually
+        to avoid std::bad_alloc on large documents.  The single-page approach
+        also keeps memory usage proportional to the number of requested pages
+        rather than the full document size.
+        """
         from docling.document_converter import DocumentConverter
 
         converter = DocumentConverter()
-        result = converter.convert(pdf_path)
-        doc_res = result.document
 
+        # Build a list of (page_range, result) pairs.
+        # One call per requested page avoids loading the full document into
+        # memory at once, which causes std::bad_alloc on large PDFs.
+        page_content: dict[int, dict[str, list]] = {}
+
+        if page_numbers:
+            for pnum in page_numbers:
+                try:
+                    res = converter.convert(pdf_path, page_range=(pnum, pnum))
+                    self._collect_docling_items(
+                        res.document, page_content,
+                        remap_page={1: pnum},   # Docling renumbers to 1 for single-page
+                    )
+                except Exception as exc:
+                    log.debug("Docling skipped page %d: %s", pnum, exc)
+        else:
+            res = converter.convert(pdf_path)
+            self._collect_docling_items(res.document, page_content, remap_page=None)
+
+        return self._build_extracted_document(document_id, pdf_path, page_content, page_numbers)
+
+    # ------------------------------------------------------------------
+
+    def _collect_docling_items(
+        self,
+        doc: Any,
+        page_content: dict[int, dict[str, list]],
+        remap_page: dict[int, int] | None,
+    ) -> None:
+        """Walk ``doc.iterate_items()`` and accumulate results into *page_content*."""
+        try:
+            items_iter = doc.iterate_items()
+        except AttributeError:
+            return
+
+        for item, _level in items_iter:
+            prov_list = getattr(item, "prov", None) or []
+            if not prov_list:
+                continue
+            prov = prov_list[0]
+            raw_pnum = int(getattr(prov, "page_no", 1))
+            pnum = remap_page.get(raw_pnum, raw_pnum) if remap_page else raw_pnum
+
+            if pnum not in page_content:
+                page_content[pnum] = {"text_blocks": [], "tables": [], "figures": []}
+
+            bbox_raw = getattr(prov, "bbox", None)
+            if bbox_raw is not None:
+                bb = BoundingBox(
+                    x1=float(getattr(bbox_raw, "l", 0)),
+                    y1=float(getattr(bbox_raw, "t", 0)),
+                    x2=float(getattr(bbox_raw, "r", 612)),
+                    y2=float(getattr(bbox_raw, "b", 792)),
+                    page_number=pnum,
+                )
+            else:
+                bb = BoundingBox(x1=0, y1=0, x2=612, y2=792, page_number=pnum)
+
+            item_cls = type(item).__name__
+
+            if item_cls == "TableItem":
+                try:
+                    df = item.export_to_dataframe()
+                    headers = [str(c) for c in df.columns]
+                    rows = [[str(v) for v in row] for row in df.values]
+                except Exception:
+                    md_tbl = getattr(item, "export_to_markdown", lambda: "")() or ""
+                    headers = [""]
+                    rows = [[md_tbl]] if md_tbl.strip() else []
+                page_content[pnum]["tables"].append(
+                    TableObject(headers=headers, rows=rows, bbox=bb)
+                )
+            elif item_cls == "PictureItem":
+                captions = getattr(item, "captions", []) or []
+                caption = captions[0].text if captions and hasattr(captions[0], "text") else ""
+                page_content[pnum]["figures"].append(
+                    FigureObject(caption=caption, bbox=bb, figure_type="image")
+                )
+            else:
+                text = getattr(item, "text", "") or ""
+                if text.strip():
+                    page_content[pnum]["text_blocks"].append(
+                        TextBlock(content=text.strip(), bbox=bb)
+                    )
+
+    def _build_extracted_document(
+        self,
+        document_id: str,
+        pdf_path: str,
+        page_content: dict[int, dict[str, list]],
+        page_numbers: list[int] | None,
+    ) -> ExtractedDocument:
+        """Convert the accumulated *page_content* dict into an ExtractedDocument."""
         pages_out: list[ExtractedPage] = []
         total_pages_with_text = 0
         total_tables = 0
         tables_with_rows = 0
 
-        # Docling exposes items by iterating the document
-        # Build a page → content mapping
-        page_texts: dict[int, list[str]] = {}
-        page_tables: dict[int, list[TableObject]] = {}
-        page_figures: dict[int, list[FigureObject]] = {}
+        target_pages = (
+            [p for p in page_numbers if p in page_content]
+            if page_numbers
+            else sorted(page_content.keys())
+        )
 
-        # Extract text via markdown export (Docling 2.x API)
-        md_text = ""
-        if hasattr(doc_res, "export_to_markdown"):
-            md_text = doc_res.export_to_markdown()
+        for pnum in target_pages:
+            c = page_content[pnum]
+            if c["text_blocks"] or c["tables"]:
+                total_pages_with_text += 1
+            for t in c["tables"]:
+                total_tables += 1
+                if t.rows:
+                    tables_with_rows += 1
+            pages_out.append(ExtractedPage(
+                page_number=pnum,
+                text_blocks=c["text_blocks"],
+                tables=c["tables"],
+                figures=c["figures"],
+            ))
 
-        # Try structured access if available
-        if hasattr(doc_res, "pages") and doc_res.pages:
-            for page_obj in doc_res.pages:
-                pnum = getattr(page_obj, "page_no", 0) + 1  # 0-indexed → 1-indexed
-                if page_numbers and pnum not in page_numbers:
-                    continue
+        if not pages_out:
+            return ExtractedDocument(
+                document_id=document_id,
+                source_filename=Path(pdf_path).name,
+                pages=[],
+            )
 
-                pw = getattr(page_obj, "width", 612)
-                ph = getattr(page_obj, "height", 792)
-
-                text_blocks: list[TextBlock] = []
-                tables: list[TableObject] = []
-                figures: list[FigureObject] = []
-
-                # Iterate page items
-                for item in getattr(page_obj, "items", []):
-                    item_type = getattr(item, "type", "text")
-                    bbox_raw = getattr(item, "bbox", None)
-                    bb = BoundingBox(
-                        x1=bbox_raw[0] if bbox_raw else 0,
-                        y1=bbox_raw[1] if bbox_raw else 0,
-                        x2=bbox_raw[2] if bbox_raw else pw,
-                        y2=bbox_raw[3] if bbox_raw else ph,
-                        page_number=pnum,
-                    )
-
-                    if item_type == "table":
-                        tbl_data = getattr(item, "data", {})
-                        headers = tbl_data.get("headers", [])
-                        rows = tbl_data.get("rows", [])
-                        total_tables += 1
-                        if len(rows) >= 1:
-                            tables_with_rows += 1
-                        tables.append(TableObject(
-                            headers=headers if headers else [""],
-                            rows=rows if rows else [],
-                            bbox=bb,
-                        ))
-                    elif item_type in ("figure", "image"):
-                        caption = getattr(item, "caption", "") or ""
-                        figures.append(FigureObject(
-                            caption=caption, bbox=bb, figure_type="image",
-                        ))
-                    else:
-                        content = getattr(item, "text", "") or ""
-                        if content.strip():
-                            text_blocks.append(TextBlock(content=content, bbox=bb))
-
-                if text_blocks or tables or figures:
-                    total_pages_with_text += 1
-
-                pages_out.append(ExtractedPage(
-                    page_number=pnum,
-                    text_blocks=text_blocks,
-                    tables=tables,
-                    figures=figures,
-                ))
-        else:
-            # Fallback: single-page markdown dump
-            if md_text.strip():
-                total_pages_with_text = 1
-                pages_out.append(ExtractedPage(
-                    page_number=1,
-                    text_blocks=[TextBlock(
-                        content=md_text,
-                        bbox=BoundingBox(x1=0, y1=0, x2=612, y2=792, page_number=1),
-                    )],
-                ))
-
-        # Confidence scoring
         n_pages = len(pages_out) or 1
         text_coverage = total_pages_with_text / n_pages
         table_comp = (tables_with_rows / total_tables) if total_tables else 1.0

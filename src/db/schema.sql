@@ -75,12 +75,53 @@ CREATE TABLE IF NOT EXISTS fact_tables (
     unit TEXT DEFAULT '',
     page_ref INTEGER NOT NULL,
     content_hash TEXT DEFAULT '',
+    entity TEXT DEFAULT '',
+    metric TEXT DEFAULT '',
+    period TEXT DEFAULT '',
+    section TEXT DEFAULT '',
+    bbox_json TEXT DEFAULT '',
+    extraction_method TEXT DEFAULT 'regex',
+    confidence REAL DEFAULT 0.0,
     created_at TEXT NOT NULL,
     FOREIGN KEY (document_id) REFERENCES documents(document_id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_facts_document ON fact_tables(document_id);
 CREATE INDEX IF NOT EXISTS idx_facts_key ON fact_tables(key);
+CREATE INDEX IF NOT EXISTS idx_facts_entity ON fact_tables(entity);
+CREATE INDEX IF NOT EXISTS idx_facts_period ON fact_tables(period);
+
+-- ── Entity mentions ──────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS entity_mentions (
+    entity_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id TEXT NOT NULL,
+    entity_name TEXT NOT NULL,
+    entity_type TEXT NOT NULL,
+    mention_count INTEGER DEFAULT 0,
+    aliases_json TEXT DEFAULT '[]',
+    created_at TEXT NOT NULL,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_entities_document ON entity_mentions(document_id);
+CREATE INDEX IF NOT EXISTS idx_entities_name ON entity_mentions(entity_name);
+CREATE INDEX IF NOT EXISTS idx_entities_type ON entity_mentions(entity_type);
+
+-- ── Knowledge graph edges ────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS knowledge_graph_edges (
+    edge_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id TEXT NOT NULL,
+    source_node TEXT NOT NULL,
+    target_node TEXT NOT NULL,
+    relation TEXT NOT NULL,
+    page_ref INTEGER DEFAULT 0,
+    confidence REAL DEFAULT 0.0,
+    created_at TEXT NOT NULL,
+    FOREIGN KEY (document_id) REFERENCES documents(document_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_kgedges_document ON knowledge_graph_edges(document_id);
+CREATE INDEX IF NOT EXISTS idx_kgedges_source ON knowledge_graph_edges(source_node);
 
 -- ── Query logs ───────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS query_logs (

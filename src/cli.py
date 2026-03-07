@@ -84,7 +84,11 @@ def run_pipeline(
     ),
     page_strategy: str = typer.Option(
         "head_mid_tail", "--page-strategy",
-        help="Page sampling strategy: head_mid_tail, head, uniform.",
+        help="Page sampling strategy: head_mid_tail, head, uniform, random.",
+    ),
+    page_range: Optional[str] = typer.Option(
+        None, "--page-range", "-p",
+        help="Explicit pages to process. Range: '7-20'. List: '7,12,15'. Overrides --sample-pages.",
     ),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
@@ -97,11 +101,29 @@ def run_pipeline(
         typer.echo(f"Error: file not found — {pdf}", err=True)
         raise typer.Exit(1)
 
+    # Parse --page-range into explicit page list
+    explicit_pages: list[int] | None = None
+    if page_range:
+        try:
+            if "-" in page_range and "," not in page_range:
+                start_s, end_s = page_range.split("-", 1)
+                explicit_pages = list(range(int(start_s), int(end_s) + 1))
+            else:
+                explicit_pages = [int(p.strip()) for p in page_range.split(",") if p.strip()]
+        except ValueError:
+            typer.echo(
+                f"Error: invalid --page-range '{page_range}'. "
+                "Use '7-20' for a range or '7,12,15' for a list.",
+                err=True,
+            )
+            raise typer.Exit(1)
+
     orch = PipelineOrchestrator()
     result = orch.run(
         pdf,
         sample_pages=sample_pages,
         page_sample_strategy=page_strategy,
+        explicit_pages=explicit_pages,
     )
 
     typer.echo(f"\n{'='*60}")
@@ -113,7 +135,11 @@ def run_pipeline(
     typer.echo(f"  Pages        : {len(result.extracted_doc.pages)}")
     typer.echo(f"  LDUs         : {len(result.ldus)}")
     typer.echo(f"  Facts        : {len(result.facts)}")
-    typer.echo(f"  Sample pages : {result.sample_pages or 'all'}")
+    kg = result.knowledge_graph
+    if kg:
+        typer.echo(f"  KG entities  : {len(kg.entities)}")
+        typer.echo(f"  KG edges     : {len(kg.edges)}")
+    typer.echo(f"  Sample pages : {result.sample_pages or (page_range if page_range else 'all')}")
     typer.echo(f"  Time         : {result.elapsed_seconds:.2f}s")
     typer.echo(f"  Artefacts    : {result.artefact_dir}")
     typer.echo(f"{'='*60}\n")
@@ -171,40 +197,81 @@ def query_docs(
     n_results: int = typer.Option(5, "--n", help="Number of results."),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
-    """Semantic search over indexed document chunks."""
+    """Query documents using the full QueryAgent (pageindex + semantic + structured)."""
     _setup_logging(verbose)
-    from src.db.vector_store import VectorStore
 
-    vs = VectorStore()
     if doc_id:
-        results = vs.query_by_document(question, doc_id, n_results=n_results)
+        # Use the full QueryAgent with provenance
+        from src.agents.query_agent import QueryAgent
+
+        agent = QueryAgent()
+        result = agent.answer(question, document_id=doc_id)
+
+        typer.echo(f"\n{'='*60}")
+        typer.echo(f"  Question   : {question}")
+        typer.echo(f"  Document   : {doc_id}")
+        typer.echo(f"  Tools used : {', '.join(result.tools_used) or 'none'}")
+        typer.echo(f"  Confidence : {result.confidence:.2f}")
+        typer.echo(f"{'='*60}")
+        typer.echo(f"\n{result.answer}\n")
+
+        if result.provenance.citations:
+            typer.echo("--- Provenance Citations ---")
+            for c in result.provenance.citations:
+                typer.echo(f"  [{c.document_name}] page {c.page_number} (hash: {c.content_hash[:12]}...)")
     else:
+        # Fallback: simple vector search across all docs
+        from src.db.vector_store import VectorStore
+
+        vs = VectorStore()
         results = vs.query(question, n_results=n_results)
 
-    docs = results.get("documents", [[]])[0]
-    metas = results.get("metadatas", [[]])[0]
-    dists = results.get("distances", [[]])[0]
+        docs = results.get("documents", [[]])[0]
+        metas = results.get("metadatas", [[]])[0]
+        dists = results.get("distances", [[]])[0]
 
-    if not docs:
-        typer.echo("No results found.")
-        return
+        if not docs:
+            typer.echo("No results found.")
+            return
 
-    for i, (text, meta, dist) in enumerate(zip(docs, metas, dists), 1):
-        typer.echo(f"\n--- Result {i} (distance={dist:.4f}) ---")
-        typer.echo(f"  doc_id: {meta.get('document_id', '?')}")
-        typer.echo(f"  page:   {meta.get('page_number', '?')}")
-        typer.echo(f"  type:   {meta.get('chunk_type', '?')}")
-        preview = text[:200].replace("\n", " ")
-        typer.echo(f"  text:   {preview}...")
+        for i, (text, meta, dist) in enumerate(zip(docs, metas, dists), 1):
+            typer.echo(f"\n--- Result {i} (distance={dist:.4f}) ---")
+            typer.echo(f"  doc_id: {meta.get('document_id', '?')}")
+            typer.echo(f"  page:   {meta.get('page_number', '?')}")
+            typer.echo(f"  type:   {meta.get('chunk_type', '?')}")
+            preview = text[:200].replace("\n", " ")
+            typer.echo(f"  text:   {preview}...")
 
 
 @app.command("audit")
 def audit(
     doc_id: str = typer.Option(..., "--doc-id", "-d", help="Document ID to audit."),
+    claim: Optional[str] = typer.Option(None, "--claim", "-c", help="Claim to verify (audit mode)."),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
-    """Show provenance / audit trail for a document."""
+    """Show provenance / audit trail, or verify a claim against a document."""
     _setup_logging(verbose)
+
+    if claim:
+        # Audit mode: verify a claim
+        from src.agents.query_agent import QueryAgent
+
+        agent = QueryAgent()
+        result = agent.audit(claim, document_id=doc_id)
+
+        typer.echo(f"\n{'='*60}")
+        typer.echo(f"  Claim  : {result.claim}")
+        typer.echo(f"  Status : {result.status}")
+        typer.echo(f"{'='*60}")
+        if result.supporting_evidence:
+            typer.echo("\n--- Supporting Evidence ---")
+            for c in result.supporting_evidence:
+                typer.echo(f"  [{c.document_name}] page {c.page_number}")
+        else:
+            typer.echo("\nNo supporting evidence found.")
+        return
+
+    # Default: show audit trail
     from src.db.repo import RefineryRepo
 
     repo = RefineryRepo()

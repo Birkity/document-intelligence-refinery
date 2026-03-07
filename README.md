@@ -277,6 +277,20 @@ All data contracts are defined in `src/models/schemas.py`:
 | `Fact` | Key-value numerical fact (for FactTable) |
 | `QueryResult` | Agent answer with provenance + tools used |
 
+## LLM Routing
+
+| Component | LLM Backend | Notes |
+|-----------|-------------|-------|
+| Strategy D (Vision) | **OpenRouter** (`google/gemma-3-27b-it:free`) | Only for extreme OCR failures; budget-gated |
+| PageIndex summaries | **Ollama local** (`qwen3-coder:480b-cloud`) | Integrated; deterministic fallback on failure |
+| QueryAgent synthesis | **Ollama local** (`qwen3-coder:480b-cloud`) | Integrated; deterministic fallback on failure |
+| Audit reasoning | **Ollama local** (`qwen3-coder:480b-cloud`) | Integrated; skipped if Ollama unreachable |
+| FactTable extraction | **Ollama local** (`qwen3-coder:480b-cloud`) | Budget-gated (20 calls/doc); falls back silently |
+| Triage, Extraction A/B/C, Chunking | None | Fully deterministic |
+
+All Ollama calls use the OpenAI-compatible endpoint at `http://localhost:11434/v1`.
+Ensure `ollama run qwen3-coder:480b-cloud` is running before executing the pipeline.
+
 ## Configuration
 
 All thresholds are externalized in `rubric/extraction_rules.yaml`:
@@ -322,11 +336,24 @@ The `ChunkValidator` checks every emitted LDU for: non-empty content, token limi
 
 The `PageIndexBuilder` creates a hierarchical navigation tree from `List[LDU]` — the equivalent of a "smart table of contents" that an LLM can traverse to locate sections without embedding-searching the full corpus.
 
-**Features:**
+**`build()` executes four explicit phases:**
+
+```
+extract sections         (_group_by_section)
+      ↓
+build PageIndex tree     (_build_node × N  — deterministic summaries)
+      ↓
+LLM enriches summaries   (_enrich_summaries_llm  — local Ollama)
+      ↓
+store in PageIndex JSON  (save_json / persist_to_db)
+```
+
+Both summary types always run: the deterministic first-N-sentences summary is generated in Phase 2 as a guaranteed fallback. Phase 3 then walks every node and replaces it with an Ollama-generated summary where the call succeeds.
+
+**Other features:**
 - Groups LDUs by `parent_section`, preserving document order
 - Computes page ranges (`page_start` / `page_end`) from content LDU page refs
 - Detects data-type signals per section: `tables`, `figures`, `lists`, `numeric_dense`
-- Generates deterministic 2-3 sentence summaries from first paragraph text (LLM hook ready)
 - Extracts lightweight key entities via capitalised multi-word patterns
 - **Query API**: `builder.query(pi, topic="revenue growth", top_n=3)` returns top-N matching sections via bag-of-words scoring
 - **Persistence**: JSON to `.refinery/pageindex/` + SQLite `page_indexes` table (upsert)
@@ -352,11 +379,12 @@ The `QueryAgent` is a LangGraph agent with three tools and full provenance track
 
 ### FactTable Extractor
 
-Extracts structured key-value numerical facts from LDUs using regex patterns:
-- `Key: $4.2B` — colon-separated currency/percentage values
-- `Key | 4,200 | 3,800` — pipe-delimited table rows
+Hybrid fact extraction pipeline using three methods in order:
+1. **Regex** — colon-separated, pipe-table, and whitespace-separated key-value patterns
+2. **Table parse** — column-aware parsing of pipe-separated table LDUs
+3. **LLM-assisted via local Ollama** — budget-gated (max 20 calls/doc), always enabled; falls back silently if Ollama is down
 
-Facts are persisted to the `fact_tables` SQLite table for `structured_query` access.
+Facts are persisted to the `fact_tables` SQLite table with enriched fields: entity, metric, period, confidence, extraction_method.
 
 ### Audit Mode
 

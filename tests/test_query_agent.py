@@ -20,6 +20,7 @@ from src.agents.pageindex import PageIndexBuilder
 from src.agents.query_agent import QueryAgent
 from src.db.init_db import initialize_database
 from src.models.schemas import (
+    AuditResult,
     BoundingBox,
     LDU,
     PageIndex,
@@ -253,28 +254,28 @@ class TestAuditMode:
 
     def test_verifiable_claim(self, tmp_path: Path) -> None:
         agent, doc_id = _build_test_corpus(tmp_path)
-        chain = agent.audit(
+        result = agent.audit(
             claim="The company reported Total Revenue of $4.2B for FY2024.",
             document_id=doc_id,
         )
-        assert isinstance(chain, ProvenanceChain)
-        assert chain.verified is True
-        assert len(chain.citations) >= 1
+        assert isinstance(result, AuditResult)
+        assert result.status == "verified"
+        assert len(result.supporting_evidence) >= 1
 
     def test_unverifiable_claim(self, tmp_path: Path) -> None:
         agent, doc_id = _build_test_corpus(tmp_path)
-        chain = agent.audit(
+        result = agent.audit(
             claim="The company opened a new branch on Mars in 2025.",
             document_id=doc_id,
         )
-        assert isinstance(chain, ProvenanceChain)
-        assert chain.verified is False
+        assert isinstance(result, AuditResult)
+        assert result.status in ("not_found", "unverifiable")
 
-    def test_audit_chain_contains_claim(self, tmp_path: Path) -> None:
+    def test_audit_result_contains_claim(self, tmp_path: Path) -> None:
         agent, doc_id = _build_test_corpus(tmp_path)
         claim = "Net Income was $1.1B."
-        chain = agent.audit(claim=claim, document_id=doc_id)
-        assert chain.query == claim
+        result = agent.audit(claim=claim, document_id=doc_id)
+        assert result.claim == claim
 
 
 # ── LangGraph Agent Graph ───────────────────────────────────────────────

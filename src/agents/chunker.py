@@ -12,7 +12,12 @@ Five enforceable chunking rules (the "Constitution"):
     4. Section headers are stored as ``parent_section`` metadata on all
        child chunks within that section.
     5. Cross-references (e.g. "see Table 3") are detected and preserved
-       in chunk content for downstream relationship resolution.
+       in chunk metadata for downstream relationship resolution.
+
+Additional features:
+    - Table subgroup splitting (by year, region, category, repeated headers)
+    - Cross-reference detection and storage in chunk metadata
+    - Table-text linking (resolve "see Table 2" references)
 """
 
 from __future__ import annotations
@@ -26,6 +31,7 @@ import yaml
 
 from src.models.schemas import (
     BoundingBox,
+    CrossReference,
     ExtractedDocument,
     ExtractedPage,
     FigureObject,
@@ -45,45 +51,43 @@ _DEFAULT_RULES = (
 # Heuristics for content-type detection
 # ---------------------------------------------------------------------------
 
-# Patterns that indicate a numbered or bullet list
 _LIST_PATTERNS: list[re.Pattern[str]] = [
-    re.compile(r"^(\d+)\.\s", re.MULTILINE),      # "1. item"
-    re.compile(r"^[-•●◦▪]\s", re.MULTILINE),      # "• item", "- item"
-    re.compile(r"^[a-z]\)\s", re.MULTILINE),       # "a) item"
-    re.compile(r"^[ivxlcdm]+\)\s", re.MULTILINE),  # "i) item", "iv) item"
+    re.compile(r"^(\d+)\.\s", re.MULTILINE),
+    re.compile(r"^[-•●◦▪]\s", re.MULTILINE),
+    re.compile(r"^[a-z]\)\s", re.MULTILINE),
+    re.compile(r"^[ivxlcdm]+\)\s", re.MULTILINE),
 ]
 
-# A section header is typically a short line (≤ 10 words) that is either
-# ALL-CAPS, Title Case with no trailing period, or starts with a digit +
-# period  (e.g. "3.1 Revenue Analysis").
 _HEADER_RE = re.compile(
     r"^(?:"
-    r"(?:[A-Z][A-Z\s\d.&:–—-]{2,80})"   # ALL CAPS line
+    r"(?:[A-Z][A-Z\s\d.&:–—-]{2,80})"
     r"|"
-    r"(?:\d+(?:\.\d+)*\s+[A-Z].{0,80})"  # "3.1 Revenue …"
+    r"(?:\d+(?:\.\d+)*\s+[A-Z].{0,80})"
     r"|"
-    r"(?:[A-Z][a-zA-Z\s&:–—-]{2,60})"    # Title Case (no trailing period)
+    r"(?:[A-Z][a-zA-Z\s&:–—-]{2,60})"
     r")$"
 )
 
-# Cross-reference patterns (detect, do not resolve)
+# Cross-reference patterns
 _XREF_RE = re.compile(
-    r"(?:see|refer\s+to|as\s+shown\s+in|in)\s+"
-    r"(?:Table|Figure|Fig\.|Section|Appendix|Chart)\s*\d+",
+    r"(?:see|refer\s+to|as\s+shown\s+in|in|per)\s+"
+    r"(?:Table|Figure|Fig\.|Section|Appendix|Chart|Note)\s*\d+(?:\.\d+)*",
     re.IGNORECASE,
 )
 
+# Table/Figure identifier patterns
+_TABLE_ID_RE = re.compile(r"Table\s+(\d+(?:\.\d+)*)", re.IGNORECASE)
+_FIGURE_ID_RE = re.compile(r"(?:Figure|Fig\.?)\s+(\d+(?:\.\d+)*)", re.IGNORECASE)
 
-# ---------------------------------------------------------------------------
-# Token estimation
-# ---------------------------------------------------------------------------
+# Year pattern for table subgroup detection
+_YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+
+# Repeated header detection in table rows
+_CATEGORY_HEADER_RE = re.compile(r"^[A-Z][A-Za-z\s]{2,40}$")
+
 
 def _estimate_tokens(text: str) -> int:
-    """Rough token count — split on whitespace.
-
-    A proper tokeniser (tiktoken / sentencepiece) can be swapped in
-    without changing the interface.
-    """
+    """Rough token count — split on whitespace."""
     return len(text.split())
 
 
@@ -108,20 +112,105 @@ def _is_section_header(text: str) -> bool:
     return bool(_HEADER_RE.match(stripped))
 
 
-# ---------------------------------------------------------------------------
-# ChunkingEngine
-# ---------------------------------------------------------------------------
+def _detect_cross_references(text: str, page: int) -> list[CrossReference]:
+    """Detect cross-references in text and return structured objects."""
+    refs: list[CrossReference] = []
+    for match in _XREF_RE.finditer(text):
+        ref_text = match.group(0)
+
+        # Determine target type
+        ref_lower = ref_text.lower()
+        if "table" in ref_lower:
+            target_type = "table"
+        elif "fig" in ref_lower:
+            target_type = "figure"
+        elif "section" in ref_lower:
+            target_type = "section"
+        elif "appendix" in ref_lower:
+            target_type = "appendix"
+        elif "note" in ref_lower:
+            target_type = "note"
+        elif "chart" in ref_lower:
+            target_type = "chart"
+        else:
+            target_type = "unknown"
+
+        # Extract target label
+        label_match = re.search(
+            r"(Table|Figure|Fig\.?|Section|Appendix|Chart|Note)\s*(\d+(?:\.\d+)*)",
+            ref_text, re.IGNORECASE
+        )
+        if label_match:
+            target_label = f"{label_match.group(1)} {label_match.group(2)}"
+        else:
+            target_label = ref_text
+
+        refs.append(CrossReference(
+            source_page=page,
+            source_text=ref_text,
+            target_type=target_type,
+            target_label=target_label,
+        ))
+    return refs
+
+
+def _split_table_into_subgroups(
+    table: TableObject,
+) -> list[tuple[str, list[list[str]]]]:
+    """Split a table into logical subgroups if meaningful patterns detected.
+
+    Returns list of (subgroup_label, rows) tuples.
+    If no meaningful split is found, returns a single group with all rows.
+    """
+    if len(table.rows) < 4:
+        return [("", table.rows)]
+
+    # Strategy 1: Look for year-based groupings in headers
+    year_cols = []
+    for i, h in enumerate(table.headers):
+        if _YEAR_RE.search(h):
+            year_cols.append(i)
+
+    # Strategy 2: Look for repeated category headers in first column
+    # (rows where all but first cell are empty → subgroup header)
+    subgroups: list[tuple[str, list[list[str]]]] = []
+    current_label = ""
+    current_rows: list[list[str]] = []
+
+    for row in table.rows:
+        # Check if this row is a subgroup header
+        first_cell = row[0].strip() if row else ""
+        other_cells = [c.strip() for c in row[1:]] if len(row) > 1 else []
+        is_subheader = (
+            first_cell
+            and _CATEGORY_HEADER_RE.match(first_cell)
+            and all(not c or c == "-" or c == "—" for c in other_cells)
+        )
+
+        if is_subheader and current_rows:
+            subgroups.append((current_label, current_rows))
+            current_label = first_cell
+            current_rows = []
+        elif is_subheader:
+            current_label = first_cell
+        else:
+            current_rows.append(row)
+
+    if current_rows:
+        subgroups.append((current_label, current_rows))
+
+    # Only use subgroups if we found meaningful splits (at least 2)
+    if len(subgroups) >= 2:
+        return subgroups
+
+    return [("", table.rows)]
 
 
 class ChunkingEngine:
     """Accepts an ``ExtractedDocument`` and emits ``list[LDU]``.
 
     All five chunking-constitution rules are enforced during emission.
-
-    Parameters
-    ----------
-    rules_path : str | Path | None
-        Path to ``extraction_rules.yaml``.  Reads ``chunking`` section.
+    Enhanced with cross-reference detection and table subgroup splitting.
     """
 
     def __init__(self, rules_path: str | Path | None = None) -> None:
@@ -134,23 +223,21 @@ class ChunkingEngine:
         self._min_tokens: int = chunk_cfg.get("min_tokens_per_chunk", 50)
         self._overlap: int = chunk_cfg.get("overlap_tokens", 64)
 
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
-
     def chunk_document(self, doc: ExtractedDocument) -> list[LDU]:
         """Transform *doc* into a flat list of LDUs.
 
         Processing order per page:
         1. Text blocks → paragraphs / lists / section headers
-        2. Tables → table LDUs
+        2. Tables → table LDUs (with subgroup splitting)
         3. Figures → figure LDUs
 
-        Section header tracking is maintained across pages for
-        ``parent_section`` propagation (rule #4).
+        Section header tracking is maintained across pages.
+        Cross-references are detected and stored in chunk metadata.
         """
         ldus: list[LDU] = []
         current_section: str | None = None
+        table_counter = 0
+        figure_counter = 0
 
         for page in doc.pages:
             page_num = page.page_number
@@ -185,16 +272,20 @@ class ChunkingEngine:
                     text, page_num, tb.bbox, current_section,
                 ))
 
-            # ── Tables (rule #1) ─────────────────────────────────────
+            # ── Tables (rule #1, with subgroup splitting) ────────────
             for tbl in page.tables:
-                ldus.append(self._chunk_table(
-                    tbl, page_num, current_section,
+                table_counter += 1
+                table_id = tbl.table_id or f"Table_{table_counter}"
+                ldus.extend(self._chunk_table(
+                    tbl, page_num, current_section, table_id,
                 ))
 
             # ── Figures (rule #2) ─────────────────────────────────────
             for fig in page.figures:
+                figure_counter += 1
+                figure_id = fig.figure_id or f"Figure_{figure_counter}"
                 ldus.append(self._chunk_figure(
-                    fig, page_num, current_section,
+                    fig, page_num, current_section, figure_id,
                 ))
 
         return ldus
@@ -211,6 +302,8 @@ class ChunkingEngine:
         section: str | None,
     ) -> list[LDU]:
         """Split text into paragraph LDUs respecting token limits."""
+        xrefs = _detect_cross_references(text, page)
+
         tokens = text.split()
         if len(tokens) <= self._max_tokens:
             return [self._make_ldu(
@@ -219,24 +312,26 @@ class ChunkingEngine:
                 page_refs=[page],
                 bbox=bbox,
                 parent_section=section,
+                cross_references=xrefs,
             )]
 
-        # Split into overlapping windows
         chunks: list[LDU] = []
         start = 0
         while start < len(tokens):
             end = min(start + self._max_tokens, len(tokens))
             chunk_text = " ".join(tokens[start:end])
+            chunk_xrefs = _detect_cross_references(chunk_text, page)
             chunks.append(self._make_ldu(
                 content=chunk_text,
                 chunk_type="paragraph",
                 page_refs=[page],
                 bbox=bbox,
                 parent_section=section,
+                cross_references=chunk_xrefs,
             ))
             if end >= len(tokens):
                 break
-            start = end - self._overlap  # overlap for context continuity
+            start = end - self._overlap
 
         return chunks
 
@@ -247,11 +342,9 @@ class ChunkingEngine:
         bbox: BoundingBox,
         section: str | None,
     ) -> list[LDU]:
-        """Rule #3 — keep list as a single LDU unless > max_tokens.
+        """Rule #3 — keep list as a single LDU unless > max_tokens."""
+        xrefs = _detect_cross_references(text, page)
 
-        When splitting is needed, splits at list-item boundaries
-        (never in the middle of an item).
-        """
         if _estimate_tokens(text) <= self._max_tokens:
             return [self._make_ldu(
                 content=text,
@@ -259,9 +352,9 @@ class ChunkingEngine:
                 page_refs=[page],
                 bbox=bbox,
                 parent_section=section,
+                cross_references=xrefs,
             )]
 
-        # Split at list-item boundaries
         items = re.split(r"(?=^\d+\.\s|^[-•●◦▪]\s|^[a-z]\)\s)", text, flags=re.MULTILINE)
         items = [it for it in items if it.strip()]
 
@@ -279,6 +372,7 @@ class ChunkingEngine:
                     page_refs=[page],
                     bbox=bbox,
                     parent_section=section,
+                    cross_references=_detect_cross_references(chunk_text, page),
                 ))
                 current_items = []
                 current_tokens = 0
@@ -293,6 +387,7 @@ class ChunkingEngine:
                 page_refs=[page],
                 bbox=bbox,
                 parent_section=section,
+                cross_references=_detect_cross_references(chunk_text, page),
             ))
 
         return chunks
@@ -302,29 +397,72 @@ class ChunkingEngine:
         table: TableObject,
         page: int,
         section: str | None,
-    ) -> LDU:
-        """Rule #1 — table is ALWAYS a single LDU. Never split rows from headers."""
-        # Serialise table to Markdown-style text for RAG retrieval
-        header_line = " | ".join(table.headers)
-        separator = " | ".join("---" for _ in table.headers)
-        rows_text = "\n".join(
-            " | ".join(cell for cell in row) for row in table.rows
-        )
-        content = f"{header_line}\n{separator}\n{rows_text}"
+        table_id: str = "",
+    ) -> list[LDU]:
+        """Rule #1 — table cells never split from headers.
 
-        return self._make_ldu(
-            content=content,
-            chunk_type="table",
-            page_refs=[page],
-            bbox=table.bbox,
-            parent_section=section,
+        Enhanced: splits tables into logical subgroups when meaningful
+        patterns are detected (year, region, category, repeated headers).
+        Each subgroup becomes its own LDU linked to the parent table.
+        """
+        subgroups = _split_table_into_subgroups(table)
+
+        if len(subgroups) <= 1:
+            # Single table LDU
+            content = self._serialize_table(table.headers, table.rows, table.caption)
+            xrefs = _detect_cross_references(content, page)
+            return [self._make_ldu(
+                content=content,
+                chunk_type="table",
+                page_refs=[page],
+                bbox=table.bbox,
+                parent_section=section,
+                cross_references=xrefs,
+                table_id=table_id,
+            )]
+
+        # Multiple subgroups
+        ldus: list[LDU] = []
+        for label, rows in subgroups:
+            content = self._serialize_table(table.headers, rows, table.caption)
+            if label:
+                content = f"[Subgroup: {label}]\n{content}"
+
+            ldus.append(self._make_ldu(
+                content=content,
+                chunk_type="table",
+                page_refs=[page],
+                bbox=table.bbox,
+                parent_section=section,
+                table_id=table_id,
+                subgroup_label=label,
+                parent_table_id=table_id,
+            ))
+
+        return ldus
+
+    @staticmethod
+    def _serialize_table(
+        headers: list[str], rows: list[list[str]], caption: str = ""
+    ) -> str:
+        """Serialize table to Markdown format for RAG retrieval."""
+        parts: list[str] = []
+        if caption:
+            parts.append(f"Caption: {caption}")
+        header_line = " | ".join(headers)
+        separator = " | ".join("---" for _ in headers)
+        rows_text = "\n".join(
+            " | ".join(cell for cell in row) for row in rows
         )
+        parts.append(f"{header_line}\n{separator}\n{rows_text}")
+        return "\n".join(parts)
 
     def _chunk_figure(
         self,
         figure: FigureObject,
         page: int,
         section: str | None,
+        figure_id: str = "",
     ) -> LDU:
         """Rule #2 — figure caption is stored as part of the figure LDU."""
         parts = [f"[{figure.figure_type.upper()}]"]
@@ -340,6 +478,7 @@ class ChunkingEngine:
             page_refs=[page],
             bbox=figure.bbox,
             parent_section=section,
+            figure_id=figure_id,
         )
 
     # ------------------------------------------------------------------
@@ -353,6 +492,11 @@ class ChunkingEngine:
         page_refs: list[int],
         bbox: BoundingBox | None = None,
         parent_section: str | None = None,
+        cross_references: list[CrossReference] | None = None,
+        table_id: str = "",
+        figure_id: str = "",
+        subgroup_label: str = "",
+        parent_table_id: str = "",
     ) -> LDU:
         """Construct an LDU with computed token count and content hash."""
         return LDU(
@@ -363,6 +507,11 @@ class ChunkingEngine:
             parent_section=parent_section,
             token_count=_estimate_tokens(content),
             content_hash=generate_content_hash(content),
+            cross_references=cross_references or [],
+            table_id=table_id,
+            figure_id=figure_id,
+            subgroup_label=subgroup_label,
+            parent_table_id=parent_table_id,
         )
 
 

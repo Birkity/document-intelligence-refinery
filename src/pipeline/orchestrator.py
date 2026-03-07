@@ -1,12 +1,13 @@
 """PipelineOrchestrator — run the full refinery on a single PDF.
 
 Stages executed in order:
-  1  Triage     → DocumentProfile
-  2  Extract    → ExtractedDocument  (strategy A/B/C with escalation)
-  3  Chunk      → list[LDU]          (semantic chunking)
-  4  PageIndex  → PageIndex tree     (+ JSON artefact)
-  5a FactTable  → list[Fact]         (structured key-value extraction)
-  5b Index      → SQLite + ChromaDB  (persistence & vector embeddings)
+  1  Triage       → DocumentProfile
+  2  Extract      → ExtractedDocument  (strategy A/B/C/D with escalation)
+  3  Chunk        → list[LDU]          (semantic chunking + cross-refs)
+  4  PageIndex    → PageIndex tree     (+ JSON artefact)
+  5a FactTable    → list[Fact]         (hybrid regex / table_parse / LLM)
+  5b EntityLink   → DocumentKnowledgeGraph (entity extraction + KG)
+  5c Index        → SQLite + ChromaDB  (persistence & vector embeddings)
 
 The ``sample_pages`` parameter enables a lightweight demo mode that
 processes only N pages (head / mid / tail) while preserving real page
@@ -29,6 +30,7 @@ from typing import Any
 import pdfplumber
 
 from src.agents.chunker import ChunkingEngine
+from src.agents.entity_linker import EntityLinker
 from src.agents.extractor import ExtractionRouter
 from src.agents.fact_table import FactTableExtractor
 from src.agents.pageindex import PageIndexBuilder
@@ -36,6 +38,7 @@ from src.agents.triage import TriageAgent
 from src.db.repo import RefineryRepo
 from src.db.vector_store import VectorStore
 from src.models.schemas import (
+    DocumentKnowledgeGraph,
     DocumentProfile,
     ExtractedDocument,
     Fact,
@@ -64,12 +67,16 @@ def select_sample_pages(
     Strategies
     ----------
     head_mid_tail
-        First page, middle page, last page (default).
+        Pages distributed across the head, middle, and tail thirds.
     head
         First *n* pages.
     uniform
         Evenly spaced pages across the document.
+    random
+        *n* pages chosen at random (without replacement).
     """
+    import random as _random
+
     if total_pages <= n:
         return list(range(1, total_pages + 1))
 
@@ -77,16 +84,34 @@ def select_sample_pages(
         return list(range(1, min(n, total_pages) + 1))
 
     if strategy == "uniform":
-        step = max(1, total_pages // n)
-        return [1 + i * step for i in range(n)]
+        # linspace-style: spread n points across [1, total_pages]
+        if n == 1:
+            return [1]
+        step = (total_pages - 1) / (n - 1)
+        return sorted({round(1 + i * step) for i in range(n)})[:n]
 
-    # Default: head_mid_tail
-    mid = (total_pages + 1) // 2
-    pages = sorted({1, mid, total_pages})
-    while len(pages) < n and pages[-1] < total_pages:
-        pages.append(pages[-1] + 1)
-        pages = sorted(set(pages))
-    return pages[:n]
+    if strategy == "random":
+        return sorted(_random.sample(range(1, total_pages + 1), n))
+
+    # Default: head_mid_tail — divide doc into thirds and sample evenly within each
+    third = total_pages // 3
+    head_pages = list(range(1, third + 1))
+    mid_pages = list(range(third + 1, 2 * third + 1))
+    tail_pages = list(range(2 * third + 1, total_pages + 1))
+
+    n_head = max(1, n // 3)
+    n_tail = max(1, n // 3)
+    n_mid = n - n_head - n_tail
+
+    def _sample(pool: list[int], k: int) -> list[int]:
+        if not pool:
+            return []
+        k = min(k, len(pool))
+        step = max(1, len(pool) // k)
+        return [pool[min(i * step, len(pool) - 1)] for i in range(k)]
+
+    pages = _sample(head_pages, n_head) + _sample(mid_pages, n_mid) + _sample(tail_pages, n_tail)
+    return sorted(set(pages))[:n]
 
 
 # ---------------------------------------------------------------------------
@@ -105,6 +130,7 @@ class PipelineResult:
     ldus: list[LDU]
     page_index: PageIndex
     facts: list[Fact]
+    knowledge_graph: DocumentKnowledgeGraph | None
     ledger_entries: list[dict]
     sample_pages: list[int] | None
     elapsed_seconds: float = 0.0
@@ -140,7 +166,8 @@ class PipelineOrchestrator:
         self._router = ExtractionRouter(rules_path=rp)
         self._chunker = ChunkingEngine(rules_path=rp)
         self._indexer = PageIndexBuilder()
-        self._fact_extractor = FactTableExtractor()
+        self._fact_extractor = FactTableExtractor.from_config()
+        self._entity_linker = EntityLinker()
         self._repo = RefineryRepo(db_path=db_path)
         self._vector_store = VectorStore(persist_dir=chroma_dir)
 
@@ -154,15 +181,19 @@ class PipelineOrchestrator:
         *,
         sample_pages: int | None = None,
         page_sample_strategy: str = "head_mid_tail",
+        explicit_pages: list[int] | None = None,
     ) -> PipelineResult:
         """Execute the full pipeline on *pdf_path*.
 
         Parameters
         ----------
         sample_pages : int | None
-            If set, only process this many sample pages for a fast demo.
+            If set, pick N pages using *page_sample_strategy*.
         page_sample_strategy : str
-            One of ``head_mid_tail``, ``head``, ``uniform``.
+            One of ``head_mid_tail``, ``head``, ``uniform``, ``random``.
+        explicit_pages : list[int] | None
+            Exact 1-indexed page numbers to process.  Takes precedence over
+            *sample_pages* when provided.
 
         Returns
         -------
@@ -187,7 +218,11 @@ class PipelineOrchestrator:
         with pdfplumber.open(str(pdf)) as _p:
             total_pages = len(_p.pages)
 
-        if sample_pages is not None:
+        if explicit_pages is not None:
+            # Clamp to valid range
+            page_nums = sorted({p for p in explicit_pages if 1 <= p <= total_pages})
+            log.info("[%s] Explicit pages → %s of %d", doc_id[:8], page_nums, total_pages)
+        elif sample_pages is not None:
             page_nums = select_sample_pages(
                 total_pages, n=sample_pages, strategy=page_sample_strategy
             )
@@ -210,20 +245,42 @@ class PipelineOrchestrator:
             source_filename=pdf.name,
             document_id=doc_id,
         )
+        # Persist PageIndex JSON to .refinery/pageindex/
+        self._indexer.save_json(page_index)
         log.info("[%s] PageIndex → %d root nodes",
                  doc_id[:8], len(page_index.root_nodes))
 
         # ── Stage 5a: FactTable ──────────────────────────────────────
-        facts = self._fact_extractor.extract(ldus, document_id=doc_id)
+        facts = self._fact_extractor.extract(
+            ldus, document_id=doc_id, origin=profile.origin_type
+        )
         log.info("[%s] FactTable → %d facts", doc_id[:8], len(facts))
 
-        # ── Stage 5b: Persist to SQLite + ChromaDB ───────────────────
+        # ── Stage 5b: Entity Linking & Knowledge Graph ───────────────
+        # Collect cross-references from LDUs
+        cross_refs = []
+        for ldu in ldus:
+            if hasattr(ldu, "cross_references") and ldu.cross_references:
+                cross_refs.extend(ldu.cross_references)
+
+        knowledge_graph = self._entity_linker.build_knowledge_graph(
+            ldus=ldus,
+            facts=facts,
+            cross_references=cross_refs,
+            document_id=doc_id,
+        )
+        log.info("[%s] KG → %d entities, %d edges",
+                 doc_id[:8], len(knowledge_graph.entities),
+                 len(knowledge_graph.edges))
+
+        # ── Stage 5c: Persist to SQLite + ChromaDB ───────────────────
         self._persist(profile, extracted_doc, ldus, page_index, facts, ledger, total_pages)
         log.info("[%s] Persisted to SQLite + ChromaDB", doc_id[:8])
 
         # ── Write artefacts ──────────────────────────────────────────
         art_dir = self._write_artefacts(
-            run_id, doc_id, profile, extracted_doc, ldus, page_index, facts, ledger,
+            run_id, doc_id, profile, extracted_doc, ldus, page_index,
+            facts, knowledge_graph, ledger,
         )
 
         elapsed = round(time.perf_counter() - t0, 3)
@@ -237,6 +294,7 @@ class PipelineOrchestrator:
             ldus=ldus,
             page_index=page_index,
             facts=facts,
+            knowledge_graph=knowledge_graph,
             ledger_entries=ledger,
             sample_pages=page_nums,
             elapsed_seconds=elapsed,
@@ -313,18 +371,9 @@ class PipelineOrchestrator:
             node_count=len(index.root_nodes),
         )
 
-        # fact_tables
+        # fact_tables (enriched — use FactTableExtractor.persist_to_db for new cols)
         if facts:
-            self._repo.upsert_facts_batch(did, [
-                {
-                    "key": f.key,
-                    "value": f.value,
-                    "unit": f.unit,
-                    "page_ref": f.page_ref,
-                    "content_hash": f.content_hash,
-                }
-                for f in facts
-            ])
+            self._fact_extractor.persist_to_db(facts)
 
         # provenance ledger
         for entry in ledger:
@@ -347,6 +396,7 @@ class PipelineOrchestrator:
         ldus: list[LDU],
         index: PageIndex,
         facts: list[Fact],
+        knowledge_graph: DocumentKnowledgeGraph | None,
         ledger: list[dict],
     ) -> Path:
         """Write JSON artefacts to ``.refinery/runs/{run_id}/``."""
@@ -386,8 +436,14 @@ class PipelineOrchestrator:
         # Facts
         fact_dicts = [f.model_dump() for f in facts]
         (art_dir / "facts.json").write_text(
-            json.dumps(fact_dicts, indent=2), encoding="utf-8"
+            json.dumps(fact_dicts, indent=2, default=str), encoding="utf-8"
         )
+
+        # Knowledge Graph
+        if knowledge_graph:
+            (art_dir / "knowledge_graph.json").write_text(
+                knowledge_graph.model_dump_json(indent=2), encoding="utf-8"
+            )
 
         log.info("Artefacts written to %s", art_dir)
         return art_dir

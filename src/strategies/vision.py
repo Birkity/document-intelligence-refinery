@@ -1,16 +1,24 @@
-"""VisionExtractor — Strategy C (high cost).
+"""VisionExtractor — Strategy D (extreme cost, budget-guarded).
 
-Renders PDF pages to images via PyMuPDF and runs local OCR
-(PaddleOCR → Tesseract → pdfplumber fallback) to extract content
-from scanned/image-heavy documents.
+Uses OpenRouter Vision LLM (gemma-3-27b-it) to extract text from
+pages that failed OCR or have handwriting/complex layouts.
 
-Install OCR deps:
-    pip install "document-intelligence-refinery[ocr]"        # PaddleOCR
-    pip install "document-intelligence-refinery[tesseract]"  # Tesseract
+This is the most expensive path and is budget-guarded:
+- Only triggered when OCR confidence is very low
+- Respects per-document vision call budget
+- Feature-flagged via ENABLE_VISION_EXTRACTION
+
+Budget ladder position:
+  Cheap → pdfplumber (FastText)
+  Medium → Docling (Layout)
+  Hard → RapidOCR (OCR)
+  Extreme → Vision LLM (this)
 """
 
 from __future__ import annotations
 
+import base64
+import json
 import logging
 from pathlib import Path
 from typing import Any
@@ -22,7 +30,6 @@ from src.models.schemas import (
     BoundingBox,
     ExtractedDocument,
     ExtractedPage,
-    FigureObject,
     TextBlock,
 )
 from src.strategies.base import BaseExtractor
@@ -34,9 +41,9 @@ _DEFAULT_RULES = (
 )
 
 
-def _render_page_to_png(pdf_path: str, page_idx: int, dpi: int = 300) -> bytes:
+def _render_page_to_png(pdf_path: str, page_idx: int, dpi: int = 200) -> bytes:
     """Render a single PDF page to a PNG byte buffer using PyMuPDF."""
-    import fitz  # PyMuPDF
+    import fitz
 
     doc = fitz.open(pdf_path)
     try:
@@ -50,13 +57,11 @@ def _render_page_to_png(pdf_path: str, page_idx: int, dpi: int = 300) -> bytes:
 
 
 class VisionExtractor(BaseExtractor):
-    """Strategy C — vision/OCR extraction.
+    """Strategy D — Vision LLM extraction via OpenRouter.
 
-    Pipeline:
-      1. Render each page to a 300-dpi PNG (PyMuPDF).
-      2. Run OCR (PaddleOCR first, Tesseract second).
-      3. Normalise OCR boxes → TextBlock with bounding boxes.
-      4. Fall back to pdfplumber if OCR is unavailable.
+    Uses the vision model only when absolutely necessary (scanned pages
+    with poor OCR, handwriting, repeated extraction failure).
+    Budget-guarded: respects max_vision_calls_per_document.
     """
 
     strategy_name: str = "vision_augmented"
@@ -64,26 +69,77 @@ class VisionExtractor(BaseExtractor):
     def __init__(self, rules_path: str | Path | None = None) -> None:
         super().__init__()
         rp = Path(rules_path) if rules_path else _DEFAULT_RULES
-        with open(rp, "r", encoding="utf-8") as fh:
-            rules = yaml.safe_load(fh)
+        if rp.exists():
+            with open(rp, "r", encoding="utf-8") as fh:
+                rules = yaml.safe_load(fh)
+        else:
+            rules = {}
         esc = rules.get("escalation", {})
         self._max_depth: int = esc.get("max_escalation_depth", 3)
 
-        # Try to get an OCR backend
-        self._ocr_backend: Any = None
-        try:
-            from src.vision.ocr_backends import get_ocr_backend
-            self._ocr_backend = get_ocr_backend()
-        except Exception:
-            pass
+        # Load config lazily to avoid import cycle
+        self._vision_calls_made = 0
 
-        # Probe for PyMuPDF
-        self._has_fitz = False
+    def _get_config(self) -> Any:
+        """Lazy-load config to avoid import cycle."""
+        from src.config import get_settings
+        return get_settings()
+
+    def _call_vision_llm(self, image_bytes: bytes, prompt: str) -> str:
+        """Call OpenRouter vision model with base64 image."""
+        cfg = self._get_config()
+
+        if not cfg.openrouter_api_key or cfg.openrouter_api_key.startswith("your-"):
+            log.warning("OpenRouter API key not configured — returning empty")
+            return ""
+
+        if not cfg.enable_vision_extraction:
+            log.info("Vision extraction disabled via feature flag")
+            return ""
+
+        if self._vision_calls_made >= cfg.budget_max_vision_calls:
+            log.warning("Vision call budget exhausted (%d calls)", self._vision_calls_made)
+            return ""
+
         try:
-            import fitz  # noqa: F401
-            self._has_fitz = True
-        except ImportError:
-            log.info("PyMuPDF (fitz) not installed — OCR not available")
+            import httpx
+
+            img_b64 = base64.b64encode(image_bytes).decode("utf-8")
+
+            response = httpx.post(
+                f"{cfg.openrouter_base_url}/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {cfg.openrouter_api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": cfg.vision_model,
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": prompt},
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/png;base64,{img_b64}"
+                                    },
+                                },
+                            ],
+                        }
+                    ],
+                    "max_tokens": 4096,
+                },
+                timeout=60.0,
+            )
+            response.raise_for_status()
+            self._vision_calls_made += 1
+
+            data = response.json()
+            return data["choices"][0]["message"]["content"]
+        except Exception as exc:
+            log.error("Vision LLM call failed: %s", exc)
+            return ""
 
     def extract(
         self,
@@ -92,101 +148,169 @@ class VisionExtractor(BaseExtractor):
         *,
         page_numbers: list[int] | None = None,
     ) -> ExtractedDocument:
-        """Extract content from *pdf_path*.
+        """Extract content using Vision LLM or fallback."""
+        cfg = self._get_config()
 
-        Parameters
-        ----------
-        page_numbers : list[int] | None
-            1-indexed page numbers to extract.  ``None`` → all pages.
-        """
-        if self._has_fitz and self._ocr_backend is not None:
-            return self._extract_ocr(pdf_path, document_id, page_numbers)
-        return self._extract_fallback(pdf_path, document_id, page_numbers)
+        # If vision is enabled and API key is set, try vision path
+        if cfg.enable_vision_extraction and cfg.openrouter_api_key and not cfg.openrouter_api_key.startswith("your-"):
+            try:
+                return self._extract_vision(pdf_path, document_id, page_numbers)
+            except Exception as exc:
+                log.warning("Vision extraction failed: %s — falling back", exc)
 
-    # ------------------------------------------------------------------
-    # Real OCR path
-    # ------------------------------------------------------------------
+        # Fallback: PyMuPDF text + pdfplumber
+        try:
+            import fitz  # noqa: F401
+            return self._extract_fitz_text(pdf_path, document_id, page_numbers)
+        except ImportError:
+            return self._extract_fallback(pdf_path, document_id, page_numbers)
 
-    def _extract_ocr(
+    def _extract_vision(
         self,
         pdf_path: str,
         document_id: str,
         page_numbers: list[int] | None = None,
     ) -> ExtractedDocument:
-        """Render pages → OCR → normalise to ExtractedDocument."""
+        """Extract using Vision LLM — render pages and send to model."""
         import fitz
 
-        doc = fitz.open(pdf_path)
-        n_pages = doc.page_count
-        doc.close()
-
         pages_out: list[ExtractedPage] = []
-        total_conf = 0.0
-        conf_count = 0
         total_chars = 0
 
-        for page_idx in range(n_pages):
-            pnum = page_idx + 1  # 1-indexed
-            if page_numbers and pnum not in page_numbers:
-                continue
+        prompt = (
+            "Extract all text from this document page. "
+            "Preserve the reading order, headings, paragraphs, and any table data. "
+            "Return the text content only, no commentary."
+        )
 
-            png_bytes = _render_page_to_png(pdf_path, page_idx, dpi=300)
-            ocr_boxes = self._ocr_backend.run_ocr(png_bytes, dpi=300)
+        doc = fitz.open(pdf_path)
+        try:
+            for page_idx in range(doc.page_count):
+                pnum = page_idx + 1
+                if page_numbers and pnum not in page_numbers:
+                    continue
 
-            # Get page dimensions for coordinate normalisation
-            _doc = fitz.open(pdf_path)
-            _page = _doc[page_idx]
-            pw, ph = float(_page.rect.width), float(_page.rect.height)
-            _doc.close()
+                page = doc[page_idx]
+                pw, ph = float(page.rect.width), float(page.rect.height)
 
-            dpi = 300
-            scale = 72.0 / dpi  # pixel → PDF points
+                try:
+                    png_bytes = _render_page_to_png(pdf_path, page_idx)
+                    text = self._call_vision_llm(png_bytes, prompt)
+                except Exception as exc:
+                    log.warning("Vision extraction failed for page %d: %s", pnum, exc)
+                    text = ""
 
-            text_blocks: list[TextBlock] = []
-            page_text = ""
-            for box in ocr_boxes:
-                page_text += box.text + " "
-                total_conf += box.confidence
-                conf_count += 1
-                text_blocks.append(
-                    TextBlock(
-                        content=box.text,
-                        bbox=BoundingBox(
-                            x1=box.x1 * scale,
-                            y1=box.y1 * scale,
-                            x2=box.x2 * scale,
-                            y2=box.y2 * scale,
-                            page_number=pnum,
-                        ),
+                text_blocks: list[TextBlock] = []
+                if text.strip():
+                    total_chars += len(text)
+                    text_blocks.append(
+                        TextBlock(
+                            content=text.strip(),
+                            bbox=BoundingBox(
+                                x1=0, y1=0, x2=pw, y2=ph, page_number=pnum
+                            ),
+                        )
+                    )
+
+                pages_out.append(
+                    ExtractedPage(
+                        page_number=pnum,
+                        text_blocks=text_blocks,
+                        extraction_strategy="vision_augmented",
                     )
                 )
-            total_chars += len(page_text)
+        finally:
+            doc.close()
 
-            # Group into a single page-level block as well for chunking
-            if page_text.strip() and not text_blocks:
-                text_blocks.append(TextBlock(
-                    content=page_text.strip(),
-                    bbox=BoundingBox(x1=0, y1=0, x2=pw, y2=ph, page_number=pnum),
-                ))
-
-            pages_out.append(ExtractedPage(
-                page_number=pnum,
-                text_blocks=text_blocks,
-            ))
-
-        # Confidence: average OCR box confidence × text density factor
-        avg_conf = (total_conf / conf_count) if conf_count else 0.0
-        n_extracted = len(pages_out) or 1
-        avg_chars = total_chars / n_extracted
-        text_density_factor = min(avg_chars / 300, 1.0)
-        self.confidence_score = round(
-            min(avg_conf * 0.7 + text_density_factor * 0.3, 1.0), 4
-        )
+        n_pages = len(pages_out) or 1
+        avg_chars = total_chars / n_pages
+        if avg_chars > 200:
+            self.confidence_score = 0.75
+        elif avg_chars > 50:
+            self.confidence_score = 0.50
+        else:
+            self.confidence_score = 0.20
 
         return ExtractedDocument(
             document_id=document_id,
             source_filename=Path(pdf_path).name,
             pages=pages_out,
+            strategies_used=["vision_augmented"],
+        )
+
+    # ------------------------------------------------------------------
+    # PyMuPDF text extraction (fallback when vision not available)
+    # ------------------------------------------------------------------
+
+    def _extract_fitz_text(
+        self,
+        pdf_path: str,
+        document_id: str,
+        page_numbers: list[int] | None = None,
+    ) -> ExtractedDocument:
+        """Extract embedded text via PyMuPDF."""
+        import fitz
+
+        pages_out: list[ExtractedPage] = []
+        total_chars = 0
+
+        doc = fitz.open(pdf_path)
+        try:
+            for page_idx in range(doc.page_count):
+                pnum = page_idx + 1
+                if page_numbers and pnum not in page_numbers:
+                    continue
+
+                page = doc[page_idx]
+                blocks = page.get_text("blocks")
+                text_blocks: list[TextBlock] = []
+                page_chars = 0
+
+                for blk in blocks:
+                    blk_text = blk[4].strip() if len(blk) > 4 else ""
+                    if not blk_text:
+                        continue
+                    page_chars += len(blk_text)
+                    text_blocks.append(
+                        TextBlock(
+                            content=blk_text,
+                            bbox=BoundingBox(
+                                x1=float(blk[0]),
+                                y1=float(blk[1]),
+                                x2=float(blk[2]),
+                                y2=float(blk[3]),
+                                page_number=pnum,
+                            ),
+                        )
+                    )
+
+                if not text_blocks:
+                    log.warning(
+                        "Page %d of '%s' has no embedded text.",
+                        pnum, Path(pdf_path).name,
+                    )
+
+                total_chars += page_chars
+                pages_out.append(
+                    ExtractedPage(page_number=pnum, text_blocks=text_blocks)
+                )
+        finally:
+            doc.close()
+
+        n_pages = len(pages_out) or 1
+        avg_chars = total_chars / n_pages
+        if avg_chars > 200:
+            self.confidence_score = 0.60
+        elif avg_chars > 50:
+            self.confidence_score = 0.40
+        else:
+            self.confidence_score = 0.15
+
+        return ExtractedDocument(
+            document_id=document_id,
+            source_filename=Path(pdf_path).name,
+            pages=pages_out,
+            strategies_used=["vision_augmented_fallback"],
         )
 
     # ------------------------------------------------------------------
@@ -224,13 +348,9 @@ class VisionExtractor(BaseExtractor):
                     )
 
                 pages_out.append(
-                    ExtractedPage(
-                        page_number=idx,
-                        text_blocks=text_blocks,
-                    )
+                    ExtractedPage(page_number=idx, text_blocks=text_blocks)
                 )
 
-        # Conservative confidence — this is a fallback, not true OCR
         n_pages = len(pages_out) or 1
         avg_chars = total_chars / n_pages
         if avg_chars > 200:
@@ -244,4 +364,5 @@ class VisionExtractor(BaseExtractor):
             document_id=document_id,
             source_filename=Path(pdf_path).name,
             pages=pages_out,
+            strategies_used=["vision_augmented_pdfplumber"],
         )

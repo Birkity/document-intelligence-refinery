@@ -5,9 +5,12 @@ by the Chunking Engine (Stage 3).  The tree mirrors a "smart table of
 contents" that an LLM can traverse to locate relevant sections without
 embedding-searching the entire corpus.
 
-No LLM is required — section detection, summary generation, and signal
-tagging are all deterministic heuristics.  An LLM-backed summariser
-can be swapped in later via the ``_generate_summary`` hook.
+Summary generation uses local Ollama as an integrated fallback feature:
+
+* **LLM-backed** (primary) — calls the local Ollama server to produce
+  a concise 2-3 sentence summary per section.  Always attempted.
+* **Deterministic** (fallback) — first N sentences from each section,
+  used automatically when Ollama is unreachable or returns an error.
 """
 
 from __future__ import annotations
@@ -23,6 +26,8 @@ from pathlib import Path
 from typing import Sequence
 
 import yaml
+
+import httpx
 
 from src.models.schemas import LDU, PageIndex, PageIndexNode
 from src.utils.hash_utils import generate_content_hash
@@ -98,6 +103,17 @@ class PageIndexBuilder:
         self._summary_max_sentences = summary_max_sentences
         self._numeric_density_threshold = numeric_density_threshold
 
+        # Load Ollama settings for integrated LLM summaries
+        self._ollama_base_url: str = "http://localhost:11434/v1"
+        self._ollama_model: str = "qwen3-coder:480b-cloud"
+        try:
+            from src.config import get_settings
+            cfg = get_settings()
+            self._ollama_base_url = cfg.ollama_base_url
+            self._ollama_model = cfg.ollama_model
+        except Exception:
+            log.debug("Could not load Ollama settings; using defaults.")
+
         # Load rules (currently unused beyond consistency probe)
         rp = Path(rules_path) if rules_path else _DEFAULT_RULES
         if rp.exists():
@@ -116,21 +132,18 @@ class PageIndexBuilder:
         source_filename: str,
         document_id: str | None = None,
     ) -> PageIndex:
-        """Build a PageIndex from *ldus*.
+        """Build a PageIndex from *ldus* in four explicit phases.
 
-        Parameters
-        ----------
-        ldus : list[LDU]
-            Flat list of Logical Document Units (output of ChunkingEngine).
-        source_filename : str
-            Original PDF filename for metadata.
-        document_id : str | None
-            Unique document identifier.  Auto-generated from
-            *source_filename* if ``None``.
-
-        Returns
-        -------
-        PageIndex
+        Phase 1 — Extract sections:  group LDUs by ``parent_section``.
+        Phase 2 — Build tree:        construct one node per section with
+                                     deterministic summaries and structural
+                                     signals (page ranges, data types, entities).
+        Phase 3 — LLM summaries:     walk every node, call local Ollama to
+                                     generate a 2-3 sentence summary.
+                                     Deterministic summary is kept for any
+                                     node where Ollama fails or is unreachable.
+        Phase 4 — Return:            the fully-enriched PageIndex is ready
+                                     for ``save_json`` / ``persist_to_db``.
         """
         if document_id is None:
             document_id = self._auto_id(source_filename)
@@ -138,16 +151,24 @@ class PageIndexBuilder:
         if not ldus:
             return PageIndex(document_id=document_id, root_nodes=[])
 
-        # 1. Group LDUs by section (preserving document order)
+        # ── Phase 1: extract sections ────────────────────────────────
         sections = self._group_by_section(ldus)
 
-        # 2. Build one PageIndexNode per section
+        # ── Phase 2: build PageIndex tree (deterministic summaries) ──
         root_nodes: list[PageIndexNode] = []
+        node_ldu_map: list[tuple[PageIndexNode, list[LDU]]] = []
         for section_title, section_ldus in sections.items():
             node = self._build_node(section_title, section_ldus)
             root_nodes.append(node)
+            node_ldu_map.append((node, section_ldus))
 
-        return PageIndex(document_id=document_id, root_nodes=root_nodes)
+        page_index = PageIndex(document_id=document_id, root_nodes=root_nodes)
+
+        # ── Phase 3: LLM summary enrichment ──────────────────────────
+        self._enrich_summaries_llm(node_ldu_map)
+
+        # ── Phase 4: return enriched index ───────────────────────────
+        return page_index
 
     def query(
         self,
@@ -279,7 +300,12 @@ class PageIndexBuilder:
         title: str,
         ldus: list[LDU],
     ) -> PageIndexNode:
-        """Construct a single PageIndexNode from its constituent LDUs."""
+        """Construct a PageIndexNode (Phase 2 — deterministic pass only).
+
+        Summary is a plain first-N-sentences extract.  Phase 3
+        (``_enrich_summaries_llm``) overwrites it with an LLM-generated
+        summary when Ollama is available.
+        """
         # Page range — computed from content LDUs only (skip section headers)
         all_pages: list[int] = []
         for ldu in ldus:
@@ -339,16 +365,14 @@ class PageIndexBuilder:
         return sorted(types)
 
     # ------------------------------------------------------------------
-    # Internal — deterministic summary
+    # Internal — deterministic summary & LLM enrichment
     # ------------------------------------------------------------------
 
     def _generate_summary(self, ldus: list[LDU]) -> str:
-        """Build a 2-3 sentence summary from paragraph LDUs.
+        """Return a deterministic 2-3 sentence summary for a section.
 
-        Takes the first N sentences from the first paragraph-type LDU
-        in the section.  Skips tables, figures, and section-header LDUs.
-
-        This is the hook point for swapping in an LLM summariser later.
+        Used in Phase 2 (tree construction) before the LLM enrichment
+        pass.  Always returns a non-empty string when content exists.
         """
         for ldu in ldus:
             if ldu.chunk_type in ("paragraph", "list"):
@@ -356,13 +380,100 @@ class PageIndexBuilder:
                     ldu.content,
                     n=self._summary_max_sentences,
                 )
-        # Fallback: use any non-section LDU
         for ldu in ldus:
             if ldu.chunk_type != "section" and ldu.content.strip():
                 return self._first_n_sentences(
                     ldu.content,
                     n=self._summary_max_sentences,
                 )
+        return ""
+
+    def _enrich_summaries_llm(
+        self,
+        node_ldu_map: list[tuple[PageIndexNode, list[LDU]]],
+    ) -> None:
+        """Phase 3 — walk every node and replace its deterministic summary
+        with an LLM-generated one via local Ollama.
+
+        If Ollama is unreachable or returns an empty response for a node,
+        the deterministic summary already stored in ``node.summary`` is
+        kept unchanged.
+        """
+        for node, section_ldus in node_ldu_map:
+            section_text = self._collect_section_text(
+                section_ldus, section_title=node.title
+            )
+            if not section_text:
+                continue
+            llm_summary = self._llm_summarise(section_text, section_title=node.title)
+            if llm_summary:
+                node.summary = llm_summary
+                log.debug("LLM summary stored for section '%s'", node.title[:60])
+
+    def _collect_section_text(self, ldus: list[LDU], section_title: str = "") -> str:
+        """Join non-header LDU content for summary input.
+
+        When the content is mostly numeric (a financial table section),
+        the section title is prepended as a label so the LLM has enough
+        context to produce a meaningful summary.
+        """
+        parts = []
+        for ldu in ldus:
+            if ldu.chunk_type != "section" and ldu.content.strip():
+                parts.append(ldu.content.strip())
+        body = " ".join(parts)[:2000]
+
+        # Prepend section title when body is numeric-dense (bare numbers
+        # have no meaning without the containing label)
+        if section_title and body and _numeric_density(body) > 0.4:
+            body = f"Section: {section_title}\n{body}"
+
+        return body
+
+    def _llm_summarise(self, text: str, section_title: str = "") -> str:
+        """Call local Ollama for a 2-3 sentence section summary.
+
+        When the section contains mostly financial figures (numeric-dense),
+        the prompt instructs the LLM to describe the financial category
+        and its reported values rather than asking it to narrate raw numbers.
+        """
+        is_numeric = _numeric_density(text) > 0.35
+        if is_numeric and section_title:
+            prompt = (
+                f"This is a section from an audited financial statement titled "
+                f"'{section_title}'. The numbers below are monetary values "
+                f"(likely in Ethiopian Birr) reported for two periods.\n\n"
+                f"Write 2-3 sentences describing what financial category this covers "
+                f"and the approximate scale of the reported figures. "
+                f"Be factual and concise.\n\n"
+                f"{text}"
+            )
+        else:
+            prompt = (
+                "Summarise the following document section in exactly 2-3 sentences. "
+                "Be factual and concise. Do not add information not present.\n\n"
+                f"{text}"
+            )
+        try:
+            resp = httpx.post(
+                f"{self._ollama_base_url}/chat/completions",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": self._ollama_model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 256,
+                    "temperature": 0.2,
+                },
+                timeout=20.0,
+            )
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"]
+            summary = content.strip()
+            if summary:
+                log.debug("Ollama summary: %s", summary[:80])
+                return summary
+        except Exception as exc:
+            log.warning("Ollama summary failed, falling back to deterministic: %s", exc)
         return ""
 
     @staticmethod

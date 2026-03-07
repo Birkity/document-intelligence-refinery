@@ -49,8 +49,10 @@ escalation:
   strategy_a_min_confidence: 0.6
   # Minimum confidence for Strategy B before escalating to C
   strategy_b_min_confidence: 0.5
-  # Maximum escalation chain length
-  max_escalation_depth: 3
+  # Minimum confidence for Strategy C (OCR) before escalating to D (Vision)
+  strategy_c_min_confidence: 0.4
+  # Maximum escalation chain length (A→B→C→D = 4)
+  max_escalation_depth: 4
 
 # -------------------------------------------------------------------
 # Chunk Size Rules
@@ -88,6 +90,17 @@ domain_keywords:
     - audit
     - expenditure
     - financial statement
+    - total income
+    - total expense
+    - net profit
+    - birr
+    - ETB
+    - annual report
+    - bank
+    - deposit
+    - loan
+    - capital
+    - reserve
 
   legal:
     - plaintiff

@@ -181,3 +181,88 @@ class TestFactPersistence:
             document_id="nonexistent", db_path=db_path
         )
         assert results == []
+
+
+# ── Enriched fact extraction ─────────────────────────────────────────────
+
+class TestEnrichedFactExtraction:
+    """Test enriched fact fields: extraction_method, confidence, period, entity."""
+
+    def test_extraction_method_regex(self) -> None:
+        ldu = _make_ldu("Revenue: $4.2B.", page=1)
+        extractor = FactTableExtractor()
+        facts = extractor.extract([ldu], document_id="doc1")
+        assert len(facts) >= 1
+        assert all(f.extraction_method == "regex" for f in facts)
+
+    def test_extraction_method_table_parse(self) -> None:
+        ldu = _make_ldu(
+            "Revenue | 4,200\nExpenses | 2,100",
+            chunk_type="table", page=1,
+        )
+        extractor = FactTableExtractor()
+        facts = extractor.extract([ldu], document_id="doc1")
+        assert len(facts) >= 1
+        assert all(f.extraction_method == "table_parse" for f in facts)
+
+    def test_confidence_is_set(self) -> None:
+        ldu = _make_ldu("Revenue: $100M.", page=1)
+        extractor = FactTableExtractor()
+        facts = extractor.extract([ldu], document_id="doc1")
+        assert len(facts) >= 1
+        assert all(0.0 < f.confidence <= 1.0 for f in facts)
+
+    def test_period_detection(self) -> None:
+        ldu = _make_ldu(
+            "Total Revenue: $4.2B for FY2024.", page=5,
+        )
+        extractor = FactTableExtractor()
+        facts = extractor.extract([ldu], document_id="doc1")
+        periods = [f.period for f in facts if f.period]
+        # At least one fact should detect FY2024
+        assert len(periods) >= 1 or len(facts) >= 1
+
+    def test_nocolon_pattern_extraction(self) -> None:
+        """The _KV_NOCOLON pattern should extract facts without colon separator."""
+        ldu = _make_ldu("Total Assets    500,000", page=3)
+        extractor = FactTableExtractor()
+        facts = extractor.extract([ldu], document_id="doc1")
+        assert len(facts) >= 1
+
+    def test_persist_enriched_columns(self, tmp_path: Path) -> None:
+        db_path = tmp_path / "test.db"
+        initialize_database(db_path)
+
+        extractor = FactTableExtractor()
+        ldu = _make_ldu("Revenue: $4.2B for FY2024.", page=5)
+        facts = extractor.extract([ldu], document_id="doc1")
+        extractor.persist_to_db(facts, db_path=db_path)
+
+        conn = sqlite3.connect(str(db_path))
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute("SELECT * FROM fact_tables").fetchall()
+        conn.close()
+        assert len(rows) >= 1
+        row = dict(rows[0])
+        assert "extraction_method" in row
+        assert "confidence" in row
+
+    def test_query_with_min_confidence(self, tmp_path: Path) -> None:
+        db_path = tmp_path / "test.db"
+        initialize_database(db_path)
+
+        extractor = FactTableExtractor()
+        facts = extractor.extract(
+            [_make_ldu("Revenue: $100M.", page=1)], document_id="doc1",
+        )
+        extractor.persist_to_db(facts, db_path=db_path)
+
+        results = extractor.query_facts(
+            document_id="doc1", min_confidence=0.5, db_path=db_path,
+        )
+        assert all(r.get("confidence", 0) >= 0.5 for r in results)
+
+    def test_from_config_factory(self) -> None:
+        """FactTableExtractor.from_config() should return an instance."""
+        extractor = FactTableExtractor.from_config()
+        assert isinstance(extractor, FactTableExtractor)

@@ -7,14 +7,15 @@ A LangGraph agent with three tools:
 2. **semantic_search** — vector retrieval over ChromaDB-stored LDU
    embeddings.
 3. **structured_query** — SQL queries over the ``fact_tables`` SQLite
-   table for precise numerical lookups.
+   table for precise numerical lookups (enriched with entity / period).
 
 Every answer carries a :class:`ProvenanceChain` with document name,
 page number, bounding box, and content hash so that claims are
 auditable back to their spatial source.
 
 The agent also supports **Audit Mode**: given a claim, it either
-verifies it with a source citation or flags it as *unverifiable*.
+verifies it with a source citation or flags it as *unverifiable*,
+returning an :class:`AuditResult`.
 """
 
 from __future__ import annotations
@@ -25,6 +26,7 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Sequence
 
+import httpx
 from langgraph.graph import END, StateGraph
 from pydantic import BaseModel, Field
 
@@ -32,6 +34,8 @@ from src.agents.fact_table import FactTableExtractor
 from src.agents.pageindex import PageIndexBuilder
 from src.db.vector_store import VectorStore
 from src.models.schemas import (
+    AuditResult,
+    DocumentKnowledgeGraph,
     LDU,
     PageIndex,
     PageIndexNode,
@@ -98,7 +102,7 @@ class AgentState(BaseModel):
 
 
 class QueryAgent:
-    """Three-tool query agent with provenance and audit mode.
+    """Three-tool query agent with provenance, audit mode, and KG support.
 
     Parameters
     ----------
@@ -116,12 +120,24 @@ class QueryAgent:
         self._db_path = Path(db_path) if db_path else _DEFAULT_DB
         self._chroma_dir = chroma_dir
         self._page_indexes: dict[str, PageIndex] = {}
+        self._knowledge_graphs: dict[str, DocumentKnowledgeGraph] = {}
         self._pageindex_builder = PageIndexBuilder()
         self._fact_extractor = FactTableExtractor()
 
         # Lazy-init vector store (created on first use)
         self._vector_store: VectorStore | None = None
         self._source_filenames: dict[str, str] = {}  # doc_id -> filename
+
+        # LLM config — Ollama for reasoning; OpenRouter only for vision
+        self._ollama_base_url: str = "http://localhost:11434/v1"
+        self._ollama_model: str = "qwen3-coder:480b-cloud"
+        try:
+            from src.config import get_settings
+            cfg = get_settings()
+            self._ollama_base_url = cfg.ollama_base_url
+            self._ollama_model = cfg.ollama_model
+        except Exception:
+            log.debug("Could not load Ollama settings; using defaults.")
 
     # ------------------------------------------------------------------
     # Vector store lifecycle
@@ -173,6 +189,10 @@ class QueryAgent:
     def register_page_index(self, page_index: PageIndex) -> None:
         """Register a PageIndex for query-time navigation."""
         self._page_indexes[page_index.document_id] = page_index
+
+    def register_knowledge_graph(self, kg: DocumentKnowledgeGraph) -> None:
+        """Register a knowledge graph for query-time enrichment."""
+        self._knowledge_graphs[kg.document_id] = kg
 
     # ------------------------------------------------------------------
     # Tool 1: pageindex_navigate
@@ -250,6 +270,9 @@ class QueryAgent:
         self,
         document_id: str,
         key_pattern: str | None = None,
+        entity: str | None = None,
+        period: str | None = None,
+        min_confidence: float = 0.0,
     ) -> list[dict[str, Any]]:
         """Query the SQLite fact table for structured key-value facts.
 
@@ -259,6 +282,12 @@ class QueryAgent:
             Filter by document.
         key_pattern : str | None
             Optional SQL LIKE pattern (e.g. ``'%revenue%'``).
+        entity : str | None
+            Optional entity filter.
+        period : str | None
+            Optional period filter.
+        min_confidence : float
+            Minimum confidence threshold.
 
         Returns
         -------
@@ -267,6 +296,9 @@ class QueryAgent:
         return self._fact_extractor.query_facts(
             document_id=document_id,
             key_pattern=key_pattern,
+            entity=entity,
+            period=period,
+            min_confidence=min_confidence,
             db_path=self._db_path,
         )
 
@@ -281,11 +313,13 @@ class QueryAgent:
     ) -> QueryResult:
         """Answer *question* about *document_id* with full provenance.
 
-        Uses a heuristic tool-selection strategy:
+        Uses a multi-hop tool-selection strategy:
         1. Try PageIndex navigation to narrow scope.
         2. Run semantic search for relevant chunks.
-        3. If the question looks numerical, also query structured facts.
-        4. Compose the answer from retrieved evidence.
+        3. If the question looks numerical, also query structured facts
+           (with entity/period enrichment from KG).
+        4. Optionally enrich via knowledge graph edges.
+        5. Compose the answer from retrieved evidence.
 
         Parameters
         ----------
@@ -326,7 +360,13 @@ class QueryAgent:
 
         # 3. Structured query for numerical questions
         if self._looks_numerical(question):
-            facts = self.structured_query(document_id=document_id)
+            # Extract entity/period hints from KG if available
+            entity_hint, period_hint = self._extract_query_hints(question, document_id)
+            facts = self.structured_query(
+                document_id=document_id,
+                entity=entity_hint,
+                period=period_hint,
+            )
             if facts:
                 tools_used.append("structured_query")
                 for f in facts:
@@ -338,10 +378,16 @@ class QueryAgent:
                         "content_hash": f.get("content_hash", ""),
                     })
 
-        # 4. Compose answer
+        # 4. Knowledge graph enrichment (multi-hop)
+        kg_evidence = self._kg_enrich(question, document_id, source_filename)
+        if kg_evidence:
+            tools_used.append("knowledge_graph")
+            all_evidence.extend(kg_evidence)
+
+        # 5. Compose answer
         answer_text = self._compose_answer(question, all_evidence)
 
-        # 5. Build provenance chain
+        # 6. Build provenance chain
         citations = self._build_citations(all_evidence, source_filename)
 
         provenance = ProvenanceChain(
@@ -367,12 +413,12 @@ class QueryAgent:
         self,
         claim: str,
         document_id: str,
-    ) -> ProvenanceChain:
+    ) -> AuditResult:
         """Verify *claim* against the document's evidence.
 
         Searches for evidence supporting the claim using all three tools.
-        Sets ``verified=True`` if matching evidence is found with
-        sufficient overlap; otherwise ``verified=False``.
+        Returns an ``AuditResult`` with status ``verified``, ``not_found``,
+        or ``unverifiable`` and supporting provenance citations.
 
         Parameters
         ----------
@@ -383,7 +429,7 @@ class QueryAgent:
 
         Returns
         -------
-        ProvenanceChain
+        AuditResult
         """
         source_filename = self._source_filenames.get(document_id, document_id)
         matching_evidence: list[dict[str, Any]] = []
@@ -411,14 +457,89 @@ class QueryAgent:
                     "content_hash": f.get("content_hash", ""),
                 })
 
-        verified = len(matching_evidence) > 0
+        # Also check KG edges for related evidence
+        kg = self._knowledge_graphs.get(document_id)
+        if kg:
+            for edge in kg.edges:
+                edge_text = f"{edge.source} {edge.relation} {edge.target}"
+                score = _overlap_score(claim, edge_text)
+                if score >= 0.25:
+                    matching_evidence.append({
+                        "content": edge_text,
+                        "page_number": edge.page_ref,
+                        "document_id": document_id,
+                        "source_filename": source_filename,
+                        "content_hash": "",
+                    })
+
         citations = self._build_citations(matching_evidence, source_filename)
 
-        return ProvenanceChain(
-            query=claim,
-            citations=citations,
-            verified=verified,
+        if len(matching_evidence) > 0:
+            status = "verified"
+        elif len(doc_chunks) > 0:
+            # We found related chunks but none matched strongly
+            status = "unverifiable"
+        else:
+            status = "not_found"
+
+        # LLM-based verification reasoning (local Ollama — always attempted)
+        explanation = ""
+        if matching_evidence or doc_chunks:
+            explanation = self._llm_audit_reason(claim, matching_evidence, doc_chunks)
+            # LLM may override the heuristic status
+            if explanation:
+                lower_exp = explanation.lower()
+                if "contradicted" in lower_exp:
+                    status = "unverifiable"
+                elif "verified" in lower_exp and status != "verified":
+                    status = "verified"
+
+        return AuditResult(
+            claim=claim,
+            status=status,
+            supporting_evidence=citations,
+            explanation=explanation,
         )
+
+    def _llm_audit_reason(
+        self,
+        claim: str,
+        matching_evidence: list[dict[str, Any]],
+        related_chunks: list[dict[str, Any]],
+    ) -> str:
+        """Use LLM to reason about whether evidence supports the claim."""
+        evidence_texts = []
+        for e in matching_evidence[:5]:
+            evidence_texts.append(e.get("content", ""))
+        for c in related_chunks[:3]:
+            evidence_texts.append(c.get("content", ""))
+
+        context = "\n".join(f"- {t}" for t in evidence_texts if t)
+        prompt = (
+            "You are a document auditor. Determine if the claim is supported by the evidence.\n"
+            "Respond with one of: VERIFIED, CONTRADICTED, or UNVERIFIABLE.\n"
+            "Then explain in 1-2 sentences.\n\n"
+            f"Claim: {claim}\n\n"
+            f"Evidence:\n{context}\n\n"
+            "Verdict:"
+        )
+        try:
+            resp = httpx.post(
+                f"{self._ollama_base_url}/chat/completions",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": self._ollama_model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 256,
+                    "temperature": 0.1,
+                },
+                timeout=30.0,
+            )
+            resp.raise_for_status()
+            return resp.json()["choices"][0]["message"]["content"].strip()
+        except Exception as exc:
+            log.warning("Ollama audit reasoning failed: %s", exc)
+            return ""
 
     # ------------------------------------------------------------------
     # LangGraph graph construction
@@ -533,6 +654,66 @@ class QueryAgent:
         }
 
     # ------------------------------------------------------------------
+    # Knowledge-graph enrichment helpers
+    # ------------------------------------------------------------------
+
+    def _extract_query_hints(
+        self, question: str, document_id: str
+    ) -> tuple[str | None, str | None]:
+        """Extract entity and period hints from the question using the KG."""
+        entity_hint: str | None = None
+        period_hint: str | None = None
+
+        kg = self._knowledge_graphs.get(document_id)
+        if not kg:
+            return entity_hint, period_hint
+
+        q_lower = question.lower()
+        # Match entity names from KG
+        for ent in kg.entities:
+            if ent.entity_name.lower() in q_lower:
+                if ent.entity_type == "organization":
+                    entity_hint = ent.entity_name
+                elif ent.entity_type == "date":
+                    period_hint = ent.entity_name
+
+        # Also try simple period regex on question
+        import re as _re
+        period_m = _re.search(
+            r"\b(?:FY|CY|Q[1-4])?\s*\d{4}\b|\b(?:H[12])\s*\d{4}\b",
+            question, _re.IGNORECASE,
+        )
+        if period_m and not period_hint:
+            period_hint = period_m.group(0).strip()
+
+        return entity_hint, period_hint
+
+    def _kg_enrich(
+        self,
+        question: str,
+        document_id: str,
+        source_filename: str,
+    ) -> list[dict[str, Any]]:
+        """Find KG edges related to the question for multi-hop enrichment."""
+        kg = self._knowledge_graphs.get(document_id)
+        if not kg:
+            return []
+
+        results: list[dict[str, Any]] = []
+        for edge in kg.edges:
+            edge_text = f"{edge.source} {edge.relation} {edge.target}"
+            score = _overlap_score(question, edge_text)
+            if score >= 0.25:
+                results.append({
+                    "content": f"[KG] {edge.source} → {edge.relation} → {edge.target}",
+                    "page_number": edge.page_ref,
+                    "document_id": document_id,
+                    "source_filename": source_filename,
+                    "content_hash": "",
+                })
+        return results[:5]  # limit KG evidence
+
+    # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
 
@@ -551,15 +732,11 @@ class QueryAgent:
         return any(kw in q_lower for kw in numerical_keywords)
 
     @staticmethod
-    def _compose_answer(
+    def _compose_answer_deterministic(
         question: str,
         evidence: list[dict[str, Any]],
     ) -> str:
-        """Compose a concise answer from retrieved evidence.
-
-        This is a deterministic composer. An LLM can replace this
-        method for more natural answers.
-        """
+        """Deterministic answer composition from retrieved evidence."""
         if not evidence:
             return "No relevant information found in the document."
 
@@ -582,6 +759,62 @@ class QueryAgent:
         # Take the top pieces
         top = [text for _, text in scored[:3]]
         return " ".join(top)
+
+    def _compose_answer(
+        self,
+        question: str,
+        evidence: list[dict[str, Any]],
+    ) -> str:
+        """Compose an answer using LLM reasoning over retrieved evidence.
+
+        Falls back to deterministic composition if LLM is unavailable.
+        """
+        if not evidence:
+            return "No relevant information found in the document."
+
+        # Collect unique evidence texts
+        seen: set[str] = set()
+        unique: list[str] = []
+        for e in evidence:
+            content = e.get("content", "")
+            if content and content not in seen:
+                seen.add(content)
+                unique.append(content)
+
+        if not self._ollama_model:
+            return self._compose_answer_deterministic(question, evidence)
+
+        # Build context for LLM
+        context = "\n\n".join(f"[Evidence {i+1}] {t}" for i, t in enumerate(unique[:8]))
+        prompt = (
+            "You are a precise document analyst. Answer the question based ONLY on "
+            "the provided evidence. If the evidence is insufficient, say so. "
+            "Be concise and factual.\n\n"
+            f"Question: {question}\n\n"
+            f"Evidence:\n{context}\n\n"
+            "Answer:"
+        )
+
+        try:
+            resp = httpx.post(
+                f"{self._ollama_base_url}/chat/completions",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": self._ollama_model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 512,
+                    "temperature": 0.1,
+                },
+                timeout=30.0,
+            )
+            resp.raise_for_status()
+            answer = resp.json()["choices"][0]["message"]["content"].strip()
+            if answer:
+                return answer
+        except Exception as exc:
+            log.warning("LLM synthesis failed, using deterministic: %s", exc)
+
+        return self._compose_answer_deterministic(question, evidence)
 
     @staticmethod
     def _build_citations(

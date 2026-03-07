@@ -251,7 +251,24 @@ class TestSamplePages:
         from src.pipeline.orchestrator import select_sample_pages
 
         pages = select_sample_pages(7, n=3, strategy="head_mid_tail")
-        assert pages == [1, 4, 7]
+        # Samples first of each third: head=[1,2]→1, mid=[3,4]→3, tail=[5,6,7]→5
+        assert pages == [1, 3, 5]
+
+    def test_head_mid_tail_returns_n_pages(self):
+        """Bug-fix regression: n=10 must return 10 pages, not 3."""
+        from src.pipeline.orchestrator import select_sample_pages
+
+        pages = select_sample_pages(60, n=10, strategy="head_mid_tail")
+        assert len(pages) == 10
+        assert pages == sorted(pages)
+
+    def test_random_strategy(self):
+        from src.pipeline.orchestrator import select_sample_pages
+
+        pages = select_sample_pages(60, n=10, strategy="random")
+        assert len(pages) == 10
+        assert all(1 <= p <= 60 for p in pages)
+        assert pages == sorted(pages)
 
     def test_head_mid_tail_3_pages(self):
         from src.pipeline.orchestrator import select_sample_pages
@@ -407,6 +424,7 @@ class TestPipelineOrchestratorSmoke:
             ldus=[],
             page_index=PageIndex(document_id="doc1", root_nodes=[]),
             facts=[],
+            knowledge_graph=None,
             ledger_entries=[],
             sample_pages=[1, 3, 5],
         )
