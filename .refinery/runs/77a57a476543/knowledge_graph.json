@@ -1,0 +1,3233 @@
+{
+  "document_id": "532544e8e3c8",
+  "entities": [
+    {
+      "entity_name": "Ethio Telecom",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "2511e39e00978c8009ba6f37896416f440a39c83b458abff1a113aaea3633950"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2511e39e00978c8009ba6f37896416f440a39c83b458abff1a113aaea3633950"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Loss",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "35eeae305419e3d4e3bd3a92fecbff1445904b3105f58a5e04d1526089f5071f"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "a700e531b8f831f35bd1817df381d8815a6831ffb779151bb8ee272d44cb1638"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "17cc572be76d8713e13d46e3d8a0d56c7ccec222e2f08faab2f3d4e5ac682433"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "b679c8936dca97234b7f4abce47e267472d0cc81b6bd72b2c4dbccf0b9a75687"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "0983aef945ad378a15c59ccf58e037842be90936c88001b6cfad87376fce780c"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Profit",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "35eeae305419e3d4e3bd3a92fecbff1445904b3105f58a5e04d1526089f5071f"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "564217d52672ab44da1a49e22f0506dc4fafdba758aaf4df7b5b2a3f6585bf58"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "454136fe60065d3a325050c5ab81fce0fd7f059282db2817c29bb1fe4ddc05d0"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c6fb68131956df2b6825f75c3956f4ade6744a0d6c489289cf06460e7b172d"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "17cc572be76d8713e13d46e3d8a0d56c7ccec222e2f08faab2f3d4e5ac682433"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Income",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "35eeae305419e3d4e3bd3a92fecbff1445904b3105f58a5e04d1526089f5071f"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "c2e444a708e6822d5e9df03f1ae7925f32353e6024105f0b7372ce2045634487"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "e71a55e9e752ed6a12abcddad23b21efa5bfb1eb04953fa62af6981002427be1"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "454136fe60065d3a325050c5ab81fce0fd7f059282db2817c29bb1fe4ddc05d0"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "da43d860482a8b42959aa9680cca20043810d164cd1772d81eeac396a6f7edcb"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "3228712f204189c7a62d380fa0a633257e712736691c3ac7bcb1ac64f6b3b18d"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "b372570ee1630255573bd033f27e06fdd609aa737734aa53561bcbdec5f00ba4"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "1337e454ee3588a70ed360be2ab0568c8c232ea7411acdad098456765f39e039"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "a92cb3132b4df49fda19166ba0c62bcb047791eb11d2218d1761cc2650e2fcf8"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "47bf406aef94ec3fe828e028d39ea478b7208048ff694ea405e0d4bb041dbfcf"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2022",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "1b7b318002c885049fb5e12293bf6cfb4aac2850a5ef4e6fe1fbb0e49e629aa6"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "594069c1b9426df6130bf708690ec5ee0291e4fa4132127c0f6f93bc9863d7c6"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "3fe36244670bf4250a8e882d8f9c4dd49e83bcd4182d47e0043178b09b6cd806"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "7021cab7d48551320f700e51d78e5aae897e922d85065a1ce345759ae4f4ad79"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2021",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "594069c1b9426df6130bf708690ec5ee0291e4fa4132127c0f6f93bc9863d7c6"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Cost",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "573f556e730cdabd5b0644a9168c147fbac14e39f54da5a34b8eb1366f3d4bcd"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "e71a55e9e752ed6a12abcddad23b21efa5bfb1eb04953fa62af6981002427be1"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2179c03cb5da65e5634fcff0874d2c4ee235c3eee12c0659ddcea8c63f0857a2"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "9e10220e25bced6ed26a9c01c296f3441f4feca2d66fdaf6f615f14879eb4f73"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Revenue",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "573f556e730cdabd5b0644a9168c147fbac14e39f54da5a34b8eb1366f3d4bcd"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Expense",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "e8818fda6c1e02b63c0e5e7524a6d7d1fc6c77c95946907dde2966fb3a59f16f"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "c2e444a708e6822d5e9df03f1ae7925f32353e6024105f0b7372ce2045634487"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "da43d860482a8b42959aa9680cca20043810d164cd1772d81eeac396a6f7edcb"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "359a7eec724035dc9fc3a2dffe356a3b99d652871ae8adf7519b9236a0593a74"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Asset",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "a700e531b8f831f35bd1817df381d8815a6831ffb779151bb8ee272d44cb1638"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "79b3ba41a333b1d20b1c238a41cb3f53a269704984c37f2cbd60cfed4e873b9c"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "26d40cde9dfa037d84acdf8f6d0e46176ededc5b38c0e49db6bee727326404f7"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "0983aef945ad378a15c59ccf58e037842be90936c88001b6cfad87376fce780c"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "f5476433111a9787f5493a5bacc7384620825a00c131a7bc9a300b194447b484"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "8289a07143f379e0c7955ba1b25c86b9450a855803fc2b84e5ccc924b54f78e8"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "8428bebd683d44e0854e31615c49a896f4d87f0e5bd498ae6a1b4b2002249789"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "fb416ffbeacd71c6fdc36eeaa7a40f8f677b2ba876fac22ceda5131145564b52"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "15fbc09bf10bed6ee4fcfc9b4bdd84911451275116df879ab883c1bbb97db634"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "2179c03cb5da65e5634fcff0874d2c4ee235c3eee12c0659ddcea8c63f0857a2"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "49b0130f0ddc842f379e45e7915638cfdf2b6e05ce150fe336bee9a1cbe6f599"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "9df2960668edd2c895eb402f7cb57067c11a26e2d661aa267245fb5615740e5f"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "caf5db2481663aa3b8b5a7b10f300d459e73054ff7fd8ccff1a7d4a24b6a48c1"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "da2722076ed75085710a8d5e4280a6fe9827ac32298234fb6ce8f70eff384a63"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "f143eedddc8f518c9fda2bcadbcc94c650b9a35992e754ea256cd1b3d6f41bea"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ebitda",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Depreciation",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "79b3ba41a333b1d20b1c238a41cb3f53a269704984c37f2cbd60cfed4e873b9c"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Amortization",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "26d40cde9dfa037d84acdf8f6d0e46176ededc5b38c0e49db6bee727326404f7"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Tax",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "454136fe60065d3a325050c5ab81fce0fd7f059282db2817c29bb1fe4ddc05d0"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "da43d860482a8b42959aa9680cca20043810d164cd1772d81eeac396a6f7edcb"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "24c6fb68131956df2b6825f75c3956f4ade6744a0d6c489289cf06460e7b172d"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "3228712f204189c7a62d380fa0a633257e712736691c3ac7bcb1ac64f6b3b18d"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "0983aef945ad378a15c59ccf58e037842be90936c88001b6cfad87376fce780c"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "49b0130f0ddc842f379e45e7915638cfdf2b6e05ce150fe336bee9a1cbe6f599"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "1337e454ee3588a70ed360be2ab0568c8c232ea7411acdad098456765f39e039"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "47bf406aef94ec3fe828e028d39ea478b7208048ff694ea405e0d4bb041dbfcf"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "edd29f3067d415969652008e68f047496aeddac6db5b2c63a252f01fb12863f1"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Interest",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "a92cb3132b4df49fda19166ba0c62bcb047791eb11d2218d1761cc2650e2fcf8"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "359a7eec724035dc9fc3a2dffe356a3b99d652871ae8adf7519b9236a0593a74"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Earnings",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "185016741f509247232813490bf6a1884458079333def7a97157e377294422e6"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "a3c40b1343af882b54a4de17d2fdd46c2d7a9c569fb5dc78e079a667934ecea6"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Liability",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "0983aef945ad378a15c59ccf58e037842be90936c88001b6cfad87376fce780c"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "The Notes",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "af339a9d94477cd55f7a011c4351a32c40758f04b62b512259e70da8bff63cd7"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "d56a7cdfc1b947385c2b26d6770faa3fe0d9011a3877afb8977191fdff6729d3"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "df866e53b4ff7b609157833e5af0d247f7e4e54eed83574485c6b31c4ad5f560"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "As Restated",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "90b8d26893e7ad0b745a9ef6a806e4f2b9f73adea24c6d95626ccc8e1459e999"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "4990",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "aba9a67cfc81ed39197229d6f906195d9d6a270994e6a08cd436e9d719e28e89"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Equity",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "5fad7a3e0b6f1deecf0b34501a3a664bd0fc1c9b7f9a781aef3cbfcd3c72eb90"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "d11814748a77a0a77596b76cfefbd143daf0f2d986e766f4fe7d2bef9dd4e26b"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "dfb5eb15cf078eb1efad37b45987293c895c2ed061f066cd89291887be8e7e88"
+        },
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "75334e72058be680ae5dc15e6fa9bc7c2e20c8c5ee6e73b80719bf8f52fcc8ec"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Dividend",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "1337e454ee3588a70ed360be2ab0568c8c232ea7411acdad098456765f39e039"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "3946",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "421f940c4bd04089ec4d8df49249c0703b825a97873a8682b95212bc5a2176ec"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Capital",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 2,
+          "section": "",
+          "content_hash": "1a1cf792579989ad4b56922351cf24bc54f15f45fd04e92347394e73a66d0bd7"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethio Teleeom",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "4ac389e1d1b45bb1bacf925490a6e1a305c4869023779d459dc6b9007f5d3e04"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ratio",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "102886a142b99d4adb85132fd2b4ba60823e54bf23bb5e837f7c99bc23556b26"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Cash Flow",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "2ea68f2b9001fc10d9ba8bef2062f0ee9c188da64d50e12569e8a985cc89641d"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "2e087cb0f44b0401e3074880859ae3cb1e5d1eb6cfb236c5d434a68282e6fd41"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "2386dd0ecd11d062fb6c0d9ddc193580993652c47e8f59cd5bb8a48a5b104cbf"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Roc",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "34a51219f2a1873d188c83e68eabfcc6fc2002e9c44fde5112417596e08c6f95"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "fa264c6f3e750c48c36fcbe23bb8c437447219ff37531d7301be488350c5bd16"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Interest Income Received",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Current_Year",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Prior_Year",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Interest Expense Paid",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Income Tax Paid",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Arrear Tax",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Net Cash Inflow From Operating Activities",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Purchase Of Intangible Assets",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Purchase Of Property, Plant And Equipment",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Payment For Right Of Use Assets",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Proceeds From Sale Of Property, Plant And Equipment",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Net Cash Outflow From Investing Activities",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Principal Elements Of Lease Payments",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Payment To Ministry Of Finance",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Net Cash Outflow From Financing Activities",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Net Increase In Cash And Cash Equivalents",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        },
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Cash And Cash Equivalents At The End Of The Year",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 3,
+          "section": "",
+          "content_hash": "41a383f161089e3094ebf11341df2adc669efeb6c6d77e0a2abe5671e5848644"
+        }
+      ],
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "Interest Income Received",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Purchase Of Intangible Assets",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Purchase Of Intangible Assets",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Payment For Right Of Use Assets",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Payment For Right Of Use Assets",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Prior_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Current_Year",
+      "relation": "reported_for_period",
+      "page_ref": 3,
+      "confidence": 0.78
+    },
+    {
+      "source": "Asset",
+      "target": "Amortization",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Earnings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Amortization",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Amortization",
+      "target": "Earnings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Amortization",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Amortization",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Amortization",
+      "target": "Ebitda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Earnings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Ebitda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "Ebitda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "Depreciation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Ebitda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Depreciation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Ebitda",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Depreciation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ebitda",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ebitda",
+      "target": "Depreciation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ebitda",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ebitda",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ebitda",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Depreciation",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Depreciation",
+      "target": "Revenue",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Depreciation",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Depreciation",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Depreciation",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Depreciation",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Liability",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Revenue",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Liability",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Profit",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Profit",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Telecom",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Telecom",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Telecom",
+      "target": "Profit",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Profit",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "Profit",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Equity",
+      "target": "Earnings",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Equity",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Equity",
+      "target": "2021",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Equity",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Equity",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Earnings",
+      "target": "3946",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "3946",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "3946",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Dividend",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "3946",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Dividend",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "3946",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Dividend",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "3946",
+      "target": "Capital",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "3946",
+      "target": "Dividend",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "3946",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "3946",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "3946",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Dividend",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Capital",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Dividend",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Dividend",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Dividend",
+      "target": "Cost",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Dividend",
+      "target": "Ethio Telecom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Dividend",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "4990",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "4990",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cost",
+      "target": "4990",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Telecom",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Telecom",
+      "target": "4990",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "4990",
+      "relation": "co_occurs_on_page",
+      "page_ref": 2,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Interest Expense Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Principal Elements Of Lease Payments",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Cash And Cash Equivalents At The End Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Cash Flow",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2021",
+      "target": "Net Cash Outflow From Investing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Principal Elements Of Lease Payments",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Cash And Cash Equivalents At The End Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Cash Flow",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Net Cash Outflow From Investing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Expense Paid",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Cash And Cash Equivalents At The End Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Cash Flow",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Net Cash Outflow From Investing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Principal Elements Of Lease Payments",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Cash Flow",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Net Cash Outflow From Investing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The End Of The Year",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash Flow",
+      "target": "Net Cash Outflow From Investing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash Flow",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash Flow",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash Flow",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash Flow",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Income",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Asset",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Investing Activities",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income",
+      "target": "Prior_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Interest",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Prior_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Asset",
+      "target": "Net Cash Outflow From Financing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "2022",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "Prior_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "Net Cash Outflow From Financing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest",
+      "target": "Payment To Ministry Of Finance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Ratio",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Prior_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Net Cash Outflow From Financing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Payment To Ministry Of Finance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "2022",
+      "target": "Interest Income Received",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Prior_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Net Cash Outflow From Financing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Payment To Ministry Of Finance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Interest Income Received",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ratio",
+      "target": "Proceeds From Sale Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Prior_Year",
+      "target": "Net Cash Outflow From Financing Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Prior_Year",
+      "target": "Payment To Ministry Of Finance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Prior_Year",
+      "target": "Interest Income Received",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Prior_Year",
+      "target": "Proceeds From Sale Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Prior_Year",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Payment To Ministry Of Finance",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Interest Income Received",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Proceeds From Sale Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Outflow From Financing Activities",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Interest Income Received",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Proceeds From Sale Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Payment To Ministry Of Finance",
+      "target": "Income Tax Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "Proceeds From Sale Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "Income Tax Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Interest Income Received",
+      "target": "Net Cash Inflow From Operating Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Roc",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Income Tax Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Net Cash Inflow From Operating Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Proceeds From Sale Of Property, Plant And Equipment",
+      "target": "Net Increase In Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "As Restated",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Income Tax Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Net Cash Inflow From Operating Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Net Increase In Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Roc",
+      "target": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Income Tax Paid",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Net Cash Inflow From Operating Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Net Increase In Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "As Restated",
+      "target": "Purchase Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Net Cash Inflow From Operating Activities",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Net Increase In Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Purchase Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Income Tax Paid",
+      "target": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Net Increase In Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Purchase Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Cash Inflow From Operating Activities",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Purchase Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Net Increase In Cash And Cash Equivalents",
+      "target": "Arrear Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Purchase Of Property, Plant And Equipment",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Arrear Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Effects Of Exchange Rate Changes On Cash And Cash Equivalents",
+      "target": "Ethio Teleeom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Arrear Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Ethio Teleeom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Property, Plant And Equipment",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Arrear Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Ethio Teleeom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Cash And Cash Equivalents At The Beginning Of The Year",
+      "target": "Current_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Arrear Tax",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Ethio Teleeom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "Current_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Tax",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Ethio Teleeom",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Current_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Arrear Tax",
+      "target": "Purchase Of Intangible Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Teleeom",
+      "target": "Expense",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Teleeom",
+      "target": "Current_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Teleeom",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Teleeom",
+      "target": "Purchase Of Intangible Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethio Teleeom",
+      "target": "Payment For Right Of Use Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Current_Year",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Purchase Of Intangible Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Expense",
+      "target": "Payment For Right Of Use Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Current_Year",
+      "target": "The Notes",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Current_Year",
+      "target": "Purchase Of Intangible Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Current_Year",
+      "target": "Payment For Right Of Use Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Purchase Of Intangible Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "The Notes",
+      "target": "Payment For Right Of Use Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    },
+    {
+      "source": "Purchase Of Intangible Assets",
+      "target": "Payment For Right Of Use Assets",
+      "relation": "co_occurs_on_page",
+      "page_ref": 3,
+      "confidence": 0.5
+    }
+  ],
+  "cross_references": []
+}

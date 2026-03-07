@@ -1,0 +1,68 @@
+{
+  "document_id": "c7d87eb9189d",
+  "root_nodes": [
+    {
+      "title": "(Untitled)",
+      "page_start": 1,
+      "page_end": 1,
+      "children": [],
+      "key_entities": [
+        "Tax Policy Directorate"
+      ],
+      "summary": "I don't have access to the actual content of the document section you're referring to. The text you provided only includes the title and metadata of what appears to be an Ethiopian government report about import tax expenditures from fiscal years 2018/19 to 2020/21, published by the Tax Policy Directorate of the Ministry of Finance in September 2022. \n\nTo provide a factual summary of the document section, I would need you to share the actual content/text of that section rather than just the title and header information.",
+      "data_types_present": [
+        "figures",
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Preface",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [
+        "Finance Tax Policy Directorate",
+        "Tax Analysis",
+        "Developing Countries",
+        "Daniel Prinz",
+        "Edris Seid",
+        "Ben Waltmann",
+        "Ethiopian Ministry",
+        "Mulay Weldu",
+        "David Phillips",
+        "Ethiopian Customs Commission"
+      ],
+      "summary": "This report has been prepared by the IFS Centre for Tax Analysis in Developing Countries (TaxDev) team (Daniel Prinz, Edris Seid and Ben Waltmann) in collaboration with the Ethiopian Ministry of Finance Tax Policy Directorate team (led by Mulay Weldu).",
+      "data_types_present": [
+        "figures"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Contents",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "This document section outlines the structure and content of a report on tax expenditures, including an executive summary, introduction, policy rationale, definitions and data methodology, and detailed tax expenditure estimates. The section covers key components such as defining benchmark tax systems, estimating tax expenditures, and presenting overall tax expenditure data. The page numbers indicate the organizational layout of the report's main sections.",
+      "data_types_present": [
+        "numeric_dense",
+        "tables"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Executive summary",
+      "page_start": 4,
+      "page_end": 5,
+      "children": [],
+      "key_entities": [
+        "Ethiopian Customs Commission"
+      ],
+      "summary": "This report estimates import tax expenditures in Ethiopia for fiscal years 2018/19, 2019/20, and 2020/21 using shipment-level microdata from the Ethiopian Customs Commission. The analysis covers four import taxes (customs duty, excise duty, VAT, and surtax) and examines exemptions and rate reductions across different commodity categories to assess whether these expenditures align with development objectives. The report notes that its revenue forgone methodology likely overstates the true fiscal cost of tax expenditures, as it does not account for behavioral responses or increased domestic tax collections that may result from import tax expenditures.",
+      "data_types_present": [],
+      "content_hashes": []
+    }
+  ]
+}

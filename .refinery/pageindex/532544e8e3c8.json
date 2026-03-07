@@ -1,0 +1,223 @@
+{
+  "document_id": "532544e8e3c8",
+  "root_nodes": [
+    {
+      "title": "Ethio Telecom",
+      "page_start": 1,
+      "page_end": 1,
+      "children": [],
+      "key_entities": [
+        "The Notes"
+      ],
+      "summary": "The statement of profit or loss and other comprehensive income for the year ended 30 June 2022 shows revenue from contracts with customers of Birr 59,448,361,000, with operating expenses of Birr 20,872,135,000 and a finance cost net of Birr 6,948,505,000, resulting in a profit after tax of Birr 8,999,582,000. Other comprehensive income included a remeasurement gain on employment benefits obligations of Birr 91,576,000 and deferred tax adjustments, leading to total comprehensive income for the year of Birr 9,063,685,000. The figures reflect increases compared to the prior year, indicating improved performance.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Statement of financial position",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "I don't see any document section provided in your message to summarize. You've only included \"For the year ended 30 June 2022\" which appears to be a header or title. Could you please provide the actual document section content that you'd like me to summarize?",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "30 June 2022 | 30 June 2021 | As Restated",
+      "page_start": 2,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "I notice that you've provided a header \"Notes | Birr'000 Notes | Birr'000\" but there is no actual document section content to summarize. The header appears to be a table or financial statement heading showing notes sections with amounts in thousands of Ethiopian Birr, but without any substantive text or data below it.\n\nTo provide a factual summary of 2-3 sentences as requested, I would need the actual content of the document section to summarize.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "ASSETS",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Non current assets",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "The document section presents a breakdown of assets including right of use assets valued at $38,857,822, intangible assets at $1,608,350, and other assets totaling $1,354,309. Notes receivable and deferred tax assets are also listed with values of $7,101,635 and $497,183 respectively. The total assets amount to $189,017,711.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "EQUITY AND LIABILITIES",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "LIABILITIES",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Non-current liabilities",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "This section covers non-current liabilities, which are long-term financial obligations that a company expects to settle beyond one year. The reported figures range from approximately 45 birr for some smaller provisions to over 69 million birr for total current liabilities, with major categories including borrowings, lease liabilities, contract liabilities, and trade payables. The total liabilities across both periods amount to approximately 76-87 million birr.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Capital",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Equity attributable to owners",
+      "page_start": 2,
+      "page_end": 2,
+      "children": [],
+      "key_entities": [
+        "The Notes"
+      ],
+      "summary": "The document section shows retained earnings of 100,000,000 with a decrease of 5,648,273, and includes various reserves totaling 1,399,923. Legal reserve and other reserves are also detailed with specific amounts. Total equity is shown as 104,554,950 and total equity and liabilities amount to 189,017,711.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Ethio Teleeom",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Statement of vash flows",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "I cannot provide a summary of the document section you've referenced because only the date \"For the ear ended 30, June 2022\" has been provided. No actual content or text from the document section is included for me to summarize.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Cash generated from operations",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Cash flows from operating activities",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "The document shows interest income received of $44,665,627 and interest expense paid of $75,218. Income tax paid was $(7,932,368) with additional arrear tax payments of $(1,458,594). The net cash inflow from operating activities was $34,772,582.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Cash flows from investing activities",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Sale of placements with financial institutions",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "The company made significant investments in intangible assets totaling $2,150,000 and property, plant and equipment purchases of $11,180,000. Major cash outflows included payments for right of use assets amounting to $11,423,007, resulting in net cash outflow from investing activities of $14,029,753. The company also generated some proceeds from asset sales totaling $148,970.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Repayments of borrowings",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "",
+      "data_types_present": [],
+      "content_hashes": []
+    },
+    {
+      "title": "Cash flows from financing activities",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [
+        "The Notes"
+      ],
+      "summary": "The document section shows cash flow information including principal lease payments of (8,283,127) and payments to Ministry of Finance of (1,000,000), resulting in net cash outflow from financing activities of (9,100,548). The net increase in cash and cash equivalents was 44,642,281, with cash and cash equivalents at the end of the year totaling 28,191,157. Exchange rate changes resulted in a decrease of (1,645,204) in cash and cash equivalents.",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    },
+    {
+      "title": "Ortolnel",
+      "page_start": 3,
+      "page_end": 3,
+      "children": [],
+      "key_entities": [],
+      "summary": "I apologize, but I don't see the actual content of the \"Ortolnel 14\" document section in your message - only the heading and number. To provide an accurate summary of 2-3 sentences, I would need you to share the full text of this section. Could you please provide the complete document section you'd like me to summarize?",
+      "data_types_present": [
+        "numeric_dense"
+      ],
+      "content_hashes": []
+    }
+  ]
+}

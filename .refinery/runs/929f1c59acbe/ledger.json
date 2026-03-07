@@ -1,0 +1,28 @@
+[
+  {
+    "document_id": "3680f816abab",
+    "source_filename": "Company_Profile_2024_25.pdf",
+    "strategy_used": "layout_aware",
+    "confidence_score": 0.95,
+    "cost_estimate": "medium",
+    "processing_time_s": 155.7013,
+    "fallback_trigger": null,
+    "page_scope": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "failure_reason": null,
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "flagged_for_review": false,
+    "timestamp": "2026-03-07T17:38:08.412648+00:00"
+  }
+]

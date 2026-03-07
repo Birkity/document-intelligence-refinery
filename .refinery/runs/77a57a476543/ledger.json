@@ -1,0 +1,21 @@
+[
+  {
+    "document_id": "532544e8e3c8",
+    "source_filename": "2022_Audited_Financial_Statement_Report.pdf",
+    "strategy_used": "ocr_heavy",
+    "confidence_score": 0.7259,
+    "cost_estimate": "high",
+    "processing_time_s": 196.6986,
+    "fallback_trigger": null,
+    "page_scope": [
+      1,
+      2,
+      3
+    ],
+    "failure_reason": null,
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "flagged_for_review": false,
+    "timestamp": "2026-03-07T15:11:20.672923+00:00"
+  }
+]

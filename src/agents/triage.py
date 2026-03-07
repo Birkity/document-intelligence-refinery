@@ -359,8 +359,11 @@ class TriageAgent:
         layout_complexity = self.detect_layout_complexity(pdf_path)
 
         # --- 3. extract text sample for domain detection (first 2 pages) ---
+        # Also compute total page_count for the profile.
         text_sample = ""
+        page_count = 0
         with pdfplumber.open(pdf_path) as pdf:
+            page_count = len(pdf.pages)
             for page in pdf.pages[:2]:
                 text_sample += (page.extract_text() or "") + "\n"
 
@@ -386,6 +389,8 @@ class TriageAgent:
             language_confidence=0.5,
             domain_hint=domain_hint,
             estimated_extraction_cost=extraction_cost,
+            page_count=page_count,
+            confidence=_origin_conf,
         )
 
         # --- Persist to .refinery/profiles/ ---

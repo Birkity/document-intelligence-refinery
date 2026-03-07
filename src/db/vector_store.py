@@ -3,6 +3,8 @@
 Stores chunk embeddings with document / page / section metadata.
 Uses a free local embedding model (default: ``all-MiniLM-L6-v2``
 via chromadb's built-in sentence-transformers integration).
+
+Enhanced metadata filters: query by document_id, page range, chunk_type.
 """
 
 from __future__ import annotations
@@ -56,15 +58,10 @@ class VectorStore:
     ) -> None:
         """Upsert chunks into the vector collection.
 
-        Parameters
-        ----------
-        ids : list[str]
-            Unique IDs for each chunk (e.g. ``{doc_id}_{chunk_idx}``).
-        documents : list[str]
-            Text content of each chunk (Chroma will embed automatically).
-        metadatas : list[dict]
-            Per-chunk metadata — must include ``document_id``,
-            ``page_number``, and ``section_path``.
+        Recommended metadata keys::
+
+            document_id, page_number, section_path, chunk_type,
+            content_hash, parent_section
         """
         self._collection.upsert(
             ids=ids,
@@ -73,16 +70,45 @@ class VectorStore:
         )
 
     def query(
-        self, query_text: str, n_results: int = 5
+        self,
+        query_text: str,
+        n_results: int = 5,
+        *,
+        where: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         """Semantic search over stored chunks.
 
-        Returns the raw ChromaDB query result dict.
+        Parameters
+        ----------
+        where : dict | None
+            ChromaDB metadata filter, e.g.
+            ``{"document_id": "abc123"}`` or
+            ``{"$and": [{"document_id": "abc"}, {"page_number": {"$gte": 3}}]}``
         """
-        return self._collection.query(
-            query_texts=[query_text],
+        kwargs: dict[str, Any] = {
+            "query_texts": [query_text],
+            "n_results": n_results,
+        }
+        if where:
+            kwargs["where"] = where
+        return self._collection.query(**kwargs)
+
+    def query_by_document(
+        self,
+        query_text: str,
+        document_id: str,
+        n_results: int = 5,
+    ) -> dict[str, Any]:
+        """Convenience: semantic search scoped to a single document."""
+        return self.query(
+            query_text,
             n_results=n_results,
+            where={"document_id": document_id},
         )
+
+    def delete_document(self, document_id: str) -> None:
+        """Remove all chunks for *document_id* from the collection."""
+        self._collection.delete(where={"document_id": document_id})
 
     @property
     def count(self) -> int:

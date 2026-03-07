@@ -46,6 +46,10 @@ class TestInitializeDatabase:
         expected = [
             "chunks",
             "documents",
+            "entity_mentions",
+            "fact_tables",
+            "knowledge_graph_edges",
+            "page_indexes",
             "provenance_ledger",
             "query_logs",
             "structured_tables",
@@ -68,7 +72,7 @@ class TestInitializeDatabase:
             if not row[0].startswith("sqlite_")
         ]
         conn.close()
-        assert len(tables) == 5
+        assert len(tables) == 9  # 7 original + entity_mentions + knowledge_graph_edges
 
     def test_can_insert_and_read_document(self, tmp_path: Path) -> None:
         db_path = tmp_path / "test.db"
