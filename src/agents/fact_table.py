@@ -24,6 +24,7 @@ from typing import Any, Sequence
 import httpx
 
 from src.models.schemas import Fact, LDU
+from src.telemetry import traced
 from src.utils.hash_utils import generate_content_hash
 
 log = logging.getLogger(__name__)
@@ -184,52 +185,107 @@ def _llm_extract_facts(
         "If a field is unknown, use an empty string.\n\n"
         f"Text:\n{text[:3000]}"
     )
+    messages = [{"role": "user", "content": prompt}]
+
+    with traced(
+        "fact_table.llm.prompt",
+        run_type="prompt",
+        inputs={
+            "document_id": document_id,
+            "page": page,
+            "section": section,
+            "text": text,
+        },
+        metadata={"provider": "ollama", "model": model},
+        tags=["week3", "document-refinery", "fact-table", "prompt"],
+    ) as prompt_run:
+        if prompt_run is not None:
+            prompt_run.end(outputs={"messages": messages})
 
     try:
-        resp = httpx.post(
-            f"{ollama_base_url}/chat/completions",
-            headers={"Content-Type": "application/json"},
-            json={
+        with traced(
+            "fact_table.llm.call",
+            run_type="llm",
+            inputs={
+                "provider": "ollama",
+                "base_url": ollama_base_url,
                 "model": model,
-                "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 1024,
-                "temperature": 0.1,
+                "messages": messages,
             },
-            timeout=30.0,
-        )
-        resp.raise_for_status()
-        content = resp.json()["choices"][0]["message"]["content"]
-        # Strip markdown fencing if present
-        content = re.sub(r"^```(?:json)?\s*", "", content.strip())
-        content = re.sub(r"\s*```$", "", content.strip())
-        items = json.loads(content)
+            tags=["week3", "document-refinery", "fact-table", "llm"],
+        ) as llm_run:
+            resp = httpx.post(
+                f"{ollama_base_url}/chat/completions",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": model,
+                    "messages": messages,
+                    "max_tokens": 1024,
+                    "temperature": 0.1,
+                },
+                timeout=30.0,
+            )
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"]
+            if llm_run is not None:
+                llm_run.end(
+                    outputs={
+                        "status_code": resp.status_code,
+                        "content": content,
+                    }
+                )
+
+        with traced(
+            "fact_table.llm.parse",
+            run_type="parser",
+            inputs={"raw_content": content},
+            tags=["week3", "document-refinery", "fact-table", "parser"],
+        ) as parse_run:
+            # Strip markdown fencing if present
+            content = re.sub(r"^```(?:json)?\s*", "", content.strip())
+            content = re.sub(r"\s*```$", "", content.strip())
+            items = json.loads(content)
+            if parse_run is not None:
+                parse_run.end(outputs={"parsed_items": items})
     except Exception as exc:
         log.warning("LLM fact extraction failed: %s", exc)
         return []
 
     facts: list[Fact] = []
-    for item in items:
-        if not isinstance(item, dict):
-            continue
-        k = str(item.get("key", "")).strip()
-        v = str(item.get("value", "")).strip()
-        if not k or not v:
-            continue
-        unit = str(item.get("unit", "")) or _parse_unit(v)
-        facts.append(Fact(
-            key=k,
-            value=v,
-            unit=unit,
-            page_ref=page,
-            document_id=document_id,
-            content_hash=content_hash,
-            entity=str(item.get("entity", "")),
-            metric=str(item.get("metric", "")),
-            period=str(item.get("period", "")) or _detect_period(text),
-            section=section,
-            extraction_method="llm_assisted",
-            confidence=0.75,
-        ))
+    with traced(
+        "fact_table.llm.postprocess",
+        run_type="tool",
+        inputs={
+            "document_id": document_id,
+            "page": page,
+            "item_count": len(items) if isinstance(items, list) else 0,
+        },
+        tags=["week3", "document-refinery", "fact-table", "postprocess"],
+    ) as postprocess_run:
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            k = str(item.get("key", "")).strip()
+            v = str(item.get("value", "")).strip()
+            if not k or not v:
+                continue
+            unit = str(item.get("unit", "")) or _parse_unit(v)
+            facts.append(Fact(
+                key=k,
+                value=v,
+                unit=unit,
+                page_ref=page,
+                document_id=document_id,
+                content_hash=content_hash,
+                entity=str(item.get("entity", "")),
+                metric=str(item.get("metric", "")),
+                period=str(item.get("period", "")) or _detect_period(text),
+                section=section,
+                extraction_method="llm_assisted",
+                confidence=0.75,
+            ))
+        if postprocess_run is not None:
+            postprocess_run.end(outputs={"fact_count": len(facts)})
     return facts
 
 
@@ -259,51 +315,105 @@ def _llm_extract_page_facts(
         "Use empty string for unknown fields. Only return the JSON array — no prose.\n\n"
         f"Page text:\n{page_text[:4000]}"
     )
+    messages = [{"role": "user", "content": prompt}]
+
+    with traced(
+        "fact_table.page_llm.prompt",
+        run_type="prompt",
+        inputs={
+            "document_id": document_id,
+            "page": page,
+            "page_text": page_text,
+        },
+        metadata={"provider": "ollama", "model": model},
+        tags=["week3", "document-refinery", "fact-table", "prompt"],
+    ) as prompt_run:
+        if prompt_run is not None:
+            prompt_run.end(outputs={"messages": messages})
 
     try:
-        resp = httpx.post(
-            f"{ollama_base_url}/chat/completions",
-            headers={"Content-Type": "application/json"},
-            json={
+        with traced(
+            "fact_table.page_llm.call",
+            run_type="llm",
+            inputs={
+                "provider": "ollama",
+                "base_url": ollama_base_url,
                 "model": model,
-                "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 2048,
-                "temperature": 0.05,
+                "messages": messages,
             },
-            timeout=60.0,
-        )
-        resp.raise_for_status()
-        raw = resp.json()["choices"][0]["message"]["content"]
-        raw = re.sub(r"^```(?:json)?\s*", "", raw.strip())
-        raw = re.sub(r"\s*```$", "", raw.strip())
-        items = json.loads(raw)
+            tags=["week3", "document-refinery", "fact-table", "llm"],
+        ) as llm_run:
+            resp = httpx.post(
+                f"{ollama_base_url}/chat/completions",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "model": model,
+                    "messages": messages,
+                    "max_tokens": 2048,
+                    "temperature": 0.05,
+                },
+                timeout=60.0,
+            )
+            resp.raise_for_status()
+            raw = resp.json()["choices"][0]["message"]["content"]
+            if llm_run is not None:
+                llm_run.end(
+                    outputs={
+                        "status_code": resp.status_code,
+                        "content": raw,
+                    }
+                )
+
+        with traced(
+            "fact_table.page_llm.parse",
+            run_type="parser",
+            inputs={"raw_content": raw},
+            tags=["week3", "document-refinery", "fact-table", "parser"],
+        ) as parse_run:
+            raw = re.sub(r"^```(?:json)?\s*", "", raw.strip())
+            raw = re.sub(r"\s*```$", "", raw.strip())
+            items = json.loads(raw)
+            if parse_run is not None:
+                parse_run.end(outputs={"parsed_items": items})
     except Exception as exc:
         log.warning("Page-level LLM fact extraction failed (page %d): %s", page, exc)
         return []
 
     facts: list[Fact] = []
-    for item in items:
-        if not isinstance(item, dict):
-            continue
-        k = str(item.get("key", "")).strip()
-        v = str(item.get("value", "")).strip()
-        if not k or not v:
-            continue
-        unit = str(item.get("unit", "")) or _parse_unit(v)
-        facts.append(Fact(
-            key=k,
-            value=v,
-            unit=unit,
-            page_ref=page,
-            document_id=document_id,
-            content_hash=content_hash,
-            entity="",
-            metric=k,
-            period=str(item.get("period", "")),
-            section="",
-            extraction_method="llm_assisted",
-            confidence=0.78,
-        ))
+    with traced(
+        "fact_table.page_llm.postprocess",
+        run_type="tool",
+        inputs={
+            "document_id": document_id,
+            "page": page,
+            "item_count": len(items) if isinstance(items, list) else 0,
+        },
+        tags=["week3", "document-refinery", "fact-table", "postprocess"],
+    ) as postprocess_run:
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            k = str(item.get("key", "")).strip()
+            v = str(item.get("value", "")).strip()
+            if not k or not v:
+                continue
+            unit = str(item.get("unit", "")) or _parse_unit(v)
+            facts.append(Fact(
+                key=k,
+                value=v,
+                unit=unit,
+                page_ref=page,
+                document_id=document_id,
+                content_hash=content_hash,
+                entity="",
+                metric=k,
+                period=str(item.get("period", "")),
+                section="",
+                extraction_method="llm_assisted",
+                confidence=0.78,
+            ))
+        if postprocess_run is not None:
+            postprocess_run.end(outputs={"fact_count": len(facts)})
     return facts
 
 
@@ -356,6 +466,40 @@ class FactTableExtractor:
     # ------------------------------------------------------------------
 
     def extract(
+        self,
+        ldus: list[LDU],
+        document_id: str,
+        origin: str = "",
+    ) -> list[Fact]:
+        """Extract facts and emit a traced chain when tracing is enabled."""
+        with traced(
+            "fact_table.extract",
+            run_type="chain",
+            inputs={
+                "document_id": document_id,
+                "ldu_count": len(ldus),
+                "origin": origin,
+                "enable_llm": self.enable_llm,
+                "budget_max_llm_calls": self._budget_max,
+            },
+            metadata={
+                "provider": "ollama",
+                "ollama_base_url": self.ollama_base_url,
+                "ollama_model": self.ollama_model,
+            },
+            tags=["week3", "document-refinery", "fact-table"],
+        ) as extract_run:
+            facts = self._extract_impl(ldus, document_id=document_id, origin=origin)
+            if extract_run is not None:
+                extract_run.end(
+                    outputs={
+                        "fact_count": len(facts),
+                        "llm_calls_made": self._llm_calls,
+                    }
+                )
+            return facts
+
+    def _extract_impl(
         self,
         ldus: list[LDU],
         document_id: str,

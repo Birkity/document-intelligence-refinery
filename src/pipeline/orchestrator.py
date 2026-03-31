@@ -35,6 +35,7 @@ from src.agents.extractor import ExtractionRouter
 from src.agents.fact_table import FactTableExtractor
 from src.agents.pageindex import PageIndexBuilder
 from src.agents.triage import TriageAgent
+from src.config import get_settings
 from src.db.repo import RefineryRepo
 from src.db.vector_store import VectorStore
 from src.models.schemas import (
@@ -45,6 +46,7 @@ from src.models.schemas import (
     LDU,
     PageIndex,
 )
+from src.telemetry import traced
 
 log = logging.getLogger(__name__)
 
@@ -176,6 +178,60 @@ class PipelineOrchestrator:
     # ------------------------------------------------------------------
 
     def run(
+        self,
+        pdf_path: str | Path,
+        *,
+        sample_pages: int | None = None,
+        page_sample_strategy: str = "head_mid_tail",
+        explicit_pages: list[int] | None = None,
+    ) -> PipelineResult:
+        """Execute the full pipeline on *pdf_path* with optional LangSmith tracing."""
+        pdf = Path(pdf_path)
+        cfg = get_settings()
+
+        with traced(
+            "document_refinery.pipeline_run",
+            run_type="chain",
+            inputs={
+                "pdf_path": str(pdf.resolve()),
+                "sample_pages": sample_pages,
+                "page_sample_strategy": page_sample_strategy,
+                "explicit_pages": explicit_pages,
+            },
+            metadata={
+                "provider": "ollama",
+                "ollama_base_url": cfg.ollama_base_url,
+                "ollama_model": cfg.ollama_model,
+                "enable_llm_fact_extraction": cfg.enable_llm_fact_extraction,
+                "enable_vision_extraction": cfg.enable_vision_extraction,
+            },
+            tags=["week3", "document-refinery", "pipeline"],
+        ) as pipeline_run:
+            result = self._run_impl(
+                pdf,
+                sample_pages=sample_pages,
+                page_sample_strategy=page_sample_strategy,
+                explicit_pages=explicit_pages,
+            )
+            if pipeline_run is not None:
+                pipeline_run.end(
+                    outputs={
+                        "run_id": result.run_id,
+                        "document_id": result.document_id,
+                        "pages_extracted": len(result.extracted_doc.pages),
+                        "ldu_count": len(result.ldus),
+                        "fact_count": len(result.facts),
+                        "knowledge_graph_entities": (
+                            len(result.knowledge_graph.entities)
+                            if result.knowledge_graph else 0
+                        ),
+                        "artifact_dir": str(result.artefact_dir) if result.artefact_dir else "",
+                        "elapsed_seconds": result.elapsed_seconds,
+                    }
+                )
+            return result
+
+    def _run_impl(
         self,
         pdf_path: str | Path,
         *,

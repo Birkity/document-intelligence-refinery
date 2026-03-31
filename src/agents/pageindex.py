@@ -30,6 +30,7 @@ import yaml
 import httpx
 
 from src.models.schemas import LDU, PageIndex, PageIndexNode
+from src.telemetry import traced
 from src.utils.hash_utils import generate_content_hash
 
 log = logging.getLogger(__name__)
@@ -127,6 +128,43 @@ class PageIndexBuilder:
     # ------------------------------------------------------------------
 
     def build(
+        self,
+        ldus: list[LDU],
+        source_filename: str,
+        document_id: str | None = None,
+    ) -> PageIndex:
+        """Build a PageIndex and emit a traced chain when tracing is enabled."""
+        trace_document_id = document_id or self._auto_id(source_filename)
+        with traced(
+            "pageindex.build",
+            run_type="chain",
+            inputs={
+                "document_id": trace_document_id,
+                "source_filename": source_filename,
+                "ldu_count": len(ldus),
+            },
+            metadata={
+                "provider": "ollama",
+                "ollama_base_url": self._ollama_base_url,
+                "ollama_model": self._ollama_model,
+            },
+            tags=["week3", "document-refinery", "pageindex"],
+        ) as build_run:
+            page_index = self._build_impl(
+                ldus,
+                source_filename=source_filename,
+                document_id=document_id,
+            )
+            if build_run is not None:
+                build_run.end(
+                    outputs={
+                        "root_node_count": len(page_index.root_nodes),
+                        "section_titles": [node.title for node in page_index.root_nodes[:10]],
+                    }
+                )
+            return page_index
+
+    def _build_impl(
         self,
         ldus: list[LDU],
         source_filename: str,
@@ -454,21 +492,63 @@ class PageIndexBuilder:
                 "Be factual and concise. Do not add information not present.\n\n"
                 f"{text}"
             )
+        messages = [{"role": "user", "content": prompt}]
+
+        with traced(
+            "pageindex.summary.prompt",
+            run_type="prompt",
+            inputs={
+                "section_title": section_title,
+                "numeric_dense": is_numeric,
+                "section_text": text,
+            },
+            metadata={"provider": "ollama", "model": self._ollama_model},
+            tags=["week3", "document-refinery", "pageindex", "prompt"],
+        ) as prompt_run:
+            if prompt_run is not None:
+                prompt_run.end(outputs={"messages": messages})
         try:
-            resp = httpx.post(
-                f"{self._ollama_base_url}/chat/completions",
-                headers={"Content-Type": "application/json"},
-                json={
+            with traced(
+                "pageindex.summary.llm_call",
+                run_type="llm",
+                inputs={
+                    "provider": "ollama",
+                    "base_url": self._ollama_base_url,
                     "model": self._ollama_model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 256,
-                    "temperature": 0.2,
+                    "messages": messages,
                 },
-                timeout=20.0,
-            )
-            resp.raise_for_status()
-            content = resp.json()["choices"][0]["message"]["content"]
-            summary = content.strip()
+                tags=["week3", "document-refinery", "pageindex", "llm"],
+            ) as llm_run:
+                resp = httpx.post(
+                    f"{self._ollama_base_url}/chat/completions",
+                    headers={"Content-Type": "application/json"},
+                    json={
+                        "model": self._ollama_model,
+                        "messages": messages,
+                        "max_tokens": 256,
+                        "temperature": 0.2,
+                    },
+                    timeout=20.0,
+                )
+                resp.raise_for_status()
+                content = resp.json()["choices"][0]["message"]["content"]
+                if llm_run is not None:
+                    llm_run.end(
+                        outputs={
+                            "status_code": resp.status_code,
+                            "content": content,
+                        }
+                    )
+
+            with traced(
+                "pageindex.summary.parse",
+                run_type="parser",
+                inputs={"raw_content": content},
+                tags=["week3", "document-refinery", "pageindex", "parser"],
+            ) as parse_run:
+                summary = content.strip()
+                if parse_run is not None:
+                    parse_run.end(outputs={"summary": summary})
             if summary:
                 log.debug("Ollama summary: %s", summary[:80])
                 return summary

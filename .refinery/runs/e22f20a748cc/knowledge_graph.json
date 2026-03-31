@@ -1,0 +1,596 @@
+{
+  "document_id": "e4a78e69f29f",
+  "entities": [
+    {
+      "entity_name": "Statistical Bulletin",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Issue No",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Summary Content The Consumer Price Index",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Summary The",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Year Gen",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Month June",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Food Inflation",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Month Moving Average General",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Annual Infla",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Alcoholic Beverages",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "2017",
+      "entity_type": "date",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        },
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Loss",
+      "entity_type": "metric",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Ethiopia",
+      "entity_type": "location",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "64f08695def9ec147c3d2a2aa6fefaae9b75cabdd227b324cb847473b8ce6232"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "entity_name": "Summary The Consumer Price Index",
+      "entity_type": "organization",
+      "mentions": [
+        {
+          "page": 1,
+          "section": "",
+          "content_hash": "d6068fd364366eb3e5ec73543b5b34bd90aaea10feeeb9580170f107358eb560"
+        }
+      ],
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "Food Inflation",
+      "target": "Summary Content The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Food Inflation",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Food Inflation",
+      "target": "2017",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Food Inflation",
+      "target": "Annual Infla",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Food Inflation",
+      "target": "Alcoholic Beverages",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary Content The Consumer Price Index",
+      "target": "Ethiopia",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary Content The Consumer Price Index",
+      "target": "2017",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary Content The Consumer Price Index",
+      "target": "Annual Infla",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary Content The Consumer Price Index",
+      "target": "Alcoholic Beverages",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary Content The Consumer Price Index",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "2017",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Annual Infla",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Alcoholic Beverages",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Ethiopia",
+      "target": "Month Moving Average General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2017",
+      "target": "Annual Infla",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2017",
+      "target": "Alcoholic Beverages",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2017",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2017",
+      "target": "Month Moving Average General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "2017",
+      "target": "Issue No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Infla",
+      "target": "Alcoholic Beverages",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Infla",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Infla",
+      "target": "Month Moving Average General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Infla",
+      "target": "Issue No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Annual Infla",
+      "target": "Summary The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Alcoholic Beverages",
+      "target": "Loss",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Alcoholic Beverages",
+      "target": "Month Moving Average General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Alcoholic Beverages",
+      "target": "Issue No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Alcoholic Beverages",
+      "target": "Summary The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Alcoholic Beverages",
+      "target": "Month June",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Month Moving Average General",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Issue No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Summary The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Month June",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Loss",
+      "target": "Summary The",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month Moving Average General",
+      "target": "Issue No",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month Moving Average General",
+      "target": "Summary The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month Moving Average General",
+      "target": "Month June",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month Moving Average General",
+      "target": "Summary The",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month Moving Average General",
+      "target": "Statistical Bulletin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Issue No",
+      "target": "Summary The Consumer Price Index",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Issue No",
+      "target": "Month June",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Issue No",
+      "target": "Summary The",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Issue No",
+      "target": "Statistical Bulletin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Issue No",
+      "target": "Year Gen",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The Consumer Price Index",
+      "target": "Month June",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The Consumer Price Index",
+      "target": "Summary The",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The Consumer Price Index",
+      "target": "Statistical Bulletin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The Consumer Price Index",
+      "target": "Year Gen",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month June",
+      "target": "Summary The",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month June",
+      "target": "Statistical Bulletin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Month June",
+      "target": "Year Gen",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The",
+      "target": "Statistical Bulletin",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Summary The",
+      "target": "Year Gen",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    },
+    {
+      "source": "Statistical Bulletin",
+      "target": "Year Gen",
+      "relation": "co_occurs_on_page",
+      "page_ref": 1,
+      "confidence": 0.5
+    }
+  ],
+  "cross_references": []
+}

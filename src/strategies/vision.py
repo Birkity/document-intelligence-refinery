@@ -33,6 +33,7 @@ from src.models.schemas import (
     TextBlock,
 )
 from src.strategies.base import BaseExtractor
+from src.telemetry import traced
 
 log = logging.getLogger(__name__)
 
@@ -105,38 +106,90 @@ class VisionExtractor(BaseExtractor):
             import httpx
 
             img_b64 = base64.b64encode(image_bytes).decode("utf-8")
-
-            response = httpx.post(
-                f"{cfg.openrouter_base_url}/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {cfg.openrouter_api_key}",
-                    "Content-Type": "application/json",
+            message_payload = [
+                {"type": "text", "text": prompt},
+                {
+                    "type": "image_url",
+                    "image_url": {"detail": "inline_base64", "byte_length": len(image_bytes)},
                 },
-                json={
+            ]
+
+            with traced(
+                "vision_extractor.prompt",
+                run_type="prompt",
+                inputs={
+                    "provider": "openrouter",
                     "model": cfg.vision_model,
-                    "messages": [
-                        {
-                            "role": "user",
-                            "content": [
-                                {"type": "text", "text": prompt},
-                                {
-                                    "type": "image_url",
-                                    "image_url": {
-                                        "url": f"data:image/png;base64,{img_b64}"
-                                    },
-                                },
-                            ],
-                        }
-                    ],
-                    "max_tokens": 4096,
+                    "prompt": prompt,
+                    "image_byte_length": len(image_bytes),
                 },
-                timeout=60.0,
-            )
-            response.raise_for_status()
-            self._vision_calls_made += 1
+                tags=["week3", "document-refinery", "vision", "prompt"],
+            ) as prompt_run:
+                if prompt_run is not None:
+                    prompt_run.end(
+                        outputs={"messages": [{"role": "user", "content": message_payload}]}
+                    )
 
-            data = response.json()
-            return data["choices"][0]["message"]["content"]
+            with traced(
+                "vision_extractor.model_call",
+                run_type="llm",
+                inputs={
+                    "provider": "openrouter",
+                    "base_url": cfg.openrouter_base_url,
+                    "model": cfg.vision_model,
+                    "messages": [{"role": "user", "content": message_payload}],
+                },
+                tags=["week3", "document-refinery", "vision", "llm"],
+            ) as llm_run:
+                response = httpx.post(
+                    f"{cfg.openrouter_base_url}/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {cfg.openrouter_api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": cfg.vision_model,
+                        "messages": [
+                            {
+                                "role": "user",
+                                "content": [
+                                    {"type": "text", "text": prompt},
+                                    {
+                                        "type": "image_url",
+                                        "image_url": {
+                                            "url": f"data:image/png;base64,{img_b64}"
+                                        },
+                                    },
+                                ],
+                            }
+                        ],
+                        "max_tokens": 4096,
+                    },
+                    timeout=60.0,
+                )
+                response.raise_for_status()
+                self._vision_calls_made += 1
+
+                data = response.json()
+                content = data["choices"][0]["message"]["content"]
+                if llm_run is not None:
+                    llm_run.end(
+                        outputs={
+                            "status_code": response.status_code,
+                            "content": content,
+                        }
+                    )
+
+            with traced(
+                "vision_extractor.parse",
+                run_type="parser",
+                inputs={"raw_content": content},
+                tags=["week3", "document-refinery", "vision", "parser"],
+            ) as parse_run:
+                parsed = content.strip()
+                if parse_run is not None:
+                    parse_run.end(outputs={"text": parsed})
+            return parsed
         except Exception as exc:
             log.error("Vision LLM call failed: %s", exc)
             return ""

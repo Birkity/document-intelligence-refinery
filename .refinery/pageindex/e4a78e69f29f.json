@@ -1,0 +1,28 @@
+{
+  "document_id": "e4a78e69f29f",
+  "root_nodes": [
+    {
+      "title": "(Untitled)",
+      "page_start": 1,
+      "page_end": 1,
+      "children": [],
+      "key_entities": [
+        "Issue No",
+        "Food Inflation",
+        "Alcoholic Beverages",
+        "Statistical Bulletin",
+        "Summary Content The Consumer Price Index",
+        "Summary The",
+        "Year Gen",
+        "Month June",
+        "Month Moving Average General",
+        "Annual Infla"
+      ],
+      "summary": "The Consumer Price Index (CPI) for Ethiopia in June EFY2017 showed a year-on-year inflation rate of 13.9%, down from 19.9% in June EFY2016. The month-on-month inflation rate increased by 0.5% in June EFY2017, compared to 0.9% in June EFY2016. The Food and Non-Alcoholic Beverages component recorded a year-on-year inflation rate of 11.7% for the same period.",
+      "data_types_present": [
+        "tables"
+      ],
+      "content_hashes": []
+    }
+  ]
+}

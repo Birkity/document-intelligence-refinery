@@ -1,0 +1,19 @@
+[
+  {
+    "document_id": "e4a78e69f29f",
+    "source_filename": "Consumer Price Index June 2025.pdf",
+    "strategy_used": "layout_aware",
+    "confidence_score": 0.85,
+    "cost_estimate": "medium",
+    "processing_time_s": 1.0142,
+    "fallback_trigger": null,
+    "page_scope": [
+      1
+    ],
+    "failure_reason": null,
+    "escalation_triggered": false,
+    "escalation_reason": null,
+    "flagged_for_review": false,
+    "timestamp": "2026-03-31T17:58:42.288544+00:00"
+  }
+]

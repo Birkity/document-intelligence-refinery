@@ -1,0 +1,13 @@
+{
+  "document_id": "e4a78e69f29f",
+  "source_filename": "Consumer Price Index June 2025.pdf",
+  "origin_type": "native_digital",
+  "layout_complexity": "table_heavy",
+  "language": "en",
+  "language_confidence": 0.5,
+  "domain_hint": "financial",
+  "estimated_extraction_cost": "needs_layout_model",
+  "page_count": 13,
+  "has_ocr_pages": false,
+  "confidence": 0.9665
+}

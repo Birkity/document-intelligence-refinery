@@ -291,6 +291,26 @@ All data contracts are defined in `src/models/schemas.py`:
 All Ollama calls use the OpenAI-compatible endpoint at `http://localhost:11434/v1`.
 Ensure `ollama run qwen3-coder:480b-cloud` is running before executing the pipeline.
 
+## LangSmith Tracing
+
+The extraction pipeline now supports opt-in LangSmith tracing on the real CLI/orchestrator path without changing provider routing.
+
+Set these environment variables before a run:
+
+```powershell
+$env:LANGSMITH_API_KEY="your-langsmith-api-key"
+$env:LANGSMITH_TRACING="true"
+$env:LANGSMITH_PROJECT="week3-document-refinery"
+```
+
+Then run one traced extraction:
+
+```powershell
+python -m src.cli run "data/Consumer Price Index June 2025.pdf" --sample-pages 1
+```
+
+Traces capture the pipeline run plus the existing prompt -> model call -> parser/post-processing spans for Ollama-backed PageIndex summaries, Ollama-backed FactTable extraction, and the optional OpenRouter vision path.
+
 ## Configuration
 
 All thresholds are externalized in `rubric/extraction_rules.yaml`:
